@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPMenuViewController">
+            <connections>
+                <outlet property="mainView" destination="CtE-aG-Z8t" id="yw8-4T-Ewu"/>
+                <outlet property="titleView" destination="fvC-cf-RpT" id="vSH-us-OF3"/>
+                <outlet property="versionLabel" destination="TyQ-yM-vSg" id="XwV-hd-y4Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvC-cf-RpT">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                    <animations/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtE-aG-Z8t">
+                    <rect key="frame" x="0.0" y="100" width="600" height="455.5"/>
+                    <animations/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyQ-yM-vSg">
+                    <rect key="frame" x="281" y="566" width="37.5" height="25.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.28877726970000001" green="0.7780812238" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="TyQ-yM-vSg" firstAttribute="top" secondItem="CtE-aG-Z8t" secondAttribute="bottom" constant="11" id="0j4-HY-BbW"/>
+                <constraint firstItem="fvC-cf-RpT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A2G-Po-aPq"/>
+                <constraint firstAttribute="trailing" secondItem="CtE-aG-Z8t" secondAttribute="trailing" id="Aku-c0-4EA"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="width" secondItem="fvC-cf-RpT" secondAttribute="width" id="J3v-6y-HBI"/>
+                <constraint firstAttribute="trailing" secondItem="fvC-cf-RpT" secondAttribute="trailing" id="UTL-IN-QAH"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e2y-jU-NOd"/>
+                <constraint firstAttribute="bottom" secondItem="TyQ-yM-vSg" secondAttribute="bottom" constant="8" id="h7m-oY-oxN"/>
+                <constraint firstItem="TyQ-yM-vSg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hGy-sN-EU4"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="fvC-cf-RpT" secondAttribute="bottom" id="iHw-yq-3fF"/>
+                <constraint firstItem="fvC-cf-RpT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qFs-Ur-qEl"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="viC-qB-BBu"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-1754" y="-505"/>
+        </view>
+    </objects>
+</document>

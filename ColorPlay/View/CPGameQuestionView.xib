@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9059"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CPGameQuestionView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-7B-pak" userLabel="optionsView">
+                    <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                    <animations/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ld8-o7-yVq" userLabel="cardView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <animations/>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vY3-7B-pak" secondAttribute="trailing" id="6H9-ap-jA3"/>
+                <constraint firstItem="vY3-7B-pak" firstAttribute="width" secondItem="Ld8-o7-yVq" secondAttribute="width" id="74x-gs-b5F"/>
+                <constraint firstItem="Ld8-o7-yVq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BVp-2X-CbX"/>
+                <constraint firstItem="vY3-7B-pak" firstAttribute="height" secondItem="Ld8-o7-yVq" secondAttribute="height" id="HPc-6h-0Il"/>
+                <constraint firstAttribute="bottom" secondItem="vY3-7B-pak" secondAttribute="bottom" id="cjH-IC-l2M"/>
+                <constraint firstItem="vY3-7B-pak" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eHD-KP-KQg"/>
+                <constraint firstItem="vY3-7B-pak" firstAttribute="top" secondItem="Ld8-o7-yVq" secondAttribute="bottom" id="eh6-jR-4mM"/>
+                <constraint firstItem="Ld8-o7-yVq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mny-n5-Tvt"/>
+                <constraint firstAttribute="trailing" secondItem="Ld8-o7-yVq" secondAttribute="trailing" id="v14-6X-Jrd"/>
+            </constraints>
+            <connections>
+                <outlet property="cardView" destination="Ld8-o7-yVq" id="kbt-fI-50U"/>
+                <outlet property="optionView" destination="vY3-7B-pak" id="ueQ-4d-GbL"/>
+            </connections>
+            <point key="canvasLocation" x="-839" y="-48"/>
+        </view>
+    </objects>
+</document>

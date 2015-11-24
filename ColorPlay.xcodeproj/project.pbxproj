@@ -1,0 +1,811 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		282421031BF21A4C008DAE61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421021BF21A4C008DAE61 /* main.m */; };
+		282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421051BF21A4C008DAE61 /* AppDelegate.m */; };
+		2824210E1BF21A4C008DAE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2824210D1BF21A4C008DAE61 /* Assets.xcassets */; };
+		282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */; };
+		2824211C1BF21A4C008DAE61 /* ColorPlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2824211B1BF21A4C008DAE61 /* ColorPlayTests.m */; };
+		282421271BF21A4C008DAE61 /* ColorPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421261BF21A4C008DAE61 /* ColorPlayUITests.m */; };
+		2824213C1BF21B7D008DAE61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213B1BF21B7D008DAE61 /* QuartzCore.framework */; };
+		2824213E1BF21B86008DAE61 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213D1BF21B86008DAE61 /* CoreGraphics.framework */; };
+		28B2FD481BF21E720065F762 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD471BF21E720065F762 /* GCDTimer.m */; };
+		28B2FD4E1BF21E980065F762 /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD4B1BF21E980065F762 /* UIColor+Common.m */; };
+		28B2FD4F1BF21E980065F762 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD4D1BF21E980065F762 /* UIImage+Color.m */; };
+		28B2FD5A1BF21EC10065F762 /* CPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD561BF21EC10065F762 /* CPMenuViewController.m */; };
+		28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD571BF21EC10065F762 /* CPMenuViewController.xib */; };
+		28B2FD5F1BF221B10065F762 /* CPGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD5D1BF221B10065F762 /* CPGameViewController.m */; };
+		28B2FD601BF221B10065F762 /* CPGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD5E1BF221B10065F762 /* CPGameViewController.xib */; };
+		28B2FD641BF221FE0065F762 /* CPResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD621BF221FE0065F762 /* CPResultViewController.m */; };
+		28B2FD651BF221FE0065F762 /* CPResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD631BF221FE0065F762 /* CPResultViewController.xib */; };
+		28B2FD691BF222170065F762 /* CPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD671BF222170065F762 /* CPAboutViewController.m */; };
+		28B2FD6A1BF222170065F762 /* CPAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD681BF222170065F762 /* CPAboutViewController.xib */; };
+		28B2FD6E1BF2222A0065F762 /* CPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD6C1BF2222A0065F762 /* CPSettingViewController.m */; };
+		28B2FD6F1BF2222A0065F762 /* CPSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD6D1BF2222A0065F762 /* CPSettingViewController.xib */; };
+		28B2FD731BF222A30065F762 /* CPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B2FD711BF222A30065F762 /* CPTutorialViewController.m */; };
+		28B2FD741BF222A30065F762 /* CPTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD721BF222A30065F762 /* CPTutorialViewController.xib */; };
+		28B2FD781BF235380065F762 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B2FD771BF235380065F762 /* libMobClickLibrary.a */; };
+		28B2FD7C1BF237880065F762 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B2FD7B1BF237880065F762 /* libz.tbd */; };
+		28B2FD7E1BF23B0F0065F762 /* ColorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B2FD7D1BF23B0F0065F762 /* ColorList.plist */; };
+		28B90C991BF2428D00035651 /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90C981BF2428D00035651 /* UIViewController+Tracking.m */; };
+		28B90C9C1BF4227900035651 /* CPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90C9B1BF4227900035651 /* CPGameScene.m */; };
+		28B90CA21BF4629D00035651 /* CPGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CA11BF4629D00035651 /* CPGameCard.m */; };
+		28B90CA51BF462BA00035651 /* CPGameQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CA41BF462BA00035651 /* CPGameQuestion.m */; };
+		28B90CA81BF462F200035651 /* CPGameCardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CA71BF462F200035651 /* CPGameCardColor.m */; };
+		28B90CAB1BF4637800035651 /* CPColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CAA1BF4637800035651 /* CPColorFactory.m */; };
+		28B90CAE1BF463A900035651 /* CPCardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CAD1BF463A900035651 /* CPCardFactory.m */; };
+		28B90CB11BF463BA00035651 /* CPQuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CB01BF463BA00035651 /* CPQuestionFactory.m */; };
+		28B90CB41BF4642B00035651 /* CPGameQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CB31BF4642B00035651 /* CPGameQuestionView.m */; };
+		28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B90CB51BF4646400035651 /* CPGameQuestionView.xib */; };
+		28B90CB91BF4649F00035651 /* CPGameCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B90CB81BF4649F00035651 /* CPGameCardView.m */; };
+		28B90CBB1BF464A900035651 /* CPGameCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B90CBA1BF464A900035651 /* CPGameCardView.xib */; };
+		28BAFA921C0242F7002E44E6 /* CPGameScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFA911C0242F7002E44E6 /* CPGameScoreView.m */; };
+		28BAFA941C02430D002E44E6 /* CPGameScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BAFA931C02430D002E44E6 /* CPGameScoreView.xib */; };
+		28BAFAAE1C04B443002E44E6 /* CPAnimation3DMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAA51C04B443002E44E6 /* CPAnimation3DMenuView.m */; };
+		28BAFAAF1C04B443002E44E6 /* CPEffectLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAA71C04B443002E44E6 /* CPEffectLabelView.m */; };
+		28BAFAB01C04B443002E44E6 /* CPEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAA91C04B443002E44E6 /* CPEmitterView.m */; };
+		28BAFAB11C04B443002E44E6 /* CPOutlineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */; };
+		28BAFAB21C04B443002E44E6 /* CPStopWatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		282421181BF21A4C008DAE61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 282420F61BF21A4C008DAE61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 282420FD1BF21A4C008DAE61;
+			remoteInfo = ColorPlay;
+		};
+		282421231BF21A4C008DAE61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 282420F61BF21A4C008DAE61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 282420FD1BF21A4C008DAE61;
+			remoteInfo = ColorPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		282420FE1BF21A4C008DAE61 /* ColorPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		282421021BF21A4C008DAE61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		282421041BF21A4C008DAE61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		282421051BF21A4C008DAE61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2824210D1BF21A4C008DAE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		282421101BF21A4C008DAE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		282421121BF21A4C008DAE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		282421171BF21A4C008DAE61 /* ColorPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2824211B1BF21A4C008DAE61 /* ColorPlayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPlayTests.m; sourceTree = "<group>"; };
+		2824211D1BF21A4C008DAE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		282421221BF21A4C008DAE61 /* ColorPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		282421261BF21A4C008DAE61 /* ColorPlayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPlayUITests.m; sourceTree = "<group>"; };
+		282421281BF21A4C008DAE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2824213B1BF21B7D008DAE61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2824213D1BF21B86008DAE61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28B2FD461BF21E720065F762 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		28B2FD471BF21E720065F762 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		28B2FD4A1BF21E980065F762 /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
+		28B2FD4B1BF21E980065F762 /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
+		28B2FD4C1BF21E980065F762 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		28B2FD4D1BF21E980065F762 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		28B2FD551BF21EC10065F762 /* CPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMenuViewController.h; sourceTree = "<group>"; };
+		28B2FD561BF21EC10065F762 /* CPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMenuViewController.m; sourceTree = "<group>"; };
+		28B2FD571BF21EC10065F762 /* CPMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPMenuViewController.xib; sourceTree = "<group>"; };
+		28B2FD5C1BF221B10065F762 /* CPGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameViewController.h; sourceTree = "<group>"; };
+		28B2FD5D1BF221B10065F762 /* CPGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameViewController.m; sourceTree = "<group>"; };
+		28B2FD5E1BF221B10065F762 /* CPGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPGameViewController.xib; sourceTree = "<group>"; };
+		28B2FD611BF221FE0065F762 /* CPResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPResultViewController.h; sourceTree = "<group>"; };
+		28B2FD621BF221FE0065F762 /* CPResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPResultViewController.m; sourceTree = "<group>"; };
+		28B2FD631BF221FE0065F762 /* CPResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPResultViewController.xib; sourceTree = "<group>"; };
+		28B2FD661BF222170065F762 /* CPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAboutViewController.h; sourceTree = "<group>"; };
+		28B2FD671BF222170065F762 /* CPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAboutViewController.m; sourceTree = "<group>"; };
+		28B2FD681BF222170065F762 /* CPAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPAboutViewController.xib; sourceTree = "<group>"; };
+		28B2FD6B1BF2222A0065F762 /* CPSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSettingViewController.h; sourceTree = "<group>"; };
+		28B2FD6C1BF2222A0065F762 /* CPSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSettingViewController.m; sourceTree = "<group>"; };
+		28B2FD6D1BF2222A0065F762 /* CPSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPSettingViewController.xib; sourceTree = "<group>"; };
+		28B2FD701BF222A30065F762 /* CPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTutorialViewController.h; sourceTree = "<group>"; };
+		28B2FD711BF222A30065F762 /* CPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTutorialViewController.m; sourceTree = "<group>"; };
+		28B2FD721BF222A30065F762 /* CPTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPTutorialViewController.xib; sourceTree = "<group>"; };
+		28B2FD771BF235380065F762 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = ../libMobClickLibrary.a; sourceTree = "<group>"; };
+		28B2FD791BF2353E0065F762 /* MobClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = ../MobClick.h; sourceTree = "<group>"; };
+		28B2FD7B1BF237880065F762 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		28B2FD7D1BF23B0F0065F762 /* ColorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorList.plist; sourceTree = "<group>"; };
+		28B2FD7F1BF23B620065F762 /* CPMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPMacro.h; sourceTree = "<group>"; };
+		28B90C971BF2428D00035651 /* UIViewController+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
+		28B90C981BF2428D00035651 /* UIViewController+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
+		28B90C9A1BF4227900035651 /* CPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameScene.h; sourceTree = "<group>"; };
+		28B90C9B1BF4227900035651 /* CPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameScene.m; sourceTree = "<group>"; };
+		28B90CA01BF4629D00035651 /* CPGameCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameCard.h; sourceTree = "<group>"; };
+		28B90CA11BF4629D00035651 /* CPGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameCard.m; sourceTree = "<group>"; };
+		28B90CA31BF462BA00035651 /* CPGameQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameQuestion.h; sourceTree = "<group>"; };
+		28B90CA41BF462BA00035651 /* CPGameQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameQuestion.m; sourceTree = "<group>"; };
+		28B90CA61BF462F200035651 /* CPGameCardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameCardColor.h; sourceTree = "<group>"; };
+		28B90CA71BF462F200035651 /* CPGameCardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameCardColor.m; sourceTree = "<group>"; };
+		28B90CA91BF4637800035651 /* CPColorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPColorFactory.h; sourceTree = "<group>"; };
+		28B90CAA1BF4637800035651 /* CPColorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPColorFactory.m; sourceTree = "<group>"; };
+		28B90CAC1BF463A900035651 /* CPCardFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCardFactory.h; sourceTree = "<group>"; };
+		28B90CAD1BF463A900035651 /* CPCardFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCardFactory.m; sourceTree = "<group>"; };
+		28B90CAF1BF463BA00035651 /* CPQuestionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPQuestionFactory.h; sourceTree = "<group>"; };
+		28B90CB01BF463BA00035651 /* CPQuestionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPQuestionFactory.m; sourceTree = "<group>"; };
+		28B90CB21BF4642B00035651 /* CPGameQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameQuestionView.h; sourceTree = "<group>"; };
+		28B90CB31BF4642B00035651 /* CPGameQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameQuestionView.m; sourceTree = "<group>"; };
+		28B90CB51BF4646400035651 /* CPGameQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPGameQuestionView.xib; sourceTree = "<group>"; };
+		28B90CB71BF4649F00035651 /* CPGameCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameCardView.h; sourceTree = "<group>"; };
+		28B90CB81BF4649F00035651 /* CPGameCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameCardView.m; sourceTree = "<group>"; };
+		28B90CBA1BF464A900035651 /* CPGameCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPGameCardView.xib; sourceTree = "<group>"; };
+		28BAFA901C0242F7002E44E6 /* CPGameScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGameScoreView.h; sourceTree = "<group>"; };
+		28BAFA911C0242F7002E44E6 /* CPGameScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGameScoreView.m; sourceTree = "<group>"; };
+		28BAFA931C02430D002E44E6 /* CPGameScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPGameScoreView.xib; sourceTree = "<group>"; };
+		28BAFAA41C04B443002E44E6 /* CPAnimation3DMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAnimation3DMenuView.h; sourceTree = "<group>"; };
+		28BAFAA51C04B443002E44E6 /* CPAnimation3DMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAnimation3DMenuView.m; sourceTree = "<group>"; };
+		28BAFAA61C04B443002E44E6 /* CPEffectLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPEffectLabelView.h; sourceTree = "<group>"; };
+		28BAFAA71C04B443002E44E6 /* CPEffectLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPEffectLabelView.m; sourceTree = "<group>"; };
+		28BAFAA81C04B443002E44E6 /* CPEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPEmitterView.h; sourceTree = "<group>"; };
+		28BAFAA91C04B443002E44E6 /* CPEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPEmitterView.m; sourceTree = "<group>"; };
+		28BAFAAA1C04B443002E44E6 /* CPOutlineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPOutlineLabel.h; sourceTree = "<group>"; };
+		28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPOutlineLabel.m; sourceTree = "<group>"; };
+		28BAFAAC1C04B443002E44E6 /* CPStopWatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPStopWatchView.h; sourceTree = "<group>"; };
+		28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPStopWatchView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		282420FB1BF21A4C008DAE61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B2FD7C1BF237880065F762 /* libz.tbd in Frameworks */,
+				28B2FD781BF235380065F762 /* libMobClickLibrary.a in Frameworks */,
+				2824213E1BF21B86008DAE61 /* CoreGraphics.framework in Frameworks */,
+				2824213C1BF21B7D008DAE61 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		282421141BF21A4C008DAE61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2824211F1BF21A4C008DAE61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		282420F51BF21A4C008DAE61 = {
+			isa = PBXGroup;
+			children = (
+				282421001BF21A4C008DAE61 /* ColorPlay */,
+				2824211A1BF21A4C008DAE61 /* ColorPlayTests */,
+				282421251BF21A4C008DAE61 /* ColorPlayUITests */,
+				282420FF1BF21A4C008DAE61 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		282420FF1BF21A4C008DAE61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				282420FE1BF21A4C008DAE61 /* ColorPlay.app */,
+				282421171BF21A4C008DAE61 /* ColorPlayTests.xctest */,
+				282421221BF21A4C008DAE61 /* ColorPlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		282421001BF21A4C008DAE61 /* ColorPlay */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD441BF21E3F0065F762 /* Util */,
+				28B2FD751BF222D00065F762 /* Model */,
+				28B2FD3A1BF21DF40065F762 /* View */,
+				28B2FD501BF21EA00065F762 /* ViewController */,
+				2824213A1BF21B2B008DAE61 /* Frameworks */,
+				2824210D1BF21A4C008DAE61 /* Assets.xcassets */,
+				2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */,
+				282421121BF21A4C008DAE61 /* Info.plist */,
+				282421011BF21A4C008DAE61 /* Supporting Files */,
+			);
+			path = ColorPlay;
+			sourceTree = "<group>";
+		};
+		282421011BF21A4C008DAE61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD7D1BF23B0F0065F762 /* ColorList.plist */,
+				282421041BF21A4C008DAE61 /* AppDelegate.h */,
+				282421051BF21A4C008DAE61 /* AppDelegate.m */,
+				282421021BF21A4C008DAE61 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2824211A1BF21A4C008DAE61 /* ColorPlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				2824211B1BF21A4C008DAE61 /* ColorPlayTests.m */,
+				2824211D1BF21A4C008DAE61 /* Info.plist */,
+			);
+			path = ColorPlayTests;
+			sourceTree = "<group>";
+		};
+		282421251BF21A4C008DAE61 /* ColorPlayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				282421261BF21A4C008DAE61 /* ColorPlayUITests.m */,
+				282421281BF21A4C008DAE61 /* Info.plist */,
+			);
+			path = ColorPlayUITests;
+			sourceTree = "<group>";
+		};
+		2824213A1BF21B2B008DAE61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD7A1BF237210065F762 /* Umeng */,
+				28B2FD7B1BF237880065F762 /* libz.tbd */,
+				2824213D1BF21B86008DAE61 /* CoreGraphics.framework */,
+				2824213B1BF21B7D008DAE61 /* QuartzCore.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		28B2FD3A1BF21DF40065F762 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28BAFA951C04B04C002E44E6 /* CustomView */,
+				28B90CB21BF4642B00035651 /* CPGameQuestionView.h */,
+				28B90CB31BF4642B00035651 /* CPGameQuestionView.m */,
+				28B90CB51BF4646400035651 /* CPGameQuestionView.xib */,
+				28B90CB71BF4649F00035651 /* CPGameCardView.h */,
+				28B90CB81BF4649F00035651 /* CPGameCardView.m */,
+				28B90CBA1BF464A900035651 /* CPGameCardView.xib */,
+				28BAFA901C0242F7002E44E6 /* CPGameScoreView.h */,
+				28BAFA911C0242F7002E44E6 /* CPGameScoreView.m */,
+				28BAFA931C02430D002E44E6 /* CPGameScoreView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28B2FD441BF21E3F0065F762 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD7F1BF23B620065F762 /* CPMacro.h */,
+				28B2FD491BF21E7C0065F762 /* Category */,
+				28B2FD451BF21E4E0065F762 /* GCDTimer */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		28B2FD451BF21E4E0065F762 /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD461BF21E720065F762 /* GCDTimer.h */,
+				28B2FD471BF21E720065F762 /* GCDTimer.m */,
+			);
+			path = GCDTimer;
+			sourceTree = "<group>";
+		};
+		28B2FD491BF21E7C0065F762 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD4A1BF21E980065F762 /* UIColor+Common.h */,
+				28B2FD4B1BF21E980065F762 /* UIColor+Common.m */,
+				28B2FD4C1BF21E980065F762 /* UIImage+Color.h */,
+				28B2FD4D1BF21E980065F762 /* UIImage+Color.m */,
+				28B90C971BF2428D00035651 /* UIViewController+Tracking.h */,
+				28B90C981BF2428D00035651 /* UIViewController+Tracking.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		28B2FD501BF21EA00065F762 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD551BF21EC10065F762 /* CPMenuViewController.h */,
+				28B2FD561BF21EC10065F762 /* CPMenuViewController.m */,
+				28B2FD571BF21EC10065F762 /* CPMenuViewController.xib */,
+				28B2FD5C1BF221B10065F762 /* CPGameViewController.h */,
+				28B2FD5D1BF221B10065F762 /* CPGameViewController.m */,
+				28B2FD5E1BF221B10065F762 /* CPGameViewController.xib */,
+				28B2FD611BF221FE0065F762 /* CPResultViewController.h */,
+				28B2FD621BF221FE0065F762 /* CPResultViewController.m */,
+				28B2FD631BF221FE0065F762 /* CPResultViewController.xib */,
+				28B2FD661BF222170065F762 /* CPAboutViewController.h */,
+				28B2FD671BF222170065F762 /* CPAboutViewController.m */,
+				28B2FD681BF222170065F762 /* CPAboutViewController.xib */,
+				28B2FD6B1BF2222A0065F762 /* CPSettingViewController.h */,
+				28B2FD6C1BF2222A0065F762 /* CPSettingViewController.m */,
+				28B2FD6D1BF2222A0065F762 /* CPSettingViewController.xib */,
+				28B2FD701BF222A30065F762 /* CPTutorialViewController.h */,
+				28B2FD711BF222A30065F762 /* CPTutorialViewController.m */,
+				28B2FD721BF222A30065F762 /* CPTutorialViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		28B2FD751BF222D00065F762 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD761BF222ED0065F762 /* Factory */,
+				28B90C9A1BF4227900035651 /* CPGameScene.h */,
+				28B90C9B1BF4227900035651 /* CPGameScene.m */,
+				28B90CA01BF4629D00035651 /* CPGameCard.h */,
+				28B90CA11BF4629D00035651 /* CPGameCard.m */,
+				28B90CA31BF462BA00035651 /* CPGameQuestion.h */,
+				28B90CA41BF462BA00035651 /* CPGameQuestion.m */,
+				28B90CA61BF462F200035651 /* CPGameCardColor.h */,
+				28B90CA71BF462F200035651 /* CPGameCardColor.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28B2FD761BF222ED0065F762 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				28B90CA91BF4637800035651 /* CPColorFactory.h */,
+				28B90CAA1BF4637800035651 /* CPColorFactory.m */,
+				28B90CAC1BF463A900035651 /* CPCardFactory.h */,
+				28B90CAD1BF463A900035651 /* CPCardFactory.m */,
+				28B90CAF1BF463BA00035651 /* CPQuestionFactory.h */,
+				28B90CB01BF463BA00035651 /* CPQuestionFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		28B2FD7A1BF237210065F762 /* Umeng */ = {
+			isa = PBXGroup;
+			children = (
+				28B2FD771BF235380065F762 /* libMobClickLibrary.a */,
+				28B2FD791BF2353E0065F762 /* MobClick.h */,
+			);
+			path = Umeng;
+			sourceTree = "<group>";
+		};
+		28BAFA951C04B04C002E44E6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				28BAFAA41C04B443002E44E6 /* CPAnimation3DMenuView.h */,
+				28BAFAA51C04B443002E44E6 /* CPAnimation3DMenuView.m */,
+				28BAFAA61C04B443002E44E6 /* CPEffectLabelView.h */,
+				28BAFAA71C04B443002E44E6 /* CPEffectLabelView.m */,
+				28BAFAA81C04B443002E44E6 /* CPEmitterView.h */,
+				28BAFAA91C04B443002E44E6 /* CPEmitterView.m */,
+				28BAFAAA1C04B443002E44E6 /* CPOutlineLabel.h */,
+				28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */,
+				28BAFAAC1C04B443002E44E6 /* CPStopWatchView.h */,
+				28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		282420FD1BF21A4C008DAE61 /* ColorPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2824212B1BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlay" */;
+			buildPhases = (
+				282420FA1BF21A4C008DAE61 /* Sources */,
+				282420FB1BF21A4C008DAE61 /* Frameworks */,
+				282420FC1BF21A4C008DAE61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorPlay;
+			productName = ColorPlay;
+			productReference = 282420FE1BF21A4C008DAE61 /* ColorPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		282421161BF21A4C008DAE61 /* ColorPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2824212E1BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlayTests" */;
+			buildPhases = (
+				282421131BF21A4C008DAE61 /* Sources */,
+				282421141BF21A4C008DAE61 /* Frameworks */,
+				282421151BF21A4C008DAE61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				282421191BF21A4C008DAE61 /* PBXTargetDependency */,
+			);
+			name = ColorPlayTests;
+			productName = ColorPlayTests;
+			productReference = 282421171BF21A4C008DAE61 /* ColorPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		282421211BF21A4C008DAE61 /* ColorPlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 282421311BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlayUITests" */;
+			buildPhases = (
+				2824211E1BF21A4C008DAE61 /* Sources */,
+				2824211F1BF21A4C008DAE61 /* Frameworks */,
+				282421201BF21A4C008DAE61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				282421241BF21A4C008DAE61 /* PBXTargetDependency */,
+			);
+			name = ColorPlayUITests;
+			productName = ColorPlayUITests;
+			productReference = 282421221BF21A4C008DAE61 /* ColorPlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		282420F61BF21A4C008DAE61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = huangzhifei;
+				TargetAttributes = {
+					282420FD1BF21A4C008DAE61 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = A6E9Q4936R;
+					};
+					282421161BF21A4C008DAE61 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = A6E9Q4936R;
+						TestTargetID = 282420FD1BF21A4C008DAE61;
+					};
+					282421211BF21A4C008DAE61 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = A6E9Q4936R;
+						TestTargetID = 282420FD1BF21A4C008DAE61;
+					};
+				};
+			};
+			buildConfigurationList = 282420F91BF21A4C008DAE61 /* Build configuration list for PBXProject "ColorPlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 282420F51BF21A4C008DAE61;
+			productRefGroup = 282420FF1BF21A4C008DAE61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				282420FD1BF21A4C008DAE61 /* ColorPlay */,
+				282421161BF21A4C008DAE61 /* ColorPlayTests */,
+				282421211BF21A4C008DAE61 /* ColorPlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		282420FC1BF21A4C008DAE61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B2FD7E1BF23B0F0065F762 /* ColorList.plist in Resources */,
+				282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */,
+				28B2FD601BF221B10065F762 /* CPGameViewController.xib in Resources */,
+				2824210E1BF21A4C008DAE61 /* Assets.xcassets in Resources */,
+				28B2FD741BF222A30065F762 /* CPTutorialViewController.xib in Resources */,
+				28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */,
+				28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */,
+				28B90CBB1BF464A900035651 /* CPGameCardView.xib in Resources */,
+				28BAFA941C02430D002E44E6 /* CPGameScoreView.xib in Resources */,
+				28B2FD6F1BF2222A0065F762 /* CPSettingViewController.xib in Resources */,
+				28B2FD651BF221FE0065F762 /* CPResultViewController.xib in Resources */,
+				28B2FD6A1BF222170065F762 /* CPAboutViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		282421151BF21A4C008DAE61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		282421201BF21A4C008DAE61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		282420FA1BF21A4C008DAE61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28BAFAB21C04B443002E44E6 /* CPStopWatchView.m in Sources */,
+				28B90CA51BF462BA00035651 /* CPGameQuestion.m in Sources */,
+				28B2FD481BF21E720065F762 /* GCDTimer.m in Sources */,
+				28B90C991BF2428D00035651 /* UIViewController+Tracking.m in Sources */,
+				28B90C9C1BF4227900035651 /* CPGameScene.m in Sources */,
+				28BAFAB11C04B443002E44E6 /* CPOutlineLabel.m in Sources */,
+				28B90CA21BF4629D00035651 /* CPGameCard.m in Sources */,
+				28BAFAB01C04B443002E44E6 /* CPEmitterView.m in Sources */,
+				282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */,
+				28B90CB11BF463BA00035651 /* CPQuestionFactory.m in Sources */,
+				28BAFAAF1C04B443002E44E6 /* CPEffectLabelView.m in Sources */,
+				28B2FD731BF222A30065F762 /* CPTutorialViewController.m in Sources */,
+				28B2FD641BF221FE0065F762 /* CPResultViewController.m in Sources */,
+				28B90CA81BF462F200035651 /* CPGameCardColor.m in Sources */,
+				28B2FD691BF222170065F762 /* CPAboutViewController.m in Sources */,
+				28B2FD5A1BF21EC10065F762 /* CPMenuViewController.m in Sources */,
+				28B90CB41BF4642B00035651 /* CPGameQuestionView.m in Sources */,
+				28B2FD4F1BF21E980065F762 /* UIImage+Color.m in Sources */,
+				28BAFA921C0242F7002E44E6 /* CPGameScoreView.m in Sources */,
+				28B90CAE1BF463A900035651 /* CPCardFactory.m in Sources */,
+				28B2FD6E1BF2222A0065F762 /* CPSettingViewController.m in Sources */,
+				28BAFAAE1C04B443002E44E6 /* CPAnimation3DMenuView.m in Sources */,
+				28B90CAB1BF4637800035651 /* CPColorFactory.m in Sources */,
+				28B90CB91BF4649F00035651 /* CPGameCardView.m in Sources */,
+				282421031BF21A4C008DAE61 /* main.m in Sources */,
+				28B2FD5F1BF221B10065F762 /* CPGameViewController.m in Sources */,
+				28B2FD4E1BF21E980065F762 /* UIColor+Common.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		282421131BF21A4C008DAE61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2824211C1BF21A4C008DAE61 /* ColorPlayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2824211E1BF21A4C008DAE61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				282421271BF21A4C008DAE61 /* ColorPlayUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		282421191BF21A4C008DAE61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 282420FD1BF21A4C008DAE61 /* ColorPlay */;
+			targetProxy = 282421181BF21A4C008DAE61 /* PBXContainerItemProxy */;
+		};
+		282421241BF21A4C008DAE61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 282420FD1BF21A4C008DAE61 /* ColorPlay */;
+			targetProxy = 282421231BF21A4C008DAE61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				282421101BF21A4C008DAE61 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		282421291BF21A4C008DAE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2824212A1BF21A4C008DAE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2824212C1BF21A4C008DAE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ColorPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ColorPlay/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2824212D1BF21A4C008DAE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ColorPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ColorPlay/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2824212F1BF21A4C008DAE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ColorPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPlay.app/ColorPlay";
+			};
+			name = Debug;
+		};
+		282421301BF21A4C008DAE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ColorPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPlay.app/ColorPlay";
+			};
+			name = Release;
+		};
+		282421321BF21A4C008DAE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ColorPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ColorPlay;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		282421331BF21A4C008DAE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ColorPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hzf.ColorPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ColorPlay;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		282420F91BF21A4C008DAE61 /* Build configuration list for PBXProject "ColorPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				282421291BF21A4C008DAE61 /* Debug */,
+				2824212A1BF21A4C008DAE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2824212B1BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2824212C1BF21A4C008DAE61 /* Debug */,
+				2824212D1BF21A4C008DAE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2824212E1BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2824212F1BF21A4C008DAE61 /* Debug */,
+				282421301BF21A4C008DAE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		282421311BF21A4C008DAE61 /* Build configuration list for PBXNativeTarget "ColorPlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				282421321BF21A4C008DAE61 /* Debug */,
+				282421331BF21A4C008DAE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 282420F61BF21A4C008DAE61 /* Project object */;
+}
