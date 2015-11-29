@@ -180,6 +180,7 @@
     }
     else
     {
+        lastOffsetY = 0;
         [self.scrollGCDTimer invalidate];
     }
 }
