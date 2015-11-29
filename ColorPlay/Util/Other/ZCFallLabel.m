@@ -8,7 +8,7 @@
 
 #import "ZCFallLabel.h"
 
-#import "ZCDuangLabel.h"
+//#import "ZCDuangLabel.h"
 
 @implementation ZCFallLabel
 

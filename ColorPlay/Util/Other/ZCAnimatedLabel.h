@@ -46,7 +46,8 @@ typedef NS_ENUM(NSInteger, ZCAnimatedLabelAppearDirection)
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, strong) NSAttributedString *attributedString;
-
+@property (nonatomic, assign, readonly) CGFloat currentCursorY;
+@property (nonatomic, assign, readonly, getter=isFinished) BOOL finished;
 /**
  * If YES, eash text block will be CALayer instead of redraw
  * default to NO

@@ -11,6 +11,7 @@
 #import "CPAboutViewController.h"
 #import "MobClick.h"
 #import "CPMacro.h"
+#import "CPSettingData.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //[NSThread sleepForTimeInterval:3.5];//设置启动页面时间
+    
     //[self registerUmeng];
+    
+    [self readSettingData];
     
     // hidden status bar 
     [application setStatusBarHidden:YES];
@@ -33,8 +38,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     // 3 -- rootVC
-    CPMenuViewController *rootVC = [CPMenuViewController initWithNib];
-    //CPAboutViewController *rootVC = [CPAboutViewController initWithNib];
+    //CPMenuViewController *rootVC = [CPMenuViewController initWithNib];
+    CPAboutViewController *rootVC = [CPAboutViewController initWithNib];
     // 4 -- rootNavc
     UINavigationController *rootNaVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     
@@ -81,6 +86,12 @@
     [MobClick setAppVersion:version];
     
     [MobClick startWithAppkey:kUmengAppKey reportPolicy:BATCH channelId:kChannelID];
+}
+
+- (void)readSettingData
+{
+    //CPSettingData *setting = [CPSettingData sharedInstance];
+    
 }
 
 @end

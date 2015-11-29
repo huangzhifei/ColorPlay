@@ -67,6 +67,10 @@
     
     _debugTextBlockBounds = NO;
     _layerBased = NO;
+    
+    _currentCursorY = 0;
+    
+    _finished = NO;
 }
 
 
@@ -84,6 +88,7 @@
     if (self.animationTime > self.animationDurationTotal) {
         self.displayLink.paused = YES;
         self.useDefaultDrawing = YES;
+        _finished = YES;
     }
     else { //update text attributeds array
         
@@ -120,6 +125,15 @@
                     }
                     else {
                         CGRect dityRect = [self redrawAreaForRect:self.bounds textBlock:textBlock];
+                        //NSLog(@"x: %f y: %f", dityRect.origin.x, dityRect.origin.y);
+                        /**
+                         *  emit current rect to scroll view
+                         */
+                        if( _currentCursorY < dityRect.origin.y )
+                        {
+                            _currentCursorY = dityRect.origin.y;
+                        }
+                        
                         [self setNeedsDisplayInRect:dityRect];
                     }
                 }

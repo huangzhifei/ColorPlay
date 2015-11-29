@@ -392,7 +392,16 @@ const NSInteger itemTag = 1000;
         item.currentAngle = endAngle;
         
     }
+    
     self.currentIndex++;
+    
+    //增加连贯性
+    if(self.currentIndex >= self.itemsArray.count)
+    {
+        [self startRotateAnimation];
+        
+        return;
+    }
     
     [GCDTimer scheduledTimerWithTimeInterval:0.25 repeats:NO block:^{
         
@@ -421,13 +430,13 @@ const NSInteger itemTag = 1000;
     scaleAnimation.autoreverses = NO;
     scaleAnimation.removedOnCompletion = NO;
     scaleAnimation.fillMode = kCAFillModeForwards;
-    scaleAnimation.duration = 0.05;
+    scaleAnimation.duration = 0.1;
     
     [item.layer addAnimation:scaleAnimation forKey:@"transform.scale"];
     
     self.currentIndex++;
     
-    [GCDTimer scheduledTimerWithTimeInterval:0.02 repeats:NO block:^{
+    [GCDTimer scheduledTimerWithTimeInterval:0.1 repeats:NO block:^{
         
         [self startScaleAnimation];
         

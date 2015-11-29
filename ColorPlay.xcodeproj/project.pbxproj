@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280A13F71C08865A000F2E1B /* CPSettingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A13F61C08865A000F2E1B /* CPSettingData.m */; };
+		280A13FF1C0AFDD8000F2E1B /* ZCAnimatedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A13FA1C0AFDD8000F2E1B /* ZCAnimatedLabel.m */; };
+		280A14001C0AFDD8000F2E1B /* ZCCoreTextLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A13FC1C0AFDD8000F2E1B /* ZCCoreTextLayout.m */; };
+		280A14011C0AFDD8000F2E1B /* ZCEasingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A13FE1C0AFDD8000F2E1B /* ZCEasingUtil.m */; };
+		280A14041C0B018E000F2E1B /* ZCFallLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14031C0B018E000F2E1B /* ZCFallLabel.m */; };
+		280A14071C0B01A0000F2E1B /* ZCDuangLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */; };
+		280A14091C0B04CD000F2E1B /* AboutContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 280A14081C0B04CD000F2E1B /* AboutContent.plist */; };
 		282421031BF21A4C008DAE61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421021BF21A4C008DAE61 /* main.m */; };
 		282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421051BF21A4C008DAE61 /* AppDelegate.m */; };
-		2824210E1BF21A4C008DAE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2824210D1BF21A4C008DAE61 /* Assets.xcassets */; };
 		282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */; };
 		2824211C1BF21A4C008DAE61 /* ColorPlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2824211B1BF21A4C008DAE61 /* ColorPlayTests.m */; };
 		282421271BF21A4C008DAE61 /* ColorPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421261BF21A4C008DAE61 /* ColorPlayUITests.m */; };
@@ -52,6 +58,7 @@
 		28BAFAB01C04B443002E44E6 /* CPEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAA91C04B443002E44E6 /* CPEmitterView.m */; };
 		28BAFAB11C04B443002E44E6 /* CPOutlineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */; };
 		28BAFAB21C04B443002E44E6 /* CPStopWatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */; };
+		28BAFAF51C08117D002E44E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BAFAF41C08117D002E44E6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,11 +79,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280A13F51C08865A000F2E1B /* CPSettingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSettingData.h; sourceTree = "<group>"; };
+		280A13F61C08865A000F2E1B /* CPSettingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSettingData.m; sourceTree = "<group>"; };
+		280A13F91C0AFDD8000F2E1B /* ZCAnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCAnimatedLabel.h; sourceTree = "<group>"; };
+		280A13FA1C0AFDD8000F2E1B /* ZCAnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCAnimatedLabel.m; sourceTree = "<group>"; };
+		280A13FB1C0AFDD8000F2E1B /* ZCCoreTextLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCoreTextLayout.h; sourceTree = "<group>"; };
+		280A13FC1C0AFDD8000F2E1B /* ZCCoreTextLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCoreTextLayout.m; sourceTree = "<group>"; };
+		280A13FD1C0AFDD8000F2E1B /* ZCEasingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEasingUtil.h; sourceTree = "<group>"; };
+		280A13FE1C0AFDD8000F2E1B /* ZCEasingUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEasingUtil.m; sourceTree = "<group>"; };
+		280A14021C0B018E000F2E1B /* ZCFallLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFallLabel.h; sourceTree = "<group>"; };
+		280A14031C0B018E000F2E1B /* ZCFallLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFallLabel.m; sourceTree = "<group>"; };
+		280A14051C0B01A0000F2E1B /* ZCDuangLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDuangLabel.h; sourceTree = "<group>"; };
+		280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDuangLabel.m; sourceTree = "<group>"; };
+		280A14081C0B04CD000F2E1B /* AboutContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AboutContent.plist; sourceTree = "<group>"; };
 		282420FE1BF21A4C008DAE61 /* ColorPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282421021BF21A4C008DAE61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282421041BF21A4C008DAE61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		282421051BF21A4C008DAE61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2824210D1BF21A4C008DAE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282421101BF21A4C008DAE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282421121BF21A4C008DAE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282421171BF21A4C008DAE61 /* ColorPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +170,7 @@
 		28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPOutlineLabel.m; sourceTree = "<group>"; };
 		28BAFAAC1C04B443002E44E6 /* CPStopWatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPStopWatchView.h; sourceTree = "<group>"; };
 		28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPStopWatchView.m; sourceTree = "<group>"; };
+		28BAFAF41C08117D002E44E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +202,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280A13F81C0AFD77000F2E1B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				280A13F91C0AFDD8000F2E1B /* ZCAnimatedLabel.h */,
+				280A13FA1C0AFDD8000F2E1B /* ZCAnimatedLabel.m */,
+				280A13FB1C0AFDD8000F2E1B /* ZCCoreTextLayout.h */,
+				280A13FC1C0AFDD8000F2E1B /* ZCCoreTextLayout.m */,
+				280A13FD1C0AFDD8000F2E1B /* ZCEasingUtil.h */,
+				280A13FE1C0AFDD8000F2E1B /* ZCEasingUtil.m */,
+				280A14021C0B018E000F2E1B /* ZCFallLabel.h */,
+				280A14031C0B018E000F2E1B /* ZCFallLabel.m */,
+				280A14051C0B01A0000F2E1B /* ZCDuangLabel.h */,
+				280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		282420F51BF21A4C008DAE61 = {
 			isa = PBXGroup;
 			children = (
@@ -210,9 +247,6 @@
 				28B2FD3A1BF21DF40065F762 /* View */,
 				28B2FD501BF21EA00065F762 /* ViewController */,
 				2824213A1BF21B2B008DAE61 /* Frameworks */,
-				2824210D1BF21A4C008DAE61 /* Assets.xcassets */,
-				2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */,
-				282421121BF21A4C008DAE61 /* Info.plist */,
 				282421011BF21A4C008DAE61 /* Supporting Files */,
 			);
 			path = ColorPlay;
@@ -221,10 +255,14 @@
 		282421011BF21A4C008DAE61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28BAFAF41C08117D002E44E6 /* Assets.xcassets */,
 				28B2FD7D1BF23B0F0065F762 /* ColorList.plist */,
+				280A14081C0B04CD000F2E1B /* AboutContent.plist */,
+				282421121BF21A4C008DAE61 /* Info.plist */,
 				282421041BF21A4C008DAE61 /* AppDelegate.h */,
 				282421051BF21A4C008DAE61 /* AppDelegate.m */,
 				282421021BF21A4C008DAE61 /* main.m */,
+				2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,6 +316,7 @@
 		28B2FD441BF21E3F0065F762 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				280A13F81C0AFD77000F2E1B /* Other */,
 				28B2FD7F1BF23B620065F762 /* CPMacro.h */,
 				28B2FD491BF21E7C0065F762 /* Category */,
 				28B2FD451BF21E4E0065F762 /* GCDTimer */,
@@ -344,6 +383,8 @@
 				28B90CA41BF462BA00035651 /* CPGameQuestion.m */,
 				28B90CA61BF462F200035651 /* CPGameCardColor.h */,
 				28B90CA71BF462F200035651 /* CPGameCardColor.m */,
+				280A13F51C08865A000F2E1B /* CPSettingData.h */,
+				280A13F61C08865A000F2E1B /* CPSettingData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,14 +537,15 @@
 				28B2FD7E1BF23B0F0065F762 /* ColorList.plist in Resources */,
 				282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */,
 				28B2FD601BF221B10065F762 /* CPGameViewController.xib in Resources */,
-				2824210E1BF21A4C008DAE61 /* Assets.xcassets in Resources */,
 				28B2FD741BF222A30065F762 /* CPTutorialViewController.xib in Resources */,
 				28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */,
 				28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */,
 				28B90CBB1BF464A900035651 /* CPGameCardView.xib in Resources */,
 				28BAFA941C02430D002E44E6 /* CPGameScoreView.xib in Resources */,
 				28B2FD6F1BF2222A0065F762 /* CPSettingViewController.xib in Resources */,
+				280A14091C0B04CD000F2E1B /* AboutContent.plist in Resources */,
 				28B2FD651BF221FE0065F762 /* CPResultViewController.xib in Resources */,
+				28BAFAF51C08117D002E44E6 /* Assets.xcassets in Resources */,
 				28B2FD6A1BF222170065F762 /* CPAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,17 +573,23 @@
 			files = (
 				28BAFAB21C04B443002E44E6 /* CPStopWatchView.m in Sources */,
 				28B90CA51BF462BA00035651 /* CPGameQuestion.m in Sources */,
+				280A14071C0B01A0000F2E1B /* ZCDuangLabel.m in Sources */,
 				28B2FD481BF21E720065F762 /* GCDTimer.m in Sources */,
 				28B90C991BF2428D00035651 /* UIViewController+Tracking.m in Sources */,
+				280A14041C0B018E000F2E1B /* ZCFallLabel.m in Sources */,
 				28B90C9C1BF4227900035651 /* CPGameScene.m in Sources */,
 				28BAFAB11C04B443002E44E6 /* CPOutlineLabel.m in Sources */,
 				28B90CA21BF4629D00035651 /* CPGameCard.m in Sources */,
 				28BAFAB01C04B443002E44E6 /* CPEmitterView.m in Sources */,
 				282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */,
+				280A13F71C08865A000F2E1B /* CPSettingData.m in Sources */,
 				28B90CB11BF463BA00035651 /* CPQuestionFactory.m in Sources */,
 				28BAFAAF1C04B443002E44E6 /* CPEffectLabelView.m in Sources */,
+				280A14001C0AFDD8000F2E1B /* ZCCoreTextLayout.m in Sources */,
 				28B2FD731BF222A30065F762 /* CPTutorialViewController.m in Sources */,
+				280A14011C0AFDD8000F2E1B /* ZCEasingUtil.m in Sources */,
 				28B2FD641BF221FE0065F762 /* CPResultViewController.m in Sources */,
+				280A13FF1C0AFDD8000F2E1B /* ZCAnimatedLabel.m in Sources */,
 				28B90CA81BF462F200035651 /* CPGameCardColor.m in Sources */,
 				28B2FD691BF222170065F762 /* CPAboutViewController.m in Sources */,
 				28B2FD5A1BF21EC10065F762 /* CPMenuViewController.m in Sources */,

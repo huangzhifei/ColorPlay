@@ -21,7 +21,6 @@ CGFloat ZCQuadraticEaseOut(CGFloat p)
     return -(p * (p - 2));
 }
 
-
 CGFloat ZCBounceEaseOut(CGFloat p)
 {
     if(p < 1/2.75)

@@ -7,7 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#define kMusicSelected          @"musicSelected"
+#define kEffectSelected         @"effectSelected"
+#define kBgEffectSeleted        @"bgEffectSelected"
+#define kNotificationSeleted    @"notificationSelected"
+#define kMusicVolumn            @"musicVolumn"
+#define kEffectVolumn           @"effectVolumn"
 
 @interface CPSettingData : NSObject
+
+@property (nonatomic) BOOL musicSelected;
+@property (nonatomic) BOOL effectSelected;
+@property (nonatomic) CGFloat musicVolumn;
+@property (nonatomic) CGFloat effectVolumn;
+@property (nonatomic) BOOL bgEffectSelected;
+@property (nonatomic) BOOL notificationSelected;
+
++ (instancetype)sharedInstance;
+
+- (void)defaultSetting;
+
+- (void)saveSetting;
 
 @end

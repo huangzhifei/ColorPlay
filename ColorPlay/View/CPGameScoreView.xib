@@ -12,10 +12,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-Xd-0E0" userLabel="viewscore">
-                    <rect key="frame" x="162" y="0.0" width="276.5" height="115"/>
+                    <rect key="frame" x="162" y="0.0" width="276" height="115"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="133-YK-hRo">
-                            <rect key="frame" x="56" y="10" width="58.5" height="23"/>
+                            <rect key="frame" x="56" y="10" width="58" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                             <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7u-9m-PVr">
-                            <rect key="frame" x="20" y="88" width="94.5" height="23"/>
+                            <rect key="frame" x="20" y="88" width="94" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                             <nil key="highlightedColor"/>
@@ -48,24 +48,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaN-fV-FRS" userLabel="viewimage">
-                            <rect key="frame" x="204" y="41" width="72" height="70"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fail" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-dP-6Wz">
-                                    <rect key="frame" x="0.0" y="6" width="64" height="64"/>
-                                    <animations/>
-                                </imageView>
-                            </subviews>
+                            <rect key="frame" x="204" y="41" width="71" height="70"/>
                             <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="i9f-dP-6Wz" secondAttribute="bottom" id="9xX-HM-uhs"/>
-                                <constraint firstItem="i9f-dP-6Wz" firstAttribute="leading" secondItem="AaN-fV-FRS" secondAttribute="leading" id="R1L-1J-AFl"/>
-                                <constraint firstAttribute="trailing" secondItem="i9f-dP-6Wz" secondAttribute="trailing" constant="8" id="be6-ms-SaC"/>
-                                <constraint firstItem="i9f-dP-6Wz" firstAttribute="top" secondItem="AaN-fV-FRS" secondAttribute="top" constant="6" id="wFD-Ji-gCx"/>
-                            </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8c-Gw-O2n">
-                            <rect key="frame" x="56" y="49" width="58.5" height="23"/>
+                            <rect key="frame" x="56" y="49" width="58" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                             <nil key="highlightedColor"/>
@@ -78,14 +66,17 @@
                         <constraint firstItem="pwf-BF-36v" firstAttribute="leading" secondItem="JBI-kV-g9T" secondAttribute="leading" id="2im-4o-Wd6"/>
                         <constraint firstAttribute="trailing" secondItem="pwf-BF-36v" secondAttribute="trailing" constant="79" id="57b-LE-7Co"/>
                         <constraint firstItem="uUt-pl-lCx" firstAttribute="leading" secondItem="JBI-kV-g9T" secondAttribute="leading" id="7iO-jk-QvY"/>
+                        <constraint firstItem="AaN-fV-FRS" firstAttribute="leading" secondItem="g2g-Xd-0E0" secondAttribute="leading" constant="204" id="DtO-B6-9xn"/>
                         <constraint firstItem="133-YK-hRo" firstAttribute="top" secondItem="g2g-Xd-0E0" secondAttribute="top" constant="10" id="G64-fr-bHD"/>
                         <constraint firstItem="r7u-9m-PVr" firstAttribute="height" secondItem="133-YK-hRo" secondAttribute="height" id="M3p-U4-INQ"/>
                         <constraint firstItem="AaN-fV-FRS" firstAttribute="leading" secondItem="uUt-pl-lCx" secondAttribute="trailing" constant="6" id="MGm-ym-Xby"/>
                         <constraint firstItem="I8c-Gw-O2n" firstAttribute="leading" secondItem="g2g-Xd-0E0" secondAttribute="leading" constant="56" id="OWz-Ul-JIH"/>
                         <constraint firstItem="pwf-BF-36v" firstAttribute="bottom" secondItem="AaN-fV-FRS" secondAttribute="bottom" id="PVt-Rh-smQ"/>
+                        <constraint firstItem="AaN-fV-FRS" firstAttribute="top" secondItem="g2g-Xd-0E0" secondAttribute="top" constant="41" id="TSH-q3-Ogi"/>
                         <constraint firstItem="pwf-BF-36v" firstAttribute="height" secondItem="JBI-kV-g9T" secondAttribute="height" id="U5f-0q-UiF"/>
                         <constraint firstItem="I8c-Gw-O2n" firstAttribute="height" secondItem="133-YK-hRo" secondAttribute="height" id="Uds-CR-rtG"/>
                         <constraint firstItem="uUt-pl-lCx" firstAttribute="height" secondItem="JBI-kV-g9T" secondAttribute="height" id="YrT-SF-fFN"/>
+                        <constraint firstAttribute="trailing" secondItem="AaN-fV-FRS" secondAttribute="trailing" constant="1" id="aaL-hH-QkN"/>
                         <constraint firstItem="JBI-kV-g9T" firstAttribute="top" secondItem="g2g-Xd-0E0" secondAttribute="top" constant="10" id="b0L-8o-uvV"/>
                         <constraint firstItem="pwf-BF-36v" firstAttribute="top" secondItem="uUt-pl-lCx" secondAttribute="bottom" constant="16" id="b0j-Yq-VqT"/>
                         <constraint firstAttribute="trailing" secondItem="uUt-pl-lCx" secondAttribute="trailing" constant="78" id="ebe-cr-gLd"/>
@@ -111,13 +102,9 @@
             <connections>
                 <outlet property="highscoreLabel" destination="pwf-BF-36v" id="ctB-eL-MVR"/>
                 <outlet property="modeLabel" destination="JBI-kV-g9T" id="jqY-OX-imq"/>
-                <outlet property="scoreImage" destination="i9f-dP-6Wz" id="27e-cd-xCX"/>
                 <outlet property="scoreLabel" destination="uUt-pl-lCx" id="CVV-vk-iJn"/>
             </connections>
             <point key="canvasLocation" x="-71" y="-223"/>
         </view>
     </objects>
-    <resources>
-        <image name="fail" width="64" height="64"/>
-    </resources>
 </document>
