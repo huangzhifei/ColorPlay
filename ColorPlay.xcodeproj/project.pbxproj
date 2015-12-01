@@ -14,6 +14,10 @@
 		280A14041C0B018E000F2E1B /* ZCFallLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14031C0B018E000F2E1B /* ZCFallLabel.m */; };
 		280A14071C0B01A0000F2E1B /* ZCDuangLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */; };
 		280A14091C0B04CD000F2E1B /* AboutContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 280A14081C0B04CD000F2E1B /* AboutContent.plist */; };
+		280A141A1C0DE340000F2E1B /* CPSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14191C0DE340000F2E1B /* CPSoundManager.m */; };
+		280A14201C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 280A141F1C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 */; };
+		280A14251C0DF23A000F2E1B /* 红色高跟鞋.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 280A14241C0DF23A000F2E1B /* 红色高跟鞋.mp3 */; };
+		280A14291C0E0084000F2E1B /* CPRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14281C0E0084000F2E1B /* CPRippleView.m */; };
 		282421031BF21A4C008DAE61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421021BF21A4C008DAE61 /* main.m */; };
 		282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421051BF21A4C008DAE61 /* AppDelegate.m */; };
 		282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */; };
@@ -92,6 +96,15 @@
 		280A14051C0B01A0000F2E1B /* ZCDuangLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDuangLabel.h; sourceTree = "<group>"; };
 		280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDuangLabel.m; sourceTree = "<group>"; };
 		280A14081C0B04CD000F2E1B /* AboutContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AboutContent.plist; sourceTree = "<group>"; };
+		280A140A1C0C66E6000F2E1B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		280A14181C0DE340000F2E1B /* CPSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSoundManager.h; sourceTree = "<group>"; };
+		280A14191C0DE340000F2E1B /* CPSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSoundManager.m; sourceTree = "<group>"; };
+		280A141F1C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "大王叫我来巡山.mp3"; sourceTree = "<group>"; };
+		280A14211C0DE808000F2E1B /* Ocean Waves.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ocean Waves.m4a"; sourceTree = "<group>"; };
+		280A14241C0DF23A000F2E1B /* 红色高跟鞋.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "红色高跟鞋.mp3"; sourceTree = "<group>"; };
+		280A14261C0DF544000F2E1B /* 小宝贝.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "小宝贝.m4a"; sourceTree = "<group>"; };
+		280A14271C0E0084000F2E1B /* CPRippleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPRippleView.h; sourceTree = "<group>"; };
+		280A14281C0E0084000F2E1B /* CPRippleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRippleView.m; sourceTree = "<group>"; };
 		282420FE1BF21A4C008DAE61 /* ColorPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282421021BF21A4C008DAE61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282421041BF21A4C008DAE61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -219,6 +232,26 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		280A14171C0DE325000F2E1B /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				280A14181C0DE340000F2E1B /* CPSoundManager.h */,
+				280A14191C0DE340000F2E1B /* CPSoundManager.m */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		280A141D1C0DE764000F2E1B /* music */ = {
+			isa = PBXGroup;
+			children = (
+				280A14261C0DF544000F2E1B /* 小宝贝.m4a */,
+				280A14241C0DF23A000F2E1B /* 红色高跟鞋.mp3 */,
+				280A14211C0DE808000F2E1B /* Ocean Waves.m4a */,
+				280A141F1C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
 		282420F51BF21A4C008DAE61 = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +288,9 @@
 		282421011BF21A4C008DAE61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				280A141D1C0DE764000F2E1B /* music */,
 				28BAFAF41C08117D002E44E6 /* Assets.xcassets */,
+				280A140A1C0C66E6000F2E1B /* background.png */,
 				28B2FD7D1BF23B0F0065F762 /* ColorList.plist */,
 				280A14081C0B04CD000F2E1B /* AboutContent.plist */,
 				282421121BF21A4C008DAE61 /* Info.plist */,
@@ -316,6 +351,7 @@
 		28B2FD441BF21E3F0065F762 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				280A14171C0DE325000F2E1B /* Sound */,
 				280A13F81C0AFD77000F2E1B /* Other */,
 				28B2FD7F1BF23B620065F762 /* CPMacro.h */,
 				28B2FD491BF21E7C0065F762 /* Category */,
@@ -424,6 +460,8 @@
 				28BAFAAB1C04B443002E44E6 /* CPOutlineLabel.m */,
 				28BAFAAC1C04B443002E44E6 /* CPStopWatchView.h */,
 				28BAFAAD1C04B443002E44E6 /* CPStopWatchView.m */,
+				280A14271C0E0084000F2E1B /* CPRippleView.h */,
+				280A14281C0E0084000F2E1B /* CPRippleView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -540,11 +578,13 @@
 				28B2FD741BF222A30065F762 /* CPTutorialViewController.xib in Resources */,
 				28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */,
 				28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */,
+				280A14201C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 in Resources */,
 				28B90CBB1BF464A900035651 /* CPGameCardView.xib in Resources */,
 				28BAFA941C02430D002E44E6 /* CPGameScoreView.xib in Resources */,
 				28B2FD6F1BF2222A0065F762 /* CPSettingViewController.xib in Resources */,
 				280A14091C0B04CD000F2E1B /* AboutContent.plist in Resources */,
 				28B2FD651BF221FE0065F762 /* CPResultViewController.xib in Resources */,
+				280A14251C0DF23A000F2E1B /* 红色高跟鞋.mp3 in Resources */,
 				28BAFAF51C08117D002E44E6 /* Assets.xcassets in Resources */,
 				28B2FD6A1BF222170065F762 /* CPAboutViewController.xib in Resources */,
 			);
@@ -575,12 +615,14 @@
 				28B90CA51BF462BA00035651 /* CPGameQuestion.m in Sources */,
 				280A14071C0B01A0000F2E1B /* ZCDuangLabel.m in Sources */,
 				28B2FD481BF21E720065F762 /* GCDTimer.m in Sources */,
+				280A141A1C0DE340000F2E1B /* CPSoundManager.m in Sources */,
 				28B90C991BF2428D00035651 /* UIViewController+Tracking.m in Sources */,
 				280A14041C0B018E000F2E1B /* ZCFallLabel.m in Sources */,
 				28B90C9C1BF4227900035651 /* CPGameScene.m in Sources */,
 				28BAFAB11C04B443002E44E6 /* CPOutlineLabel.m in Sources */,
 				28B90CA21BF4629D00035651 /* CPGameCard.m in Sources */,
 				28BAFAB01C04B443002E44E6 /* CPEmitterView.m in Sources */,
+				280A14291C0E0084000F2E1B /* CPRippleView.m in Sources */,
 				282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */,
 				280A13F71C08865A000F2E1B /* CPSettingData.m in Sources */,
 				28B90CB11BF463BA00035651 /* CPQuestionFactory.m in Sources */,

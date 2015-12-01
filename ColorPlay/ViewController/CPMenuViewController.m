@@ -16,6 +16,8 @@
 #import "CPSettingViewController.h"
 #import "CPAboutViewController.h"
 #import "CPTutorialViewController.h"
+#import "CPSoundManager.h"
+#import "CPSettingData.h"
 
 @interface CPMenuViewController ()
 {
@@ -30,6 +32,8 @@
 @property (strong, nonatomic) CPAnimation3DMenuView *menu3DView;
 @property (strong, nonatomic) CPEffectLabelView     *effectLabel;
 @property (strong, nonatomic) UIView *effectViewMask;
+@property (strong, nonatomic) CPSoundManager *soundManager;
+@property (strong, nonatomic) CPSettingData *setting;
 @end
 
 @implementation CPMenuViewController
@@ -46,6 +50,11 @@
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:kVersion];
     [self.versionLabel setText:[NSString stringWithFormat:@"v %@",version]];
     
+    UIImage *bgImage = [UIImage imageNamed:@"background"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+    
+    self.setting = [CPSettingData sharedInstance];
+    self.soundManager = [CPSoundManager sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +72,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.soundManager playBackgroundMusic:@"大王叫我来巡山.mp3" loops:YES];
+    
+    [self refreshSettingData];
 }
 
 - (void)viewDidLayoutSubviews
@@ -192,5 +205,11 @@
     [self.navigationController pushViewController:tutoriaVC animated:YES];
 }
 
+#pragma mark - private Methods
+
+- (void)refreshSettingData
+{
+    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
+}
 
 @end

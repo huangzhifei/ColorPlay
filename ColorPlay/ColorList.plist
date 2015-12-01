@@ -52,12 +52,6 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>GRAY</string>
-		<key>Color</key>
-		<string>#808080</string>
-	</dict>
-	<dict>
-		<key>Name</key>
 		<string>WHITE</string>
 		<key>Color</key>
 		<string>#FFFFFF</string>

@@ -14,6 +14,9 @@
 #define kChannelID          @"App store"
 #define kVersion            @"CFBundleShortVersionString"
 #define kScreen             [[UIScreen mainScreen] bounds]
+#define kMainMusic          @"红色高跟鞋.mp3"
+#define kSenceMusic         @"小宝贝.m4a"
+#define kSenceEffect        @"Ocean Waves.m4a"
 
 typedef NS_ENUM(NSInteger, CPGameMode)
 {

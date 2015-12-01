@@ -83,6 +83,7 @@
 
 - (void)updateScore
 {
+    [self.scoreLabel setAlpha:1.0f];
     [self.scoreLabel setText:[NSString stringWithFormat:@"%ld\t",(long)self.scene.score]];
     [self.view bringSubviewToFront:self.scoreLabel];
 }
@@ -110,6 +111,7 @@
 
 - (void)addCardViews
 {
+    [self.scoreLabel setAlpha:0.0f];
     if( self.gameMode == CPGameClassicMode )
     {
         return;
@@ -207,7 +209,7 @@
             [self.view bringSubviewToFront:self.lastQuestionView];
         }
         
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             
             self.lastQuestionView.transform = CGAffineTransformMakeTranslation(-self.view.frame.size.width, 0);
             

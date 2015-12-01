@@ -10,6 +10,7 @@
 #import "CPGameCard.h"
 #import "CPStopWatchView.h"
 #import "GCDTimer.h"
+#import "CPRippleView.h"
 
 typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 {
@@ -40,6 +41,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 @property (strong, nonatomic) UIControl *optionA;
 @property (strong, nonatomic) UIControl *optionB;
 @property (strong, nonatomic) UIControl *optionC;
+@property (strong, nonatomic) CPRippleView *rippleView;
 
 @property (nonatomic) CPGameMode gameMode;
 @property (strong, nonatomic) CPGameQuestion *question;
@@ -119,6 +121,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, width, height)];
         [label setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:30.0]];
         [label setTextAlignment:NSTextAlignmentCenter];
+        label.userInteractionEnabled = NO;
         label;
     });
     [self.cardView addSubview:self.cardText];
@@ -134,6 +137,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                                              stopWatch:self.question.limitTime];
         [view setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:90.0]];
         [view setOutlineWidth:5.0f];
+        view.userInteractionEnabled = NO;
         view;
     });
     [self.cardView addSubview:self.stopWatchView];
@@ -148,6 +152,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, width, height)];
         [label setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:35.0]];
         [label setTextAlignment:NSTextAlignmentCenter];
+        label.userInteractionEnabled = NO;
         label;
         
     });
@@ -164,6 +169,12 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         CGFloat height = optionFrame.size.height;
         
         UIControl *view = [[UIControl alloc] initWithFrame:CGRectMake(x, y, width, height)];
+        /**
+         *  http://stackoverflow.com/questions/9350041/uicontrol-not-receiving-touches
+         *  set userInteractionEnabled=NO, receiving touches
+         *  send UIControlEventTouchUpInside in touchesEnd
+         */
+        view.userInteractionEnabled = NO;
         [view addTarget:self action:@selector(touchClick:) forControlEvents:UIControlEventTouchUpInside];
         view.tag = 1;
         
@@ -185,6 +196,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         CGFloat height = optionFrame.size.height;
         
         UIControl *view = [[UIControl alloc] initWithFrame:CGRectMake(x, y, width, height)];
+        view.userInteractionEnabled = NO;
         [view addTarget:self action:@selector(touchClick:) forControlEvents:UIControlEventTouchUpInside];
         view.tag = 2;
         
@@ -207,6 +219,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         CGFloat height = optionFrame.size.height;
         
         UIControl *view = [[UIControl alloc] initWithFrame:CGRectMake(x, y, width, height)];
+        view.userInteractionEnabled = NO;
         [view addTarget:self action:@selector(touchClick:) forControlEvents:UIControlEventTouchUpInside];
         view.tag = 3;
         
@@ -221,6 +234,14 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
     });
     [self.optionView addSubview:self.optionC];
     
+    self.rippleView = ({
+    
+        CGFloat width = self.optionA.frame.size.width / 1.2;
+        
+        CPRippleView *view = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+        
+        view;
+    });
 }
 
 - (void)setting
@@ -732,12 +753,105 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
     self.optionC.alpha = alpha;
 }
 
+- (BOOL)checkOptionsContainsPoint:(CGPoint)point
+{
+    BOOL flag = NO;
+    
+    CGRect rectA = [self.optionA convertRect:self.optionA.bounds toView:self];
+    CGRect rectB = [self.optionB convertRect:self.optionB.bounds toView:self];
+    CGRect rectC = [self.optionC convertRect:self.optionC.bounds toView:self];
+    
+    if( CGRectContainsPoint(rectA, point) )
+    {
+        flag = YES;
+        [self showRippleLocation:point];
+        [GCDTimer scheduledTimerWithTimeInterval:0.3f repeats:NO block:^{
+            
+            [self performSelector:@selector(touchClick:) withObject:self.optionA];
+            
+        }];
+    }
+    
+    else if( CGRectContainsPoint(rectB, point) )
+    {
+        flag = YES;
+        [self showRippleLocation:point];
+        [GCDTimer scheduledTimerWithTimeInterval:0.3f repeats:NO block:^{
+            
+            [self performSelector:@selector(touchClick:) withObject:self.optionB];
+            
+        }];
+    }
+    
+    else if( CGRectContainsPoint(rectC, point) )
+    {
+        flag = YES;
+        [self showRippleLocation:point];
+        
+        [GCDTimer scheduledTimerWithTimeInterval:0.3f repeats:NO block:^{
+            
+            [self performSelector:@selector(touchClick:) withObject:self.optionC];
+            
+        }];
+        
+    }
+    
+    return flag;
+}
+
+- (void)showRippleLocation:(CGPoint)location
+{
+    [self addSubview:self.rippleView];
+    self.rippleView.center = location;
+    self.rippleView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    [UIView animateWithDuration:0.1
+                     animations:^{
+                         
+                         self.rippleView.alpha=1;
+                         
+                     }];
+    
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         self.rippleView.transform = CGAffineTransformMakeScale(1,1);
+                         self.rippleView.alpha=0;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         [self.rippleView removeFromSuperview];
+                         
+                     }];
+
+}
+
 #pragma mark - touch event
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    [super touchesBegan:touches withEvent:event];
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touch locationInView:self];
+//    
+//    NSLog(@"location: %@", NSStringFromCGPoint(location));
+//}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    [self checkOptionsContainsPoint:location];
+
+}
 
 - (void)touchClick:(id)sender
 {
     if( self.startPlay )
     {
+        NSLog(@"touchClick");
         UIControl *control = (UIControl *)sender;
         
         if( self.delegate && [self.delegate respondsToSelector:@selector(checkAnswerWithClickOption:)] )

@@ -8,6 +8,8 @@
 
 #import "CPSettingViewController.h"
 #import "CPSettingData.h"
+#import "CPSoundManager.h"
+#import "CPMacro.h"
 
 typedef NS_ENUM(NSInteger, SliderType)
 {
@@ -44,12 +46,14 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 @property (weak, nonatomic) IBOutlet UIImageView *musicSliderRight;
 @property (weak, nonatomic) IBOutlet UIImageView *effectSliderLeft;
 @property (weak, nonatomic) IBOutlet UIImageView *effectSliderRight;
+
 - (IBAction)backClicked:(id)sender;
 
 @property (strong, nonatomic) UISlider *musicSlider;
 @property (strong, nonatomic) UISlider *effectSlider;
-
 @property (nonatomic) BOOL viewCornerFlag;
+@property (strong, nonatomic) CPSettingData *setting;
+@property (strong, nonatomic) CPSoundManager *soundManager;
 
 @end
 
@@ -72,54 +76,47 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self refreshSettingData];
+}
+
 - (void)viewDidLayoutSubviews
 {
-//    if( !self.viewCornerFlag )
-//    {
-//        self.viewCornerFlag = YES;
-//        
-//        self.soundView.layer.borderWidth = 2.0f;
-//        self.soundView.layer.cornerRadius = 15.0f;
-//        
-//        self.functionView.layer.borderWidth = 2.0f;
-//        self.functionView.layer.cornerRadius = 15.0f;
-//        
-//        self.saveView.layer.borderWidth = 2.0f;
-//        self.saveView.layer.cornerRadius = 15.0f;
-//    }
-    
     if( !_musicSlider )
     {
         [self.soundMusicSlider addSubview:self.musicSlider];
-        CPSettingData *setting = [CPSettingData sharedInstance];
-        [self.musicSlider setValue:setting.musicVolumn animated:YES];
+        [self.musicSlider setValue:self.setting.musicVolumn animated:YES];
     }
     
     if( !_effectSlider )
     {
         [self.soundEffectSlider addSubview:self.effectSlider];
-        CPSettingData *setting = [CPSettingData sharedInstance];
-        [self.effectSlider setValue:setting.effectVolumn animated:NO];
+        [self.effectSlider setValue:self.setting.effectVolumn animated:NO];
     }
 }
 
 - (void)commonInit
 {
-    self.viewCornerFlag = false;
+    _viewCornerFlag = false;
+
+    _soundEffectCheck.selected = self.setting.effectSelected;
+    _soundEffectCheck.tag = ButtonEffect;
     
-    CPSettingData *setting = [CPSettingData sharedInstance];
+    _soundMusicCheck.selected = self.setting.musicSelected;
+    _soundMusicCheck.tag = ButtonMusic;
+    _bgEffectCheck.selected = self.setting.bgEffectSelected;
+    _bgEffectCheck.tag = ButtonBgEffect;
     
-    self.soundEffectCheck.selected = setting.effectSelected;
-    self.soundEffectCheck.tag = ButtonEffect;
+    _notificationPusCheck.selected = self.setting.notificationSelected;
+    _notificationPusCheck.tag = ButtonNotification;
     
-    self.soundMusicCheck.selected = setting.musicSelected;
-    self.soundMusicCheck.tag = ButtonMusic;
+    _soundManager = [CPSoundManager sharedInstance];
+    _setting = [CPSettingData sharedInstance];
     
-    self.bgEffectCheck.selected = setting.bgEffectSelected;
-    self.bgEffectCheck.tag = ButtonBgEffect;
-    
-    self.notificationPusCheck.selected = setting.notificationSelected;
-    self.notificationPusCheck.tag = ButtonNotification;
+    [self.soundManager playBackgroundMusic:kMainMusic loops:YES];
 }
 
 #pragma getter
@@ -194,19 +191,17 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 
 - (void)updateUIState
 {
-    CPSettingData *setting = [CPSettingData sharedInstance];
+    self.soundEffectCheck.selected = self.setting.effectSelected;
     
-    self.soundEffectCheck.selected = setting.effectSelected;
+    self.soundMusicCheck.selected = self.setting.musicSelected;
     
-    self.soundMusicCheck.selected = setting.musicSelected;
+    self.bgEffectCheck.selected = self.setting.bgEffectSelected;
     
-    self.bgEffectCheck.selected = setting.bgEffectSelected;
+    self.notificationPusCheck.selected = self.setting.notificationSelected;
     
-    self.notificationPusCheck.selected = setting.notificationSelected;
+    [self.musicSlider setValue:self.setting.musicVolumn animated:YES];
     
-    [self.musicSlider setValue:setting.musicVolumn animated:YES];
-    
-    [self.effectSlider setValue:setting.effectVolumn animated:YES];
+    [self.effectSlider setValue:self.setting.effectVolumn animated:YES];
 
 }
 
@@ -223,8 +218,7 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
             self.musicSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
             self.musicSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
             
-            CPSettingData *setting = [CPSettingData sharedInstance];
-            setting.musicVolumn = slider.value;
+            self.setting.musicVolumn = slider.value;
         }
             break;
             
@@ -233,8 +227,7 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
             self.effectSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
             self.effectSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
             
-            CPSettingData *setting = [CPSettingData sharedInstance];
-            setting.effectVolumn = slider.value;
+            self.setting.effectVolumn = slider.value;
         }
             
         default:
@@ -275,19 +268,19 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 #pragma mark - actions
 
 - (IBAction)defaultClicked:(id)sender {
-    
-    CPSettingData *setting = [CPSettingData sharedInstance];
-    
-    [setting defaultSetting];
+
+    [self.setting defaultSetting];
     
     [self updateUIState];
+    
+    [self refreshSettingData];
 }
 
 - (IBAction)saveClicked:(id)sender {
     
-    CPSettingData *setting = [CPSettingData sharedInstance];
+    [self.setting saveSetting];
     
-    [setting saveSetting];
+    [self refreshSettingData];
 }
 
 - (IBAction)selectedClicked:(id)sender {
@@ -295,31 +288,30 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     UIButton *button = (UIButton *)sender;
     
     button.selected = !button.selected;
-    CPSettingData *setting = [CPSettingData sharedInstance];
     
     switch(button.tag)
     {
         case ButtonMusic:
         {
-            setting.musicSelected = button.selected;
+            self.setting.musicSelected = button.selected;
         }
             break;
         
         case ButtonEffect:
         {
-            setting.effectSelected = button.selected;
+            self.setting.effectSelected = button.selected;
         }
             break;
             
         case ButtonBgEffect:
         {
-            setting.bgEffectSelected = button.selected;
+            self.setting.bgEffectSelected = button.selected;
         }
             break;
             
         case ButtonNotification:
         {
-            setting.notificationSelected = button.selected;
+            self.setting.notificationSelected = button.selected;
         }
             break;
     }
@@ -330,6 +322,13 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+#pragma mark - private Methods
+
+-(void)refreshSettingData
+{
+    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
 }
 
 @end

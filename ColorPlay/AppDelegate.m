@@ -12,6 +12,7 @@
 #import "MobClick.h"
 #import "CPMacro.h"
 #import "CPSettingData.h"
+#import "CPSoundManager.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +27,7 @@
     
     //[self registerUmeng];
     
-    [self readSettingData];
+    [self commonInitSetting];
     
     // hidden status bar 
     [application setStatusBarHidden:YES];
@@ -38,8 +39,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     // 3 -- rootVC
-    //CPMenuViewController *rootVC = [CPMenuViewController initWithNib];
-    CPAboutViewController *rootVC = [CPAboutViewController initWithNib];
+    CPMenuViewController *rootVC = [CPMenuViewController initWithNib];
+    //CPAboutViewController *rootVC = [CPAboutViewController initWithNib];
     // 4 -- rootNavc
     UINavigationController *rootNaVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     
@@ -88,10 +89,13 @@
     [MobClick startWithAppkey:kUmengAppKey reportPolicy:BATCH channelId:kChannelID];
 }
 
-- (void)readSettingData
+- (void)commonInitSetting
 {
-    //CPSettingData *setting = [CPSettingData sharedInstance];
+    CPSettingData *setting = [CPSettingData sharedInstance];
     
+    CPSoundManager *soundManager = [CPSoundManager sharedInstance];
+    [soundManager preloadBackgroundMusic:@"大王叫我来巡山.mp3"];
+    soundManager.musicVolume = setting.musicVolumn / 100;
 }
 
 @end

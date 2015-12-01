@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/AppDelegate.m"
-            timestampString = "470322250.380722"
+            timestampString = "470673902.452473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/AppDelegate.m"
-            timestampString = "470322250.380722"
+            timestampString = "470673902.452473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470677193.497086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "+initWithNib"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/AppDelegate.m"
-            timestampString = "470322250.380722"
+            timestampString = "470673902.452473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469985127.6447"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-easyMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469985127.6447"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "-easyMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469984180.20744"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-effectLabel"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470674603.820664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470677193.497086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "+initWithNib"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470677193.497086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "+initWithNib"
             landmarkType = "5">
          </BreakpointContent>
@@ -756,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/AppDelegate.m"
-            timestampString = "470322250.380722"
+            timestampString = "470673902.452473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1156,11 +1156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470674603.820664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -1172,11 +1172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470674603.820664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -1188,11 +1188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469907232.177196"
+            timestampString = "470677193.497086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1316,11 +1316,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
+            timestampString = "470681989.461701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
+            startingLineNumber = "672"
+            endingLineNumber = "672"
             landmarkName = "-updateTopToBottomCrossoverFrame"
             landmarkType = "5">
          </BreakpointContent>
@@ -1348,11 +1348,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "469721676.741517"
+            timestampString = "470681822.891449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-initWithFrame:question:gameMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1364,11 +1364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
+            timestampString = "470681822.891449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-commonInit"
             landmarkType = "5">
          </BreakpointContent>
@@ -1444,11 +1444,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
+            timestampString = "470681989.461701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-commonInit"
             landmarkType = "5">
          </BreakpointContent>
@@ -1460,11 +1460,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-timeout"
             landmarkType = "5">
          </BreakpointContent>
@@ -1476,11 +1476,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
+            timestampString = "470681989.461701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-commonInit"
             landmarkType = "5">
          </BreakpointContent>
@@ -1523,22 +1523,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
-            landmarkName = "-touchClick:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ColorPlay/Model/CPGameQuestion.m"
             timestampString = "470073629.2967"
             startingColumnNumber = "9223372036854775807"
@@ -1556,11 +1540,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "-checkAnswerWithClickOption:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1572,11 +1556,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "-checkAnswerWithClickOption:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1588,11 +1572,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-checkAnswerWithClickOption:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1604,28 +1588,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-checkAnswerWithClickOption:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "747"
-            endingLineNumber = "747"
-            landmarkName = "-touchClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2068,11 +2036,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469984180.20744"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -2084,11 +2052,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469984180.20744"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-effectLabel"
             landmarkType = "5">
          </BreakpointContent>
@@ -2100,11 +2068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPMenuViewController.m"
-            timestampString = "469985127.6447"
+            timestampString = "470676909.340336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "-menu3DView"
             landmarkType = "5">
          </BreakpointContent>
@@ -2340,11 +2308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "-checkAnswerWithClickOption:"
             landmarkType = "5">
             <Locations>
@@ -2388,11 +2356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPGameViewController.m"
-            timestampString = "470075484.640867"
+            timestampString = "470677522.372423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-addCardViews"
             landmarkType = "5">
          </BreakpointContent>
@@ -2419,22 +2387,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ColorPlay/View/CPGameQuestionView.m"
-            timestampString = "470075484.640867"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "743"
-            endingLineNumber = "743"
-            landmarkName = "-touchClick:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ColorPlay/Model/CPGameQuestion.m"
             timestampString = "470070372.188619"
             startingColumnNumber = "9223372036854775807"
@@ -2450,11 +2402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPAboutViewController.m"
-            timestampString = "470511474.14903"
+            timestampString = "470575448.644807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "-backClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2530,11 +2482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470331916.781381"
+            timestampString = "470676721.388469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "-sliderTouchDown:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2562,12 +2514,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/AppDelegate.m"
-            timestampString = "470322242.685878"
+            timestampString = "470673902.452473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-readSettingData"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-commonInitSetting"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2578,11 +2530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470327836.603628"
+            timestampString = "470676428.170239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -2594,11 +2546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470331916.781381"
+            timestampString = "470676721.388469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "-sliderValueChanged:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2610,11 +2562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470331916.781381"
+            timestampString = "470676721.388469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-sliderValueChanged:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2626,11 +2578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470331916.781381"
+            timestampString = "470676721.388469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-saveClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2658,11 +2610,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470328956.655678"
+            timestampString = "470676428.170239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -2706,11 +2658,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPSettingViewController.m"
-            timestampString = "470330590.727643"
+            timestampString = "470676721.388469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-effectSlider"
             landmarkType = "5">
          </BreakpointContent>
@@ -2722,11 +2674,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPAboutViewController.m"
-            timestampString = "470511474.14903"
+            timestampString = "470575448.644807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-fallLabel"
             landmarkType = "5">
          </BreakpointContent>
@@ -2738,11 +2690,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPAboutViewController.m"
-            timestampString = "470511474.14903"
+            timestampString = "470575448.644807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-startShowData"
             landmarkType = "5">
          </BreakpointContent>
@@ -2850,11 +2802,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPAboutViewController.m"
-            timestampString = "470511474.14903"
+            timestampString = "470575448.644807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-startShowData"
             landmarkType = "5">
          </BreakpointContent>
@@ -2914,12 +2866,412 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ColorPlay/ViewController/CPAboutViewController.m"
-            timestampString = "470511474.14903"
+            timestampString = "470575448.644807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-currentCursorWithFallLabel"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/AppDelegate.m"
+            timestampString = "470674167.088654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-commonInitSetting"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/AppDelegate.m"
+            timestampString = "470674171.168921"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-commonInitSetting"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470674183.990102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-setMusicVolume:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CPSoundManager setMusicVolume:]"
+                  moduleName = "ColorPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abc/Desktop/projects/ColorPlay/ColorPlay/Util/Sound/CPSoundManager.m"
+                  timestampString = "470677134.861876"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CPSoundManager setMusicVolume:]"
+                  moduleName = "ColorPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abc/Desktop/projects/ColorPlay/ColorPlay/Util/Sound/CPSoundManager.m"
+                  timestampString = "470677134.862245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "98">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470674184.324671"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-setMusicVolume:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470674298.288247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-preloadBackgroundMusic:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470674303.380326"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-playBackgroundMusic:loops:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/ViewController/CPMenuViewController.m"
+            timestampString = "470676909.340336"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-refreshSettingData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470675337.776854"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-setMusicVolume:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/ViewController/CPSettingViewController.m"
+            timestampString = "470676721.388469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "-refreshSettingData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/ViewController/CPSettingViewController.m"
+            timestampString = "470676950.628316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/ViewController/CPSettingViewController.m"
+            timestampString = "470676951.556203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/ViewController/CPSettingViewController.m"
+            timestampString = "470676995.533858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
+            landmarkName = "-refreshSettingData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/Util/Sound/CPSoundManager.m"
+            timestampString = "470677140.24302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-playBackgroundMusic:loops:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686524.080509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "839"
+            endingLineNumber = "839"
+            landmarkName = "@implementation CPGameQuestionView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470681989.461701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-commonInit"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470682148.907191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-commonInit"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470682181.496326"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-commonInit"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686524.080509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "852"
+            endingLineNumber = "852"
+            landmarkName = "-touchClick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470684454.850859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
+            landmarkName = "-checkOptionsContainsPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686270.665793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
+            landmarkName = "-checkOptionsContainsPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686270.665793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "779"
+            endingLineNumber = "779"
+            landmarkName = "-checkOptionsContainsPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686270.665793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "796"
+            endingLineNumber = "796"
+            landmarkName = "-checkOptionsContainsPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPlay/View/CPGameQuestionView.m"
+            timestampString = "470686524.080509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "805"
+            endingLineNumber = "805"
+            landmarkName = "-showRippleLocation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

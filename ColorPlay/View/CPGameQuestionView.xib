@@ -18,6 +18,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ld8-o7-yVq" userLabel="cardView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                     <animations/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                    </accessibility>
                 </view>
             </subviews>
             <animations/>

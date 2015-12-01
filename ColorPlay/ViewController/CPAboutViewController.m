@@ -65,6 +65,9 @@
         data;
     });
     
+    UIImage *bgImage = [UIImage imageNamed:@"background"];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
 }
 
 - (void)viewDidLayoutSubviews
