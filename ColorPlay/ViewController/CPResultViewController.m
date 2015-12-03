@@ -15,6 +15,7 @@
 #import "CPGameScoreView.h"
 #import "CPEffectLabelView.h"
 #import "GCDTimer.h"
+#import "CPStarsOverlayView.h"
 
 @interface CPResultViewController ()
 
@@ -29,6 +30,8 @@
 @property (strong, nonatomic) CPGameScoreView *gameScoreView;
 
 @property (strong, nonatomic) CPEffectLabelView *effectView;
+
+@property (strong, nonatomic) CPStarsOverlayView *starsOverlayView;
 
 @end
 
@@ -59,6 +62,13 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    if( !_starsOverlayView )
+    {
+        self.starsOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starsOverlayView];
+        [self.view sendSubviewToBack:self.starsOverlayView];
+    }
     
     if( !_effectView )
     {
@@ -93,7 +103,7 @@
             label.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:40];
             label.text = @"ColorPlay";
             label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = [UIColor redColor];
+            label.textColor = [UIColor whiteColor];
             label.effectColor = @[(id)[UIColor blackColor].CGColor,
                                   (id)[UIColor yellowColor].CGColor,
                                   (id)[UIColor greenColor].CGColor,

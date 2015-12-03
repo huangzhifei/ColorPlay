@@ -9,6 +9,7 @@
 #import "CPAboutViewController.h"
 #import "GCDTimer.h"
 #import "ZCFallLabel.h"
+#import "CPStarsOverlayView.h"
 
 @interface CPAboutViewController ()
 
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) ZCFallLabel *fallLabel;
 @property (strong, nonatomic) NSString *showData;
 @property (assign, nonatomic) CGFloat scrollOrignalHeight;
+@property (strong, nonatomic) CPStarsOverlayView *starOverlayView;
 
 - (IBAction)backClick:(id)sender;
 
@@ -46,9 +48,9 @@
     
     //[self.backButton setBounds:CGRectMake(20, 30, 60, 35)];
     
-    CATransform3D scale = CATransform3DIdentity;
-    
-    self.backButton.layer.transform = CATransform3DScale(scale, 1.25, 1.0, 1.0);
+//    CATransform3D scale = CATransform3DIdentity;
+//    
+//    self.backButton.layer.transform = CATransform3DScale(scale, 1.25, 1.0, 1.0);
     
     self.showData = ({
         
@@ -65,9 +67,9 @@
         data;
     });
     
-    UIImage *bgImage = [UIImage imageNamed:@"background"];
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+//    UIImage *bgImage = [UIImage imageNamed:@"background"];
+//    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
 }
 
 - (void)viewDidLayoutSubviews
@@ -81,6 +83,13 @@
      *  http://weiqingfei.iteye.com/blog/2214974
      */
     [self.view layoutIfNeeded];
+    
+    if( !_starOverlayView )
+    {
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+        [self.view sendSubviewToBack:self.starOverlayView];
+    }
     
     if( !_fallLabel )
     {
@@ -146,7 +155,7 @@
     style.alignment = NSTextAlignmentLeft;
     
     NSDictionary *fontAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:17],
-                                     NSParagraphStyleAttributeName : style, NSForegroundColorAttributeName : [UIColor colorWithRed:0.0f green:122.0/255.0f blue:1 alpha:1.0f]};
+                                     NSParagraphStyleAttributeName : style, NSForegroundColorAttributeName : [UIColor colorWithRed:1.0f green:1.0f blue:1 alpha:1.0f]};
     
     NSMutableAttributedString *mutableString = [[[NSAttributedString alloc] initWithString:self.fallLabel.text
                                                                                attributes: fontAttributes] mutableCopy];

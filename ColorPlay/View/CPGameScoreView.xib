@@ -18,12 +18,14 @@
                             <rect key="frame" x="56" y="10" width="58" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBI-kV-g9T">
                             <rect key="frame" x="135" y="10" width="64" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwf-BF-36v">
@@ -33,18 +35,21 @@
                                 <constraint firstAttribute="width" constant="62" id="oRw-ew-bZe"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7u-9m-PVr">
-                            <rect key="frame" x="20" y="88" width="94" height="23"/>
+                            <rect key="frame" x="19" y="88" width="95" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-pl-lCx">
                             <rect key="frame" x="135" y="49" width="63" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaN-fV-FRS" userLabel="viewimage">
@@ -56,6 +61,7 @@
                             <rect key="frame" x="56" y="49" width="58" height="23"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -86,7 +92,7 @@
                         <constraint firstItem="JBI-kV-g9T" firstAttribute="leading" secondItem="133-YK-hRo" secondAttribute="trailing" constant="21" id="mSm-vt-dlA"/>
                         <constraint firstItem="r7u-9m-PVr" firstAttribute="top" secondItem="I8c-Gw-O2n" secondAttribute="bottom" constant="16" id="ohI-Xo-1Yu"/>
                         <constraint firstAttribute="bottom" secondItem="r7u-9m-PVr" secondAttribute="bottom" constant="4" id="pub-b2-dpY"/>
-                        <constraint firstItem="r7u-9m-PVr" firstAttribute="leading" secondItem="g2g-Xd-0E0" secondAttribute="leading" constant="20" id="tx4-Bg-NXO"/>
+                        <constraint firstItem="r7u-9m-PVr" firstAttribute="leading" secondItem="g2g-Xd-0E0" secondAttribute="leading" constant="19" id="tx4-Bg-NXO"/>
                         <constraint firstItem="r7u-9m-PVr" firstAttribute="trailing" secondItem="133-YK-hRo" secondAttribute="trailing" id="xAl-QE-bsf"/>
                         <constraint firstItem="I8c-Gw-O2n" firstAttribute="top" secondItem="133-YK-hRo" secondAttribute="bottom" constant="16" id="xPS-5X-ljH"/>
                     </constraints>

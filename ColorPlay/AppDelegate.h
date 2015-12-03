@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPExplodeAnimationController.h"
+
+#define AppDelegateAccessor ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) CPExplodeAnimationController *settingsAnimationController;
 
 @end
 

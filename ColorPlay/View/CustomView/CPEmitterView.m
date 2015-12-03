@@ -64,4 +64,8 @@
     return [CAEmitterLayer class];
 }
 
+- (void)dealloc
+{
+    
+}
 @end

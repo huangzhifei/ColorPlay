@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^touchAnimation)(void);
+
 @interface CPAnimation3DItem : UIButton
+
+- (void)touchUpInsideAnimation:(touchAnimation)block;
 
 @end
 

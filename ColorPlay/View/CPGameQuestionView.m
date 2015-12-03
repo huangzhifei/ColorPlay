@@ -272,9 +272,11 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         {
             [self.cardView setBackgroundColor:[UIColor clearColor]];
             
-            [self.stopWatchView setOutlineColor:[UIColor darkGrayColor]];
+            [self.stopWatchView setOutlineColor:[UIColor whiteColor]];
             
             [self.cardText setText:[NSString stringWithFormat:@"#%ld", (long)(self.question.targetIndex + 1)]];
+            [self.cardText setTextColor:[UIColor whiteColor]];
+            [self.questionText setTextColor:[UIColor whiteColor]];
             
         }
             break;

@@ -27,6 +27,8 @@
     
     //[self registerUmeng];
     
+    self.settingsAnimationController = [[CPExplodeAnimationController alloc] init];
+    
     [self commonInitSetting];
     
     // hidden status bar 
@@ -91,11 +93,7 @@
 
 - (void)commonInitSetting
 {
-    CPSettingData *setting = [CPSettingData sharedInstance];
-    
-    CPSoundManager *soundManager = [CPSoundManager sharedInstance];
-    [soundManager preloadBackgroundMusic:@"大王叫我来巡山.mp3"];
-    soundManager.musicVolume = setting.musicVolumn / 100;
+    //CPSettingData *setting = [CPSettingData sharedInstance];
 }
 
 @end

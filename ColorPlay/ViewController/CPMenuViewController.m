@@ -18,6 +18,8 @@
 #import "CPTutorialViewController.h"
 #import "CPSoundManager.h"
 #import "CPSettingData.h"
+#import "CPStarsOverlayView.h"
+#import "GCDTimer.h"
 
 @interface CPMenuViewController ()
 {
@@ -34,6 +36,8 @@
 @property (strong, nonatomic) UIView *effectViewMask;
 @property (strong, nonatomic) CPSoundManager *soundManager;
 @property (strong, nonatomic) CPSettingData *setting;
+@property (strong, nonatomic) CPStarsOverlayView *starOverlayView;
+
 @end
 
 @implementation CPMenuViewController
@@ -50,8 +54,8 @@
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:kVersion];
     [self.versionLabel setText:[NSString stringWithFormat:@"v %@",version]];
     
-    UIImage *bgImage = [UIImage imageNamed:@"background"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+//    UIImage *bgImage = [UIImage imageNamed:@"background"];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
     
     self.setting = [CPSettingData sharedInstance];
     self.soundManager = [CPSoundManager sharedInstance];
@@ -72,15 +76,27 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    if( self.setting.musicSelected )
+    {
+        [self.soundManager playBackgroundMusic:@"大王叫我来巡山.mp3" loops:YES];
     
-    [self.soundManager playBackgroundMusic:@"大王叫我来巡山.mp3" loops:YES];
-    
-    [self refreshSettingData];
+        [self refreshSettingData];
+    }
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    [self.view layoutIfNeeded];
+    
+    if( !_starOverlayView)
+    {
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+        [self.view sendSubviewToBack:self.starOverlayView];
+    }
     
     if( _effectLabel )
     {
@@ -94,6 +110,17 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+//    if( self.starOverlayView )
+//    {
+//        [self.starOverlayView removeFromSuperview];
+//        self.starOverlayView = nil;
+//    }
+}
+
 #pragma mark - getter
 
 - (UIView *)effectLabel
@@ -105,11 +132,11 @@
             label.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:40];
             label.text = @"ColorPlay";
             label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = [UIColor redColor];
-            label.effectColor = @[(id)[UIColor blackColor].CGColor,
-                                        (id)[UIColor yellowColor].CGColor,
-                                        (id)[UIColor greenColor].CGColor,
-                                        (id)[UIColor blueColor].CGColor];
+            label.textColor = [UIColor whiteColor];
+//            label.effectColor = @[(id)[UIColor blackColor].CGColor,
+//                                        (id)[UIColor yellowColor].CGColor,
+//                                        (id)[UIColor greenColor].CGColor,
+//                                        (id)[UIColor blueColor].CGColor];
             
             label;
         });
@@ -125,37 +152,41 @@
     {
         CPAnimation3DItem *easy = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
         [easy setTitle:@"Classic" forState:UIControlStateNormal];
-        [easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]]  forState:UIControlStateNormal];
-        [easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateHighlighted];
-        [easy.titleLabel setTextColor:[UIColor blackColor]];
+        //[easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]]  forState:UIControlStateNormal];
+        //[easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateHighlighted];
+        [easy setTintColor:[UIColor whiteColor]];
         [easy.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [easy addTarget:self action:@selector(easyMode:) forControlEvents:UIControlEventTouchUpInside];
         
         CPAnimation3DItem *hard = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]]  forState:UIControlStateNormal];
-        [hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]] forState:UIControlStateHighlighted];
         [hard setTitle:@"Fantasy" forState:UIControlStateNormal];
+        //[hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]]  forState:UIControlStateNormal];
+        //[hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]] forState:UIControlStateHighlighted];
+        [hard setTintColor:[UIColor whiteColor]];
         [hard.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [hard addTarget:self action:@selector(hardMode:) forControlEvents:UIControlEventTouchUpInside];
         
         CPAnimation3DItem *setting = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]]  forState:UIControlStateNormal];
-        [setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]] forState:UIControlStateHighlighted];
         [setting setTitle:@"Setting" forState:UIControlStateNormal];
+        //[setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]]  forState:UIControlStateNormal];
+        //[setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]] forState:UIControlStateHighlighted];
+        [setting setTintColor:[UIColor whiteColor]];
         [setting.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [setting addTarget:self action:@selector(settingMode:) forControlEvents:UIControlEventTouchUpInside];
         
         CPAnimation3DItem *about = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]]  forState:UIControlStateNormal];
-        [about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateHighlighted];
         [about setTitle:@"About" forState:UIControlStateNormal];
+        //[about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]]  forState:UIControlStateNormal];
+        //[about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateHighlighted];
+        [about setTintColor:[UIColor whiteColor]];
         [about.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [about addTarget:self action:@selector(aboutMode:) forControlEvents:UIControlEventTouchUpInside];
         
         CPAnimation3DItem *guide = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]]  forState:UIControlStateNormal];
-        [guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]] forState:UIControlStateHighlighted];
         [guide setTitle:@"Tutorial" forState:UIControlStateNormal];
+        //[guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]]  forState:UIControlStateNormal];
+        //[guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]] forState:UIControlStateHighlighted];
+        [guide setTintColor:[UIColor whiteColor]];
         [guide.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [guide addTarget:self action:@selector(guideMode:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -172,37 +203,57 @@
 
 - (void)easyMode:(id)sender
 {
-    CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:CPGameClassicMode];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    [item touchUpInsideAnimation:^{
+        
+        CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:CPGameClassicMode];
+        [self.navigationController pushViewController:gameVC animated:YES];
+        
+    }];
     
-    [self.navigationController pushViewController:gameVC animated:YES];
 }
 
 - (void)hardMode:(id)sender
 {
-    CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:CPGameFantasyMode];
-    
-    [self.navigationController pushViewController:gameVC animated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    [item touchUpInsideAnimation:^{
+        
+        CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:CPGameFantasyMode];
+        [self.navigationController pushViewController:gameVC animated:YES];
+    }];
 }
 
 - (void)settingMode:(id)sender
 {
-    CPSettingViewController *settingVC = [CPSettingViewController initWithNib];
-    
-    [self.navigationController pushViewController:settingVC animated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    [item touchUpInsideAnimation:^{
+        
+        CPSettingViewController *settingVC = [CPSettingViewController initWithNib];
+        [self.navigationController pushViewController:settingVC animated:YES];
+        
+    }];
 }
 
 - (void)aboutMode:(id)sender
 {
-    CPAboutViewController *aboutVC = [CPAboutViewController initWithNib];
-    
-    [self.navigationController pushViewController:aboutVC animated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    [item touchUpInsideAnimation:^{
+        
+        CPAboutViewController *aboutVC = [CPAboutViewController initWithNib];
+        [self.navigationController pushViewController:aboutVC animated:YES];
+        
+    }];
 }
 
 - (void)guideMode:(id)sender
 {
-    CPTutorialViewController *tutoriaVC = [CPTutorialViewController initWithNib];
-    
-    [self.navigationController pushViewController:tutoriaVC animated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    [item touchUpInsideAnimation:^{
+        
+//        CPTutorialViewController *tutoriaVC = [CPTutorialViewController initWithNib];
+//        [self.navigationController pushViewController:tutoriaVC animated:YES];
+        
+    }];
 }
 
 #pragma mark - private Methods

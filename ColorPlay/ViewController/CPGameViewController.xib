@@ -29,6 +29,7 @@
                 </label>
             </subviews>
             <animations/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="3g7-WU-ops" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="CKm-O2-c32"/>
                 <constraint firstAttribute="trailing" secondItem="3g7-WU-ops" secondAttribute="trailing" constant="8" id="U9h-In-ppP"/>

@@ -14,8 +14,12 @@
 #import "CPResultViewController.h"
 #import "GCDTimer.h"
 #import "CPGameCardView.h"
+#import "CPSoundManager.h"
+#import "CPSettingData.h"
+#import "AppDelegate.h"
+#import "CPStarsOverlayView.h"
 
-@interface CPGameViewController ()<CPGameQuestionViewDelegate>
+@interface CPGameViewController ()<CPGameQuestionViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet CPOutlineLabel *scoreLabel;
 
@@ -24,7 +28,9 @@
 @property (nonatomic, strong) CPGameQuestionView *currentQuestionView;
 @property (nonatomic, strong) CPGameQuestionView *lastQuestionView;
 @property (nonatomic, strong) NSMutableArray *cardViewList;
-
+@property (nonatomic, strong) CPSettingData *setting;
+@property (nonatomic, strong) CPSoundManager *soundManager;
+@property (nonatomic, strong) CPStarsOverlayView *starOverlayView;
 @end
 
 @implementation CPGameViewController
@@ -49,6 +55,10 @@
     
     self.cardViewList = [[NSMutableArray alloc] init];
     
+    self.setting = [CPSettingData sharedInstance];
+    self.soundManager = [CPSoundManager sharedInstance];
+    [self.soundManager preloadBackgroundMusic:kMainMusic];
+    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
 }
 
 #pragma mark - life cycle
@@ -57,9 +67,31 @@
 {
     [super viewDidLayoutSubviews];
     
+    if( !_starOverlayView )
+    {
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+    }
+    
     if( !_scene )
     {
         self.scene = [[CPGameScene alloc] initWithGameMode:self.gameMode];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.soundManager playBackgroundMusic:kMainMusic loops:YES];
+    
+    if( self.setting.musicSelected )
+    {
+        
+    }
+    else
+    {
+        
     }
 }
 
@@ -90,10 +122,17 @@
 
 - (void)gameOver
 {
+    
+    
     CPResultViewController *resultVC = [CPResultViewController initWithNib];
     resultVC.gameMode = self.gameMode;
     resultVC.score = self.scene.score;
-    [self.navigationController pushViewController:resultVC animated:YES];
+    [self.navigationController pushViewController:resultVC animated:NO];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"----------");
+    }];
 }
 
 - (void)addQuestionView
@@ -188,12 +227,14 @@
 #pragma mark - tag 
     // 将来在失败或者超时，还添加一个毛玻璃效果，展现一个失败画面，例如：大哭gif
     
+    
+    
     [self gameOver];
 }
 
 - (void)checkAnswerWithClickOption:(BOOL)right
 {
-    if( right )
+    if( 1 )
     {
         [self.scene nextQuestion];
         
@@ -229,5 +270,14 @@
         [self gameOver];
     }
 }
+
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    AppDelegateAccessor.settingsAnimationController.reverse = YES;
+    
+    return AppDelegateAccessor.settingsAnimationController;
+}
+
 
 @end

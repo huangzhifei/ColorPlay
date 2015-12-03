@@ -8,6 +8,7 @@
 
 #import "CPAnimation3DMenuView.h"
 #import "GCDTimer.h"
+#import "CPRippleView.h"
 
 @interface CPAnimation3DItem()
 
@@ -20,6 +21,7 @@
 @implementation CPAnimation3DItem
 
 #pragma  mark - init
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -36,10 +38,9 @@
 
 - (void)commonInit
 {
-    self.layer.borderWidth = 2.5f;
-    
+    self.layer.borderWidth = 1.0f;
+    self.layer.borderColor = [[UIColor yellowColor] CGColor];
     self.layer.cornerRadius = self.radius;
-    
     [self setClipsToBounds:YES];
 }
 
@@ -50,6 +51,52 @@
     self.radius = MIN(self.bounds.size.width/2, self.bounds.size.height/2);
     
     [self commonInit];
+}
+
+#pragma mark - public Methods
+
+- (void)touchUpInsideAnimation:(touchAnimation)block
+{
+    CPRippleView *rippleView = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.height, self.bounds.size.height)];
+    
+    rippleView.bgColor = [[UIColor alloc] initWithCGColor:self.layer.borderColor];
+    
+    [self addSubview:rippleView];
+    rippleView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+    rippleView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    rippleView.alpha=1;
+    
+    
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         rippleView.transform = CGAffineTransformMakeScale(1,1);
+                         rippleView.alpha = 0.5;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:0.1
+                                          animations:^{
+                                              
+                                              rippleView.alpha=0;
+                                              
+                                          } completion:^(BOOL finished) {
+                                              
+                                              [rippleView removeFromSuperview];
+                                              
+                                              if( block )
+                                              {
+                                                  block();
+                                              }
+                                              
+                                              
+                                          }];
+                         
+                         
+                     }];
+
 }
 
 @end
@@ -128,7 +175,7 @@ const NSInteger itemTag = 1000;
             CGFloat target = fabs(j - itemsCount*1.0/2);
             if( target == scale )
             {
-                CGFloat obj = powf(0.7, j*1.0);
+                CGFloat obj = powf(0.8, j*1.0);
                 [array addObject:@(obj)];
                 break;
             }
@@ -170,7 +217,7 @@ const NSInteger itemTag = 1000;
         [array addObject:[NSValue valueWithCGPoint:itemPoint]];
         
         CPAnimation3DItem *item = [self.itemsArray objectAtIndex:index];
-        [item setBounds:CGRectMake(0, 0, self.radius-10, self.radius-10)];
+        [item setBounds:CGRectMake(0, 0, self.radius, self.radius)];
         item.currentIndex = index;
         item.tag = itemTag + index;
         

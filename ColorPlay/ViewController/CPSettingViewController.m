@@ -10,6 +10,7 @@
 #import "CPSettingData.h"
 #import "CPSoundManager.h"
 #import "CPMacro.h"
+#import "CPStarsOverlayView.h"
 
 typedef NS_ENUM(NSInteger, SliderType)
 {
@@ -54,6 +55,7 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 @property (nonatomic) BOOL viewCornerFlag;
 @property (strong, nonatomic) CPSettingData *setting;
 @property (strong, nonatomic) CPSoundManager *soundManager;
+@property (strong, nonatomic) CPStarsOverlayView *starOverlayView;
 
 @end
 
@@ -85,6 +87,15 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 
 - (void)viewDidLayoutSubviews
 {
+    [super viewDidLayoutSubviews];
+    
+    if( !_starOverlayView )
+    {
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+        [self.view sendSubviewToBack:self.starOverlayView];
+    }
+    
     if( !_musicSlider )
     {
         [self.soundMusicSlider addSubview:self.musicSlider];

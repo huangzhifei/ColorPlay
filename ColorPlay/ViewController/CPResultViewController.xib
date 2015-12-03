@@ -33,7 +33,7 @@
                     <rect key="frame" x="252" y="561.5" width="96" height="22.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="16"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaU-78-Pa5" userLabel="titleView">
@@ -43,7 +43,7 @@
                 </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.28877726973309747" green="0.77808122379597355" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2T0-lp-Lia"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="top" secondItem="BaU-78-Pa5" secondAttribute="bottom" id="5aP-MV-Vii"/>

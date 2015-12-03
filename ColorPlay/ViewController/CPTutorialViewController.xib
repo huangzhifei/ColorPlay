@@ -22,9 +22,17 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNz-bN-29B">
+                    <rect key="frame" x="155" y="253" width="46" height="30"/>
+                    <animations/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.28987268518518516" green="0.77618634259259256" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="235" y="293"/>
         </view>
     </objects>
 </document>

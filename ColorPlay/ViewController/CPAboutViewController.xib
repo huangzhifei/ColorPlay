@@ -37,7 +37,7 @@
                     <rect key="frame" x="254" y="32" width="92" height="50"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="35"/>
-                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdN-7k-j0F">
@@ -73,7 +73,7 @@
                 </scrollView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.29019607843137252" green="0.77647058823529413" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="9mA-4A-xcV" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.75" id="87d-yJ-VMc"/>
                 <constraint firstItem="LxO-rT-gxX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="Ey0-jh-oSn"/>

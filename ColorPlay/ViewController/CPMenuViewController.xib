@@ -19,37 +19,40 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvC-cf-RpT">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                     <animations/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtE-aG-Z8t">
-                    <rect key="frame" x="0.0" y="100" width="600" height="455.5"/>
-                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyQ-yM-vSg">
-                    <rect key="frame" x="281" y="566" width="37.5" height="25.5"/>
+                    <rect key="frame" x="282" y="566" width="37.5" height="25.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtE-aG-Z8t">
+                    <rect key="frame" x="0.0" y="120" width="600" height="406"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <animations/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="TyQ-yM-vSg" firstAttribute="top" secondItem="CtE-aG-Z8t" secondAttribute="bottom" constant="11" id="0j4-HY-BbW"/>
-                <constraint firstItem="fvC-cf-RpT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A2G-Po-aPq"/>
-                <constraint firstAttribute="trailing" secondItem="CtE-aG-Z8t" secondAttribute="trailing" id="Aku-c0-4EA"/>
-                <constraint firstItem="CtE-aG-Z8t" firstAttribute="width" secondItem="fvC-cf-RpT" secondAttribute="width" id="J3v-6y-HBI"/>
-                <constraint firstAttribute="trailing" secondItem="fvC-cf-RpT" secondAttribute="trailing" id="UTL-IN-QAH"/>
-                <constraint firstItem="CtE-aG-Z8t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e2y-jU-NOd"/>
-                <constraint firstAttribute="bottom" secondItem="TyQ-yM-vSg" secondAttribute="bottom" constant="8" id="h7m-oY-oxN"/>
-                <constraint firstItem="TyQ-yM-vSg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hGy-sN-EU4"/>
-                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="fvC-cf-RpT" secondAttribute="bottom" id="iHw-yq-3fF"/>
-                <constraint firstItem="fvC-cf-RpT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qFs-Ur-qEl"/>
-                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="viC-qB-BBu"/>
+                <constraint firstAttribute="trailing" secondItem="CtE-aG-Z8t" secondAttribute="trailing" id="3pF-Wy-AGM"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="A5D-pR-B52"/>
+                <constraint firstItem="fvC-cf-RpT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B9Z-TN-pzQ"/>
+                <constraint firstItem="TyQ-yM-vSg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F8A-19-FT1"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="MSR-Kp-jLW"/>
+                <constraint firstAttribute="trailing" secondItem="fvC-cf-RpT" secondAttribute="trailing" id="MvV-3b-s0J"/>
+                <constraint firstAttribute="bottom" secondItem="TyQ-yM-vSg" secondAttribute="bottom" constant="8" id="TZU-6J-hES"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="fvC-cf-RpT" secondAttribute="bottom" id="fNd-S7-tTa"/>
+                <constraint firstItem="CtE-aG-Z8t" firstAttribute="top" secondItem="fvC-cf-RpT" secondAttribute="bottom" id="hrJ-W9-i2i"/>
+                <constraint firstItem="fvC-cf-RpT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qBM-1p-g1t"/>
+                <constraint firstItem="TyQ-yM-vSg" firstAttribute="top" secondItem="CtE-aG-Z8t" secondAttribute="bottom" constant="40" id="zyB-0B-2B2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="-1754" y="-505"/>
+            <point key="canvasLocation" x="-1938" y="-628"/>
         </view>
     </objects>
 </document>

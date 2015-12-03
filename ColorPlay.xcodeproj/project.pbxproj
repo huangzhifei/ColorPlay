@@ -18,6 +18,9 @@
 		280A14201C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 280A141F1C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 */; };
 		280A14251C0DF23A000F2E1B /* 红色高跟鞋.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 280A14241C0DF23A000F2E1B /* 红色高跟鞋.mp3 */; };
 		280A14291C0E0084000F2E1B /* CPRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14281C0E0084000F2E1B /* CPRippleView.m */; };
+		280A14371C108488000F2E1B /* CPStarsOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14361C108488000F2E1B /* CPStarsOverlayView.m */; };
+		280A14441C10A4C2000F2E1B /* CPReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14431C10A4C2000F2E1B /* CPReversibleAnimationController.m */; };
+		280A14471C10A9C3000F2E1B /* CPExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A14461C10A9C3000F2E1B /* CPExplodeAnimationController.m */; };
 		282421031BF21A4C008DAE61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421021BF21A4C008DAE61 /* main.m */; };
 		282421061BF21A4C008DAE61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421051BF21A4C008DAE61 /* AppDelegate.m */; };
 		282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */; };
@@ -105,6 +108,12 @@
 		280A14261C0DF544000F2E1B /* 小宝贝.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "小宝贝.m4a"; sourceTree = "<group>"; };
 		280A14271C0E0084000F2E1B /* CPRippleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPRippleView.h; sourceTree = "<group>"; };
 		280A14281C0E0084000F2E1B /* CPRippleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRippleView.m; sourceTree = "<group>"; };
+		280A14351C108488000F2E1B /* CPStarsOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPStarsOverlayView.h; sourceTree = "<group>"; };
+		280A14361C108488000F2E1B /* CPStarsOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPStarsOverlayView.m; sourceTree = "<group>"; };
+		280A14421C10A4C2000F2E1B /* CPReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPReversibleAnimationController.h; sourceTree = "<group>"; };
+		280A14431C10A4C2000F2E1B /* CPReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPReversibleAnimationController.m; sourceTree = "<group>"; };
+		280A14451C10A9C3000F2E1B /* CPExplodeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPExplodeAnimationController.h; sourceTree = "<group>"; };
+		280A14461C10A9C3000F2E1B /* CPExplodeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPExplodeAnimationController.m; sourceTree = "<group>"; };
 		282420FE1BF21A4C008DAE61 /* ColorPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282421021BF21A4C008DAE61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282421041BF21A4C008DAE61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +261,17 @@
 			path = music;
 			sourceTree = "<group>";
 		};
+		280A14411C10A46E000F2E1B /* TransitionsController */ = {
+			isa = PBXGroup;
+			children = (
+				280A14421C10A4C2000F2E1B /* CPReversibleAnimationController.h */,
+				280A14431C10A4C2000F2E1B /* CPReversibleAnimationController.m */,
+				280A14451C10A9C3000F2E1B /* CPExplodeAnimationController.h */,
+				280A14461C10A9C3000F2E1B /* CPExplodeAnimationController.m */,
+			);
+			path = TransitionsController;
+			sourceTree = "<group>";
+		};
 		282420F51BF21A4C008DAE61 = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +405,7 @@
 		28B2FD501BF21EA00065F762 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				280A14411C10A46E000F2E1B /* TransitionsController */,
 				28B2FD551BF21EC10065F762 /* CPMenuViewController.h */,
 				28B2FD561BF21EC10065F762 /* CPMenuViewController.m */,
 				28B2FD571BF21EC10065F762 /* CPMenuViewController.xib */,
@@ -450,6 +471,8 @@
 		28BAFA951C04B04C002E44E6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				280A14351C108488000F2E1B /* CPStarsOverlayView.h */,
+				280A14361C108488000F2E1B /* CPStarsOverlayView.m */,
 				28BAFAA41C04B443002E44E6 /* CPAnimation3DMenuView.h */,
 				28BAFAA51C04B443002E44E6 /* CPAnimation3DMenuView.m */,
 				28BAFAA61C04B443002E44E6 /* CPEffectLabelView.h */,
@@ -612,8 +635,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28BAFAB21C04B443002E44E6 /* CPStopWatchView.m in Sources */,
+				280A14471C10A9C3000F2E1B /* CPExplodeAnimationController.m in Sources */,
 				28B90CA51BF462BA00035651 /* CPGameQuestion.m in Sources */,
 				280A14071C0B01A0000F2E1B /* ZCDuangLabel.m in Sources */,
+				280A14371C108488000F2E1B /* CPStarsOverlayView.m in Sources */,
 				28B2FD481BF21E720065F762 /* GCDTimer.m in Sources */,
 				280A141A1C0DE340000F2E1B /* CPSoundManager.m in Sources */,
 				28B90C991BF2428D00035651 /* UIViewController+Tracking.m in Sources */,
@@ -635,6 +660,7 @@
 				28B90CA81BF462F200035651 /* CPGameCardColor.m in Sources */,
 				28B2FD691BF222170065F762 /* CPAboutViewController.m in Sources */,
 				28B2FD5A1BF21EC10065F762 /* CPMenuViewController.m in Sources */,
+				280A14441C10A4C2000F2E1B /* CPReversibleAnimationController.m in Sources */,
 				28B90CB41BF4642B00035651 /* CPGameQuestionView.m in Sources */,
 				28B2FD4F1BF21E980065F762 /* UIImage+Color.m in Sources */,
 				28BAFA921C0242F7002E44E6 /* CPGameScoreView.m in Sources */,
