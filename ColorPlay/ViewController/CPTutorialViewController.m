@@ -7,8 +7,13 @@
 //
 
 #import "CPTutorialViewController.h"
+#import "CPStarsOverlayView.h"
 
 @interface CPTutorialViewController ()
+
+- (IBAction)back:(id)sender;
+
+@property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
 
 @end
 
@@ -29,21 +34,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - events
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)viewDidLayoutSubviews
 {
+    [super viewDidLayoutSubviews];
+    
+    [self.view layoutIfNeeded];
+    
+    if( !_starOverlayView )
+    {
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+        [self.view sendSubviewToBack:self.starOverlayView];
+    }
+}
+
+- (IBAction)back:(id)sender {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 @end

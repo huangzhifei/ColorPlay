@@ -15,24 +15,51 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我是操作说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOh-zj-3XI">
-                    <rect key="frame" x="92" y="73" width="102" height="21"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-6w-asM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGg-Fw-RiU" userLabel="containerView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNz-bN-29B">
-                    <rect key="frame" x="155" y="253" width="46" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="iGg-Fw-RiU" firstAttribute="top" secondItem="YLe-6w-asM" secondAttribute="top" id="G7N-Zc-fl6"/>
+                        <constraint firstAttribute="trailing" secondItem="iGg-Fw-RiU" secondAttribute="trailing" constant="-16" id="acB-wX-sdo"/>
+                        <constraint firstAttribute="bottom" secondItem="iGg-Fw-RiU" secondAttribute="bottom" constant="-8" id="eBs-8e-YtM"/>
+                        <constraint firstItem="iGg-Fw-RiU" firstAttribute="leading" secondItem="YLe-6w-asM" secondAttribute="leading" id="v63-yN-eai"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHE-KD-XYG">
+                    <rect key="frame" x="8" y="16" width="60" height="30"/>
                     <animations/>
-                    <state key="normal" title="Button">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" image="Arrow_Left_24"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="ZhJ-lk-Ezw"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.28987268518518516" green="0.77618634259259256" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="235" y="293"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iGg-Fw-RiU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="5p0-o6-ASy"/>
+                <constraint firstItem="iGg-Fw-RiU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6JM-QI-khy"/>
+                <constraint firstItem="iGg-Fw-RiU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="D8J-5L-BA6"/>
+                <constraint firstAttribute="trailing" secondItem="YLe-6w-asM" secondAttribute="trailing" id="FdW-1h-oGj"/>
+                <constraint firstItem="YLe-6w-asM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N4r-28-Dty"/>
+                <constraint firstItem="iGg-Fw-RiU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OPK-Ni-BA8"/>
+                <constraint firstAttribute="bottom" secondItem="YLe-6w-asM" secondAttribute="bottom" id="UMH-nP-Si4"/>
+                <constraint firstItem="YLe-6w-asM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="efM-ec-K0C"/>
+                <constraint firstAttribute="trailing" secondItem="iGg-Fw-RiU" secondAttribute="trailing" id="jf1-DL-Jjq"/>
+                <constraint firstAttribute="bottom" secondItem="iGg-Fw-RiU" secondAttribute="bottom" id="yaN-iW-Qz1"/>
+            </constraints>
+            <point key="canvasLocation" x="177" y="210"/>
         </view>
     </objects>
+    <resources>
+        <image name="Arrow_Left_24" width="32" height="32"/>
+    </resources>
 </document>

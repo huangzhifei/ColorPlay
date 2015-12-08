@@ -258,15 +258,15 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     {
         case SoundMusicSlider:
         {
-            self.musicSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
-            self.musicSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+            self.musicSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
+            self.musicSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
         }
             break;
             
         case SoundEffectSlider:
         {
-            self.effectSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
-            self.effectSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+            self.effectSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
+            self.effectSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
         }
             
         default:

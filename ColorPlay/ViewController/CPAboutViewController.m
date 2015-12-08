@@ -13,16 +13,16 @@
 
 @interface CPAboutViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *effectView;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIView             *effectView;
+@property (weak, nonatomic) IBOutlet UIButton           *backButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollContainerViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView       *scrollView;
 
-@property (strong, nonatomic) GCDTimer *scrollGCDTimer;
-@property (strong, nonatomic) ZCFallLabel *fallLabel;
-@property (strong, nonatomic) NSString *showData;
-@property (assign, nonatomic) CGFloat scrollOrignalHeight;
-@property (strong, nonatomic) CPStarsOverlayView *starOverlayView;
+@property (strong, nonatomic) GCDTimer                  *scrollGCDTimer;
+@property (strong, nonatomic) ZCFallLabel               *fallLabel;
+@property (strong, nonatomic) NSString                  *showData;
+@property (assign, nonatomic) CGFloat                   scrollOrignalHeight;
+@property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
 
 - (IBAction)backClick:(id)sender;
 
@@ -46,12 +46,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //[self.backButton setBounds:CGRectMake(20, 30, 60, 35)];
-    
-//    CATransform3D scale = CATransform3DIdentity;
-//    
-//    self.backButton.layer.transform = CATransform3DScale(scale, 1.25, 1.0, 1.0);
-    
     self.showData = ({
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"AboutContent" ofType:@".plist"];
@@ -67,16 +61,10 @@
         data;
     });
     
-//    UIImage *bgImage = [UIImage imageNamed:@"background"];
-//    
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
 }
 
 - (void)viewDidLayoutSubviews
 {
-    //NSLog(@"view %@", NSStringFromCGRect(self.view.frame));
-    //NSLog(@"1: effectView %@", NSStringFromCGRect(self.effectView.frame));
-    
     /**
      *  UIVIewController.viewDidLayoutSubviews这个方法是在所管理的UIView布局完后就调用了，
      *  但是这时候UIView里的SubView的并还没有布局好！！！fuck

@@ -103,7 +103,6 @@
 		280A14051C0B01A0000F2E1B /* ZCDuangLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDuangLabel.h; sourceTree = "<group>"; };
 		280A14061C0B01A0000F2E1B /* ZCDuangLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDuangLabel.m; sourceTree = "<group>"; };
 		280A14081C0B04CD000F2E1B /* AboutContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AboutContent.plist; sourceTree = "<group>"; };
-		280A140A1C0C66E6000F2E1B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		280A14181C0DE340000F2E1B /* CPSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSoundManager.h; sourceTree = "<group>"; };
 		280A14191C0DE340000F2E1B /* CPSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSoundManager.m; sourceTree = "<group>"; };
 		280A141F1C0DE7E4000F2E1B /* 大王叫我来巡山.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "大王叫我来巡山.mp3"; sourceTree = "<group>"; };
@@ -323,7 +322,6 @@
 			children = (
 				280A141D1C0DE764000F2E1B /* music */,
 				28BAFAF41C08117D002E44E6 /* Assets.xcassets */,
-				280A140A1C0C66E6000F2E1B /* background.png */,
 				28B2FD7D1BF23B0F0065F762 /* ColorList.plist */,
 				280A14081C0B04CD000F2E1B /* AboutContent.plist */,
 				282421121BF21A4C008DAE61 /* Info.plist */,
