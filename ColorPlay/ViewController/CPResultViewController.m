@@ -19,14 +19,15 @@
 
 @interface CPResultViewController()
 
-@property (weak, nonatomic) IBOutlet UIView *titleView;
-@property (weak, nonatomic) IBOutlet UIView *scoreView;
-@property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet UIView         *titleView;
+@property (weak, nonatomic) IBOutlet UIView         *scoreView;
+@property (weak, nonatomic) IBOutlet UIView         *menuView;
+@property (weak, nonatomic) IBOutlet UILabel        *bannerLabel;
 
 @property (strong, nonatomic) CPAnimation3DMenuView *menu3DView;
-@property (strong, nonatomic) CPGameScoreView *gameScoreView;
-@property (strong, nonatomic) CPEffectLabelView *effectView;
-@property (strong, nonatomic) CPStarsOverlayView *starsOverlayView;
+@property (strong, nonatomic) CPGameScoreView       *gameScoreView;
+@property (strong, nonatomic) CPEffectLabelView     *effectView;
+@property (strong, nonatomic) CPStarsOverlayView    *starsOverlayView;
 
 @end
 
@@ -86,6 +87,21 @@
     {
         [self.scoreView addSubview:self.gameScoreView];
         [self.gameScoreView startAnimation];
+        
+        [GCDTimer scheduledTimerWithTimeInterval:2.0 repeats:NO block:^{
+            
+            NSInteger highScore = self.gameScoreView.highScore;
+            
+            if( self.score >= highScore )
+            {
+                self.bannerLabel.text = @"继续努力!";
+            }
+            else
+            {
+                self.bannerLabel.text = @"还需要努力!";
+            }
+            
+        }];
     }
     
     if( !_menu3DView )
@@ -178,7 +194,7 @@
         
         _menu3DView = [[CPAnimation3DMenuView alloc] initWithFrame:self.menuView.bounds
                                                         itemsArray:items
-                                                            radius:80
+                                                            radius:90
                                                           duration:0.5];
 
     }

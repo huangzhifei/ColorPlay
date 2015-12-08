@@ -8,7 +8,7 @@
 
 #import "CPStarsOverlayView.h"
 #import "GCDTimer.h"
-#define LIFTTIME 5
+#define LIFTTIME 10
 
 @interface CPStarsOverlayView()
 
@@ -54,7 +54,6 @@
     self.backgroundColor = [UIColor blackColor];
     
     [self setup];
-
 }
 
 - (void)setup
@@ -62,25 +61,27 @@
     _emitter = (CAEmitterLayer *)self.layer;
     _emitter.emitterMode = kCAEmitterLayerOutline;
     _emitter.emitterShape = kCAEmitterLayerCircle;
-    _emitter.renderMode = kCAEmitterLayerOldestFirst;
+    //_emitter.renderMode = kCAEmitterLayerOldestFirst;
     _emitter.preservesDepth = true;
     
     _particle = [CAEmitterCell emitterCell];
+    _particle.name = @"spark";
     
     _particle.contents = (id)[_emitterImage CGImage];
     _particle.birthRate = 10;
     
     _particle.lifetime = LIFTTIME;
-    _particle.lifetimeRange = 5;
+    _particle.lifetimeRange = 1;
     
     _particle.velocity = 20;
     _particle.velocityRange = 10;
     
-    _particle.scale = 0.04;
+    _particle.scale = 0.02;
     _particle.scaleRange = 0.1;
     _particle.scaleSpeed = 0.02;
     
     _emitter.emitterCells = [NSArray arrayWithObject:_particle];
+    
 }
 
 - (void)setEmitterImage:(UIImage *)emitterImage
@@ -97,7 +98,6 @@
     
     _emitter.emitterPosition = self.center;
     _emitter.emitterSize = self.bounds.size;
-    
 }
 
 /**
@@ -142,7 +142,7 @@
     NSInteger sizeWidth = MAX(self.bounds.size.width, self.bounds.size.height);
     CGFloat radius = arc4random() % sizeWidth;
     _emitter.emitterSize = CGSizeMake(radius, radius);
-    _particle.birthRate = 5 + sqrt(radius*1.0);
+    _particle.birthRate = 15;
 }
 
 #pragma mark - public Methods
@@ -150,11 +150,15 @@
 - (void)stopFireWork
 {
     _emitter.lifetime = 0;
+    [_emitter setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.spark.birthRate"];
+    [_gcdTimer invalidate];
+    
 }
 
 - (void)restartFireWork
 {
     _emitter.lifetime = LIFTTIME;
+    [_emitter setValue:[NSNumber numberWithInteger:10] forKeyPath:@"emitterCells.spark.birthRate"];
 }
 
 @end

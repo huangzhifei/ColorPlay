@@ -76,11 +76,18 @@
 - (void)stopFireWork
 {
     emitterLayer.lifetime = 0;
+    [emitterLayer setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.starred.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.starredhalf.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.starredept.birthRate"];
 }
 
 - (void)restartFireWork
 {
     emitterLayer.lifetime = 1;
+    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starred.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starredhalf.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starredept.birthRate"];
+
 }
 
 #pragma mark - private Methods
@@ -95,16 +102,19 @@
     emitterLayer.emitterShape = kCAEmitterLayerSphere;
     
     CAEmitterCell *cell1 = [self productEmitterCellWithContents:(id)[[UIImage imageNamed:@"starred"] CGImage]];
-    cell1.scale = 0.3;
+    cell1.name = @"starred";
+    cell1.scale = 0.4;
     cell1.scaleRange = 0.3;
     
     CAEmitterCell *cell2 = [self productEmitterCellWithContents:(id)[[UIImage imageNamed:@"starredhalf"] CGImage]];
-    cell2.scale = 0.2;
+    cell2.name = @"starredhalf";
+    cell2.scale = 0.3;
     cell2.scaleRange = 0.2;
     
     CAEmitterCell *cell3 = [self productEmitterCellWithContents:(id)[[UIImage imageNamed:@"starredept"] CGImage]];
-    cell2.scale = 0.03;
-    cell2.scaleRange = 0.03;
+    cell3.name = @"starredept";
+    cell3.scale = 0.2;
+    cell3.scaleRange = 0.1;
     
     emitterLayer.emitterCells = @[cell1, cell2, cell3];
 }
@@ -112,7 +122,7 @@
 - (CAEmitterCell *)productEmitterCellWithContents:(id)contents
 {
     CAEmitterCell *cell = [CAEmitterCell emitterCell];
-    cell.birthRate = 100;
+    cell.birthRate = 150;
     cell.lifetime = 1.0;
     cell.lifetimeRange = 0.3;
     cell.contents = contents;
@@ -139,7 +149,7 @@
 
 //- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 //{
-//    
+//    NSLog(@"------!!!");
 //}
 
 @end

@@ -132,27 +132,6 @@
 
 - (void)gameOver
 {
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    
-//    switch (self.gameMode) {
-//        case CPGameClassicMode:
-//            
-//            [userDefault setInteger:self.scene.score forKey:kClassicHighScore];
-//            
-//            break;
-//            
-//        case CPGameFantasyMode:
-//            
-//            [userDefault setInteger:self.scene.score forKey:kFantasyHighScore];
-//            
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    
-//    [userDefault synchronize];
-    
     CPResultViewController *resultVC = [CPResultViewController initWithNib];
     resultVC.gameMode = self.gameMode;
     resultVC.score = self.scene.score;

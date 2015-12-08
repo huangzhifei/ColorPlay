@@ -11,8 +11,8 @@
 
 @interface CPResultViewController : UIViewController
 
-@property (nonatomic) CPGameMode gameMode;
-@property (nonatomic) NSInteger score;
+@property (assign, nonatomic) CPGameMode gameMode;
+@property (assign, nonatomic) NSInteger score;
 
 + (instancetype)initWithNib;
 

@@ -201,7 +201,10 @@
         
         NSArray *items = @[easy, hard, setting, about, guide];
         
-        _menu3DView = [[CPAnimation3DMenuView alloc] initWithFrame:self.mainView.bounds itemsArray:items radius:80 duration:0.5];
+        _menu3DView = [[CPAnimation3DMenuView alloc] initWithFrame:self.mainView.bounds
+                                                        itemsArray:items
+                                                            radius:90
+                                                          duration:0.5];
 
     }
 

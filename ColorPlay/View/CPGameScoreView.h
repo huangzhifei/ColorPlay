@@ -15,4 +15,6 @@
 
 - (void)startAnimation;
 
+@property (assign, nonatomic) NSInteger highScore;
+
 @end

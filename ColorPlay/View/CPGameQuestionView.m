@@ -846,14 +846,12 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
     CGPoint location = [touch locationInView:self];
     
     [self checkOptionsContainsPoint:location];
-
 }
 
 - (void)touchClick:(id)sender
 {
     if( self.startPlay )
     {
-        NSLog(@"touchClick");
         UIControl *control = (UIControl *)sender;
         
         if( self.delegate && [self.delegate respondsToSelector:@selector(checkAnswerWithClickOption:)] )
@@ -868,9 +866,9 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 - (void)startTimer
 {
     self.startPlay = YES;
-    
     [self.stopWatchView fireStopWatch:0.0f timeOut:^{
-        
+
+        self.startPlay = NO;
         if( self.delegate && [self.delegate respondsToSelector:@selector(timeout)] )
         {
             [self.delegate timeout];

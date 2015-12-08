@@ -25,13 +25,13 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
 @property (weak, nonatomic) IBOutlet UILabel        *modeLabel;
 @property (weak, nonatomic) IBOutlet UILabel        *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel        *highscoreLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView    *starred_1;
 @property (weak, nonatomic) IBOutlet UIImageView    *starred_2;
 @property (weak, nonatomic) IBOutlet UIImageView    *starred_3;
 
 @property (assign, nonatomic) CPGameMode mode;
 @property (assign, nonatomic) NSInteger score;
-@property (assign, nonatomic) NSInteger highScore;
 
 @end
 

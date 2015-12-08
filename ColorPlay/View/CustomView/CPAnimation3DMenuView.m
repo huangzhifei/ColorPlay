@@ -28,7 +28,7 @@
     
     if(self)
     {
-        self.radius = 40;
+        self.radius = 45;
         
         [self commonInit];
     }

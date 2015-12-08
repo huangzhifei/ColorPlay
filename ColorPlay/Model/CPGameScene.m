@@ -8,7 +8,7 @@
 
 #import "CPGameScene.h"
 
-#define MAXSTOPTIMER 3
+#define MAXSTOPTIMER 7
 
 @interface CPGameScene()
 
