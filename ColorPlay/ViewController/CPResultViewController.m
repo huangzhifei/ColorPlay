@@ -17,20 +17,15 @@
 #import "GCDTimer.h"
 #import "CPStarsOverlayView.h"
 
-@interface CPResultViewController ()
+@interface CPResultViewController()
 
 @property (weak, nonatomic) IBOutlet UIView *titleView;
-
 @property (weak, nonatomic) IBOutlet UIView *scoreView;
-
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 
 @property (strong, nonatomic) CPAnimation3DMenuView *menu3DView;
-
 @property (strong, nonatomic) CPGameScoreView *gameScoreView;
-
 @property (strong, nonatomic) CPEffectLabelView *effectView;
-
 @property (strong, nonatomic) CPStarsOverlayView *starsOverlayView;
 
 @end
@@ -50,8 +45,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +65,8 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    [self.view layoutIfNeeded];
     
     if( !_starsOverlayView )
     {
@@ -79,17 +84,14 @@
     
     if( !_gameScoreView )
     {
-        self.scoreView.alpha = 0;
         [self.scoreView addSubview:self.gameScoreView];
-        [GCDTimer scheduledTimerWithTimeInterval:0.02f repeats:NO block:^{
-            
-            [self scoreViewShow];
-        }];
+        [self.gameScoreView startAnimation];
     }
     
     if( !_menu3DView )
     {
         [self.menuView addSubview:self.menu3DView];
+        [self.menu3DView startAnimation];
     }
     
 }
@@ -141,7 +143,6 @@
         [replay setTitle:@"Replay" forState:UIControlStateNormal];
         [replay setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]]  forState:UIControlStateNormal];
         [replay setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateHighlighted];
-        [replay.titleLabel setTextColor:[UIColor blackColor]];
         [replay.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
         [replay addTarget:self action:@selector(replayMode:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -186,40 +187,21 @@
 
 }
 
-- (void)scoreViewShow
-{
-    CGFloat moveDistance = self.scoreView.frame.size.width;
-    CGRect frame = self.gameScoreView.frame;
-    frame.origin.x -= moveDistance;
-    self.gameScoreView.frame = frame;
-    
-    [UIView animateWithDuration:1.0f
-                          delay:0.0f
-         usingSpringWithDamping:0.5f
-          initialSpringVelocity:5.0f
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         
-                         CGRect frame = self.gameScoreView.frame;
-                         frame.origin.x += moveDistance;
-                         self.gameScoreView.frame = frame;
-                         
-                         self.scoreView.alpha = 1;
-                         
-                     } completion:^(BOOL finished) {
-                         
-                         
-                     }];
-}
-
 - (void)replayMode:(id)sender
 {
-    CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:self.gameMode];
-    [self.navigationController pushViewController:gameVC animated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
     
-    // 注意：如果不这样清理，里面会一直增加VC
-    self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
-                                                  self.navigationController.topViewController];
+    [item touchUpInsideAnimation:^{
+        
+        CPGameViewController *gameVC = [[CPGameViewController alloc] initWithGameMode:self.gameMode];
+        [self.navigationController pushViewController:gameVC animated:YES];
+        
+        // 注意：如果不这样清理，里面会一直增加VC
+        self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
+                                                      self.navigationController.topViewController];
+        
+    }];
+    
 }
 
 - (void)sharedMode:(id)sender
@@ -229,27 +211,43 @@
 
 - (void)settingMode:(id)sender
 {
-    CPSettingViewController *settingVC = [CPSettingViewController initWithNib];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
     
-    [self.navigationController pushViewController:settingVC animated:YES];
-    
-    self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
-                                                  self.navigationController.topViewController];
+    [item touchUpInsideAnimation:^{
+        
+        CPSettingViewController *settingVC = [CPSettingViewController initWithNib];
+        [self.navigationController pushViewController:settingVC animated:YES];
+        
+        self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
+                                                      self.navigationController.topViewController];
+    }];
 }
 
 - (void)homeMode:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
+    
+    [item touchUpInsideAnimation:^{
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+    }];
 }
 
 - (void)guideMode:(id)sender
 {
-    CPTutorialViewController *tutoriaVC = [CPTutorialViewController initWithNib];
+    CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
     
-    [self.navigationController pushViewController:tutoriaVC animated:YES];
+    [item touchUpInsideAnimation:^{
+        
+        CPTutorialViewController *tutoriaVC = [CPTutorialViewController initWithNib];
+        [self.navigationController pushViewController:tutoriaVC animated:YES];
+        
+        self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
+                                                      self.navigationController.topViewController];
+        
+    }];
     
-    self.navigationController.viewControllers = @[self.navigationController.childViewControllers[0],
-                                                  self.navigationController.topViewController];
 }
 
 @end

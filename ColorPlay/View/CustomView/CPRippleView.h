@@ -14,6 +14,6 @@ typedef void (^touchAnimation)(void);
 
 @property (strong, nonatomic) UIColor *bgColor;
 
-- (void)animationWithTouch:(touchAnimation)animation;
+//- (void)animationWithTouch:(touchAnimation)animation;
 
 @end

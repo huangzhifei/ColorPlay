@@ -13,4 +13,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame Mode:(CPGameMode)mode score:(NSInteger)score;
 
+- (void)startAnimation;
+
 @end

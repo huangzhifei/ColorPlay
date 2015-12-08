@@ -66,7 +66,6 @@
     rippleView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     rippleView.alpha=1;
     
-    
     [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -182,7 +181,6 @@ const NSInteger itemTag = 1000;
         }
     }
     self.scaleArray = [[NSArray alloc] initWithArray:array];
-    
 }
 
 - (void)commonInitCenter
@@ -232,11 +230,11 @@ const NSInteger itemTag = 1000;
     }
     self.itemsCenterArray = [[NSArray alloc] initWithArray:array];
     
-    [GCDTimer scheduledTimerWithTimeInterval:0.5 repeats:NO block:^{
-       
-        [self performMyAnimation: arc4random_uniform(RaisedirectionCount)];
-        
-    }];
+//    [GCDTimer scheduledTimerWithTimeInterval:0.5 repeats:NO block:^{
+//       
+//        [self performMyAnimation: arc4random_uniform(RaisedirectionCount)];
+//        
+//    }];
 }
 
 - (void)updateItemsAlpha:(CGFloat)alpha
@@ -605,6 +603,17 @@ const NSInteger itemTag = 1000;
             [item setUserInteractionEnabled:NO];
         }
     }
+}
+
+#pragma mark - publick Methods
+
+- (void)startAnimation
+{
+    [GCDTimer scheduledTimerWithTimeInterval:0.3 repeats:NO block:^{
+        
+        [self performMyAnimation: arc4random_uniform(RaisedirectionCount)];
+        
+    }];
 }
 
 @end

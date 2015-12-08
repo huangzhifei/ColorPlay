@@ -128,7 +128,7 @@
     [userDefault setBool:YES forKey:kBgEffectSeleted];
     [userDefault setBool:YES forKey:kNotificationSeleted];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [userDefault synchronize];
 
 }
 
@@ -145,7 +145,7 @@
     [userDefault setBool:_bgEffectSelected forKey:kBgEffectSeleted];
     [userDefault setBool:_notificationSelected forKey:kNotificationSeleted];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [userDefault synchronize];
 }
 
 @end

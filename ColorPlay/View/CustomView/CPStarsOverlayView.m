@@ -8,12 +8,14 @@
 
 #import "CPStarsOverlayView.h"
 #import "GCDTimer.h"
+#define LIFTTIME 5
 
 @interface CPStarsOverlayView()
 
-@property (strong, nonatomic) CAEmitterLayer *emitter;
-@property (strong, nonatomic) CAEmitterCell *particle;
-@property (strong, nonatomic) GCDTimer *gcdTimer;
+@property (strong, nonatomic) CAEmitterLayer    *emitter;
+@property (strong, nonatomic) CAEmitterCell     *particle;
+@property (strong, nonatomic) GCDTimer          *gcdTimer;
+@property (strong, nonatomic) UIImage           *emitterImage;
 
 @end
 
@@ -68,13 +70,13 @@
     _particle.contents = (id)[_emitterImage CGImage];
     _particle.birthRate = 10;
     
-    _particle.lifetime = 10;
+    _particle.lifetime = LIFTTIME;
     _particle.lifetimeRange = 5;
     
     _particle.velocity = 20;
     _particle.velocityRange = 10;
     
-    _particle.scale = 0.02;
+    _particle.scale = 0.04;
     _particle.scaleRange = 0.1;
     _particle.scaleSpeed = 0.02;
     
@@ -137,11 +139,22 @@
 
 - (void)produceParticles
 {
-    //NSLog(@"cell count: %lu", [self.emitter.emitterCells count]);
     NSInteger sizeWidth = MAX(self.bounds.size.width, self.bounds.size.height);
     CGFloat radius = arc4random() % sizeWidth;
     _emitter.emitterSize = CGSizeMake(radius, radius);
-    _particle.birthRate = 10 + sqrt(radius*1.0);
+    _particle.birthRate = 5 + sqrt(radius*1.0);
+}
+
+#pragma mark - public Methods
+
+- (void)stopFireWork
+{
+    _emitter.lifetime = 0;
+}
+
+- (void)restartFireWork
+{
+    _emitter.lifetime = LIFTTIME;
 }
 
 @end

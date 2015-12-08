@@ -8,6 +8,8 @@
 
 #import "CPGameScene.h"
 
+#define MAXSTOPTIMER 3
+
 @interface CPGameScene()
 
 @property (nonatomic) CPGameMode currentMode;
@@ -52,7 +54,7 @@
 
 - (NSInteger)limitTime
 {
-    NSInteger MAXTime = 7;
+    NSInteger MAXTime = MAXSTOPTIMER;
     
     if( self.score >= 0 && self.score <= 10 )
     {

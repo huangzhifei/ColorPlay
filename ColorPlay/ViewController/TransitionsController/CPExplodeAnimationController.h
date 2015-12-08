@@ -6,9 +6,11 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import "CPReversibleAnimationController.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface CPExplodeAnimationController : CPReversibleAnimationController
+@interface CPExplodeAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
+@property (assign, nonatomic) CGFloat duration;
 
 @end

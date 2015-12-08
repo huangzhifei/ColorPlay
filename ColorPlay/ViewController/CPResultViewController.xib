@@ -33,7 +33,7 @@
                     <rect key="frame" x="252" y="561.5" width="96" height="22.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="16"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaU-78-Pa5" userLabel="titleView">
@@ -62,7 +62,7 @@
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="qFZ-Pd-6kg"/>
                 <constraint firstItem="158-e7-DS3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vRQ-wj-18v"/>
             </constraints>
-            <point key="canvasLocation" x="-445" y="-83"/>
+            <point key="canvasLocation" x="-575" y="-103"/>
         </view>
     </objects>
 </document>

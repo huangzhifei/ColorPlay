@@ -19,18 +19,19 @@
 #import "AppDelegate.h"
 #import "CPStarsOverlayView.h"
 
-@interface CPGameViewController ()<CPGameQuestionViewDelegate, UIViewControllerTransitioningDelegate>
+@interface CPGameViewController ()<CPGameQuestionViewDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet CPOutlineLabel *scoreLabel;
 
-@property (strong, nonatomic) CPGameScene *scene;
-@property (nonatomic) CPGameMode gameMode;
-@property (nonatomic, strong) CPGameQuestionView *currentQuestionView;
-@property (nonatomic, strong) CPGameQuestionView *lastQuestionView;
-@property (nonatomic, strong) NSMutableArray *cardViewList;
-@property (nonatomic, strong) CPSettingData *setting;
-@property (nonatomic, strong) CPSoundManager *soundManager;
-@property (nonatomic, strong) CPStarsOverlayView *starOverlayView;
+@property (nonatomic, strong) CPGameScene           *scene;
+@property (nonatomic, assign) CPGameMode            gameMode;
+@property (nonatomic, strong) CPGameQuestionView    *currentQuestionView;
+@property (nonatomic, strong) CPGameQuestionView    *lastQuestionView;
+@property (nonatomic, strong) NSMutableArray        *cardViewList;
+@property (nonatomic, strong) CPSettingData         *setting;
+@property (nonatomic, strong) CPSoundManager        *soundManager;
+@property (nonatomic, strong) CPStarsOverlayView    *starOverlayView;
+
 @end
 
 @implementation CPGameViewController
@@ -83,7 +84,9 @@
 {
     [super viewWillAppear:animated];
     
-    [self.soundManager playBackgroundMusic:kMainMusic loops:YES];
+    self.navigationController.delegate = self;
+    
+    //[self.soundManager playBackgroundMusic:kMainMusic loops:YES];
     
     if( self.setting.musicSelected )
     {
@@ -93,6 +96,13 @@
     {
         
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,17 +132,32 @@
 
 - (void)gameOver
 {
-    
+//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//    
+//    switch (self.gameMode) {
+//        case CPGameClassicMode:
+//            
+//            [userDefault setInteger:self.scene.score forKey:kClassicHighScore];
+//            
+//            break;
+//            
+//        case CPGameFantasyMode:
+//            
+//            [userDefault setInteger:self.scene.score forKey:kFantasyHighScore];
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//    [userDefault synchronize];
     
     CPResultViewController *resultVC = [CPResultViewController initWithNib];
     resultVC.gameMode = self.gameMode;
     resultVC.score = self.scene.score;
-    [self.navigationController pushViewController:resultVC animated:NO];
+    [self.navigationController pushViewController:resultVC animated:YES];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        NSLog(@"----------");
-    }];
 }
 
 - (void)addQuestionView
@@ -222,19 +247,27 @@
 
 #pragma mark - question view delegate
 
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    if( [toVC isKindOfClass:[CPResultViewController class]] )
+    {
+        CPExplodeAnimationController *explodeAnimation = [[CPExplodeAnimationController alloc] init];
+        return explodeAnimation;
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 - (void)timeout
 {
-#pragma mark - tag 
-    // 将来在失败或者超时，还添加一个毛玻璃效果，展现一个失败画面，例如：大哭gif
-    
-    
-    
     [self gameOver];
 }
 
 - (void)checkAnswerWithClickOption:(BOOL)right
 {
-    if( 1 )
+    if( right )
     {
         [self.scene nextQuestion];
         
@@ -270,14 +303,5 @@
         [self gameOver];
     }
 }
-
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    AppDelegateAccessor.settingsAnimationController.reverse = YES;
-    
-    return AppDelegateAccessor.settingsAnimationController;
-}
-
 
 @end

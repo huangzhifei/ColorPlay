@@ -8,14 +8,10 @@
 		<key>value</key>
         <string>
     这是一个简单的游戏，没有使用任何第三方的游戏引擎，纯的oc游戏，我一直有的观点：写游戏是很考验人的思维及代码控制的能力。
-    ColorPlay是一个Stroop测验类游戏，通过判断颜色来玩游戏，游戏本身很简单，用来锻炼一下反应力和记忆力也很不错，游戏虽小但五脏具全，
-严格尊守Apple推崇的MVC模式。
-    ColorPlay会作为一个小游戏上线于App Store，目前还处于第一个版本：单机版本，图标、背景图片等等都是自己在网上找的，
-打算叫朋友帮忙做点高大上的图片。
-    ColorPlay本身的逻辑不是很难，所以决定开源，里面还是有一些自己精心封装定义的UI控件带动画的，开源本身是促使自己更加尽心写好代码的
-一种方式，他能督促你写代码时想想这样设计是否合理。
-    ColorPlay开源地址：https://github.com/huangzhifei/ColorPlay支持iOS8.1+，使用Size Class + AutoLayout方式布局，
-零代码布局支持iphone4s、5s、6、6p、6s、6p，里面控件动画全部使用的是host view+ custom view方式，没有使用布局的约束动画，只支持竖屏！
+    ColorPlay是一个Stroop测验类游戏，通过判断颜色来玩游戏，游戏本身很简单，用来锻炼一下反应力和记忆力也很不错，游戏虽小但五脏具全，严格尊守Apple推崇的MVC模式。
+    ColorPlay会作为一个小游戏上线于App Store，目前还处于第一个版本：单机版本，图标、背景图片等等都是自己在网上找的。
+    ColorPlay本身的逻辑不是很难，所以决定开源，里面还是有一些自己精心封装定义的UI控件带动画的，开源本身是促使自己更加尽心写好代码的一种方式，他能督促你写代码时想想这样设计是否合理。
+    ColorPlay开源地址：https://github.com/huangzhifei/ColorPlay支持iOS8.1+，使用Size Class + AutoLayout方式布局，零代码布局支持iphone4s、5s、6、6p、6s、6p，里面控件动画全部使用的是host view+ custom view方式，没有使用布局的约束动画，只支持竖屏！
     ColorPlay使用的第三方库：
     label显示特效：
     https://github.com/overboming/ZCAnimatedLabel

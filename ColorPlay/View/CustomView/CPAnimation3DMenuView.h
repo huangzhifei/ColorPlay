@@ -34,4 +34,6 @@ typedef void (^touchAnimation)(void);
                         radius:(CGFloat)radius
                       duration:(CGFloat)duration;
 
+- (void)startAnimation;
+
 @end

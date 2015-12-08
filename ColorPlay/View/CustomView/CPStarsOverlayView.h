@@ -10,6 +10,8 @@
 
 @interface CPStarsOverlayView : UIView
 
-@property (strong, nonatomic) UIImage *emitterImage;
+- (void)stopFireWork;
+
+- (void)restartFireWork;
 
 @end

@@ -27,8 +27,6 @@
     
     //[self registerUmeng];
     
-    self.settingsAnimationController = [[CPExplodeAnimationController alloc] init];
-    
     [self commonInitSetting];
     
     // hidden status bar 
