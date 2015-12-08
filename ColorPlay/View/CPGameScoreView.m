@@ -263,7 +263,7 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
                              CGPathMoveToPoint(path, NULL, -self.bounds.size.width, 0);
                              CGPathAddCurveToPoint(path, NULL, -self.bounds.size.width/2, 0.0,
                                                    self.bounds.size.width/6, 120,
-                                                   270 , 95);
+                                                   280 , 95);
                              
                              CPFireWorkView *fireView = [[CPFireWorkView alloc] initWithFrame:self.bounds movePath:path];
                              

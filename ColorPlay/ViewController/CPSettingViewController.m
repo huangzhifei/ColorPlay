@@ -82,7 +82,22 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
 {
     [super viewWillAppear:animated];
     
+    if( self.starOverlayView )
+    {
+        [self.starOverlayView restartFireWork];
+    }
+    
     [self refreshSettingData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if( self.starOverlayView )
+    {
+        [self.starOverlayView stopFireWork];
+    }
 }
 
 - (void)viewDidLayoutSubviews

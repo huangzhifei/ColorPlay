@@ -27,7 +27,7 @@
 @property (strong, nonatomic) CPAnimation3DMenuView *menu3DView;
 @property (strong, nonatomic) CPGameScoreView       *gameScoreView;
 @property (strong, nonatomic) CPEffectLabelView     *effectView;
-@property (strong, nonatomic) CPStarsOverlayView    *starsOverlayView;
+@property (strong, nonatomic) CPStarsOverlayView    *starOverlayView;
 
 @end
 
@@ -48,19 +48,33 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if( self.starOverlayView )
+    {
+        [self.starOverlayView restartFireWork];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    /**
+     *  如果这里不删除粒子layer，在进行push或pop动画时，会出现粒子“静态假象”，动画非常不连贯
+     *  此bug困扰很久，*fuck*
+     */
+    if( self.starOverlayView )
+    {
+        [self.starOverlayView stopFireWork];
+    }
 }
 
 - (void)viewDidLayoutSubviews
@@ -69,11 +83,11 @@
     
     [self.view layoutIfNeeded];
     
-    if( !_starsOverlayView )
+    if( !_starOverlayView )
     {
-        self.starsOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
-        [self.view addSubview:self.starsOverlayView];
-        [self.view sendSubviewToBack:self.starsOverlayView];
+        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.starOverlayView];
+        [self.view sendSubviewToBack:self.starOverlayView];
     }
     
     if( !_effectView )

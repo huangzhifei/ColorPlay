@@ -8,12 +8,12 @@
 
 #import "CPStarsOverlayView.h"
 #import "GCDTimer.h"
-#define LIFTTIME 10
+#define LIFTTIME 30
 
 @interface CPStarsOverlayView()
 
 @property (strong, nonatomic) CAEmitterLayer    *emitter;
-@property (strong, nonatomic) CAEmitterCell     *particle;
+//@property (strong, nonatomic) CAEmitterCell     *particle;
 @property (strong, nonatomic) GCDTimer          *gcdTimer;
 @property (strong, nonatomic) UIImage           *emitterImage;
 
@@ -58,36 +58,40 @@
 
 - (void)setup
 {
-    _emitter = (CAEmitterLayer *)self.layer;
+    //_emitter = (CAEmitterLayer *)self.layer;
+    _emitter = [CAEmitterLayer layer];
+    _emitter.emitterPosition = self.center;
+    _emitter.emitterSize = self.bounds.size;
     _emitter.emitterMode = kCAEmitterLayerOutline;
     _emitter.emitterShape = kCAEmitterLayerCircle;
-    //_emitter.renderMode = kCAEmitterLayerOldestFirst;
+    _emitter.renderMode = kCAEmitterLayerOldestFirst;
     _emitter.preservesDepth = true;
     
-    _particle = [CAEmitterCell emitterCell];
-    _particle.name = @"spark";
+    CAEmitterCell *particle = [CAEmitterCell emitterCell];
+    particle.name = @"spark";
     
-    _particle.contents = (id)[_emitterImage CGImage];
-    _particle.birthRate = 10;
+    particle.contents = (id)[_emitterImage CGImage];
+    particle.birthRate = 10;
     
-    _particle.lifetime = LIFTTIME;
-    _particle.lifetimeRange = 1;
+    particle.lifetime = LIFTTIME;
+    particle.lifetimeRange = 1;
     
-    _particle.velocity = 20;
-    _particle.velocityRange = 10;
+    particle.velocity = 20;
+    particle.velocityRange = 10;
     
-    _particle.scale = 0.02;
-    _particle.scaleRange = 0.1;
-    _particle.scaleSpeed = 0.02;
+    particle.scale = 0.03;
+    particle.scaleRange = 0.05;
+    particle.scaleSpeed = 0.02;
     
-    _emitter.emitterCells = [NSArray arrayWithObject:_particle];
+    _emitter.emitterCells = [NSArray arrayWithObject:particle];
     
+    [self.layer addSublayer:_emitter];
 }
 
 - (void)setEmitterImage:(UIImage *)emitterImage
 {
     _emitterImage = emitterImage;
-    _particle.contents = (id)[_emitterImage CGImage];
+    [[_emitter emitterCells] firstObject].contents = (id)[_emitterImage CGImage];
 }
 
 #pragma mark - override super
@@ -139,26 +143,29 @@
 
 - (void)produceParticles
 {
+    if( !self.emitter ) return;
+    
     NSInteger sizeWidth = MAX(self.bounds.size.width, self.bounds.size.height);
     CGFloat radius = arc4random() % sizeWidth;
-    _emitter.emitterSize = CGSizeMake(radius, radius);
-    _particle.birthRate = 15;
+    self.emitter.emitterSize = CGSizeMake(radius, radius);
+    [[self.emitter emitterCells] firstObject].birthRate = 15;
 }
 
 #pragma mark - public Methods
 
 - (void)stopFireWork
 {
-    _emitter.lifetime = 0;
-    [_emitter setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.spark.birthRate"];
-    [_gcdTimer invalidate];
-    
+    self.emitter.lifetime = 0;
+    [self.emitter setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.spark.birthRate"];
+    [self.emitter removeFromSuperlayer];
+    self.emitter = nil;
 }
 
 - (void)restartFireWork
 {
-    _emitter.lifetime = LIFTTIME;
-    [_emitter setValue:[NSNumber numberWithInteger:10] forKeyPath:@"emitterCells.spark.birthRate"];
+    self.emitter.lifetime = LIFTTIME;
+    [self.emitter setValue:[NSNumber numberWithInteger:10] forKeyPath:@"emitterCells.spark.birthRate"];
+    [self setup];
 }
 
 @end

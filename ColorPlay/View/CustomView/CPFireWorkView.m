@@ -122,7 +122,7 @@
 - (CAEmitterCell *)productEmitterCellWithContents:(id)contents
 {
     CAEmitterCell *cell = [CAEmitterCell emitterCell];
-    cell.birthRate = 150;
+    cell.birthRate = 200;
     cell.lifetime = 1.0;
     cell.lifetimeRange = 0.3;
     cell.contents = contents;

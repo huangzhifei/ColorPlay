@@ -76,12 +76,7 @@
     [super viewWillAppear:animated];
     
     self.navigationController.delegate = self;
-    
-    if( self.starOverlayView )
-    {
-        [self.starOverlayView restartFireWork];
-    }
-    
+
     if( self.setting.musicSelected )
     {
         //[self.soundManager playBackgroundMusic:@"大王叫我来巡山.mp3" loops:YES];
@@ -96,10 +91,6 @@
     
     self.navigationController.delegate = nil;
     
-    if( self.starOverlayView )
-    {
-        [self.starOverlayView stopFireWork];
-    }
 }
 
 - (void)viewDidLayoutSubviews
