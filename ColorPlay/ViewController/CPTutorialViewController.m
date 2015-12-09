@@ -8,16 +8,22 @@
 
 #import "CPTutorialViewController.h"
 #import "CPStarsOverlayView.h"
+#import "CPPageData.h"
+#import "CPPageView.h"
 
 @interface CPTutorialViewController ()
 
 - (IBAction)back:(id)sender;
 
 @property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
+@property (strong, nonatomic) CPPageView                *pageView;
+@property (strong, nonatomic) CPPageData                *page;
 
 @end
 
 @implementation CPTutorialViewController
+
+#pragma mark - init
 
 + (instancetype)initWithNib
 {
@@ -27,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _page = [[CPPageData alloc] init];
+    
+    NSLog(@"%@", _page.photos);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,13 +70,22 @@
     
     [self.view layoutIfNeeded];
     
-    if( !_starOverlayView )
+    if( _starOverlayView )
     {
         self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
         [self.view addSubview:self.starOverlayView];
         [self.view sendSubviewToBack:self.starOverlayView];
     }
+    
+    if( !_pageView )
+    {
+        _pageView = [[CPPageView alloc] initWithFrame:self.view.frame page:self.page.photos];
+        [self.view addSubview:_pageView];
+        [self.view sendSubviewToBack:_pageView];
+    }
 }
+
+#pragma mark - IB
 
 - (IBAction)back:(id)sender {
     

@@ -13,6 +13,8 @@
 #import "CPMacro.h"
 #import "CPSettingData.h"
 #import "CPSoundManager.h"
+#import "CPTestViewController.h"
+#import "CPTutorialViewController.h"
 
 @interface AppDelegate ()
 
@@ -33,14 +35,16 @@
     [application setStatusBarHidden:YES];
     
     // 1 -- window
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [[UIWindow alloc] initWithFrame:kScreen];
     
     // 2 -- window bg
     self.window.backgroundColor = [UIColor whiteColor];
     
     // 3 -- rootVC
     CPMenuViewController *rootVC = [CPMenuViewController initWithNib];
-    //CPAboutViewController *rootVC = [CPAboutViewController initWithNib];
+    //CPTestViewController *rootVC = [CPTestViewController initWithNib];
+    //CPTutorialViewController *rootVC = [CPTutorialViewController initWithNib];
+    
     // 4 -- rootNavc
     UINavigationController *rootNaVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     

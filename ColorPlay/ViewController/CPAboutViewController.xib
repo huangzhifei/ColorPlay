@@ -28,7 +28,7 @@
                         <constraint firstAttribute="height" constant="30" id="ldc-TC-rg4"/>
                         <constraint firstAttribute="width" constant="60" id="wZ7-ci-ujs"/>
                     </constraints>
-                    <state key="normal" image="Arrow_Left_24"/>
+                    <state key="normal" image="Arrow_Left"/>
                     <connections>
                         <action selector="backClick:" destination="-1" eventType="touchUpInside" id="ILu-EZ-xaQ"/>
                     </connections>
@@ -90,6 +90,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Arrow_Left_24" width="32" height="32"/>
+        <image name="Arrow_Left" width="32" height="32"/>
     </resources>
 </document>

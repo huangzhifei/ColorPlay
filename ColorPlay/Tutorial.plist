@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <string>classic</string>
+        <string>c-background</string>
+        <string>c-meaning</string>
+        <string>c-color</string>
+        <string>fantasy</string>
+        <string>f-card</string>
+        <string>f-card2</string>
+        <string>f-background</string>
+        <string>f-meaning</string>
+        <string>f-color</string>
+    </array>
+</plist>
+

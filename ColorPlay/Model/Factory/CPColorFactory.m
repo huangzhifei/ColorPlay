@@ -7,6 +7,7 @@
 //
 
 #import "CPColorFactory.h"
+#define kName @"ColorList.plist"
 
 @interface CPColorFactory()
 
@@ -43,36 +44,21 @@
 
 - (void)initColorPlist
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"ColorList" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:kName ofType:nil];
     
-//    _colorArray = ({
-//        
-//        NSArray *array = [NSArray arrayWithContentsOfFile:path];
-//        
-//        NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
-//        
-//        for (NSDictionary *dic in array)
-//        {
-//            [mutableArray addObject:[[CPGameCardColor alloc] initWidthDic:dic]];
-//        }
-//        
-//        mutableArray;
-//    });
-    
-
+    _colorArray = ({
+        
         NSArray *array = [NSArray arrayWithContentsOfFile:path];
         
-        NSMutableArray *muArray = [[NSMutableArray alloc] init];
+        NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
         
         for (NSDictionary *dic in array)
         {
-            
-            CPGameCardColor *cc = [[CPGameCardColor alloc] initWithDict:dic];
-            
-            [muArray addObject:cc];
+            [mutableArray addObject:[[CPGameCardColor alloc] initWithDict:dic]];
         }
-    
-    self.colorArray = muArray;
+        
+        mutableArray;
+    });
 
 }
 

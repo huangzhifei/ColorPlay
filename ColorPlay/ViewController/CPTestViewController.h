@@ -10,4 +10,6 @@
 
 @interface CPTestViewController : UIViewController
 
++ (instancetype)initWithNib;
+
 @end

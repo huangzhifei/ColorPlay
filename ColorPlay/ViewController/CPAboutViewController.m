@@ -56,7 +56,7 @@
         
         NSString *data = [dict objectForKey:@"value"];
         
-        //NSLog(@"data: %@", data);
+        NSLog(@"data: %@", data);
         
         data;
     });

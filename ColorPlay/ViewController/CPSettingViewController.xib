@@ -32,7 +32,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L41-ZX-73n" userLabel="back">
                     <rect key="frame" x="8" y="16" width="60" height="30"/>
                     <animations/>
-                    <state key="normal" image="Arrow_Left_24"/>
+                    <state key="normal" image="Arrow_Left"/>
                     <connections>
                         <action selector="backClicked:" destination="-1" eventType="touchUpInside" id="PqZ-1W-eK2"/>
                     </connections>
@@ -321,11 +321,11 @@
                 <constraint firstItem="cnI-f8-MGp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="ua7-Ta-Erz"/>
                 <constraint firstAttribute="trailing" secondItem="ZCH-aJ-001" secondAttribute="trailing" constant="24" id="vxZ-P3-ra5"/>
             </constraints>
-            <point key="canvasLocation" x="-645" y="45"/>
+            <point key="canvasLocation" x="-540" y="36"/>
         </view>
     </objects>
     <resources>
-        <image name="Arrow_Left_24" width="32" height="32"/>
+        <image name="Arrow_Left" width="32" height="32"/>
         <image name="check_no" width="64" height="64"/>
         <image name="check_yes" width="64" height="64"/>
         <image name="sound_off_72_white" width="28" height="36"/>
