@@ -11,6 +11,8 @@
 #import "CPStopWatchView.h"
 #import "GCDTimer.h"
 #import "CPRippleView.h"
+#import "CPSoundManager.h"
+#import "CPSettingData.h"
 
 typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 {
@@ -32,20 +34,19 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 
 @interface CPGameQuestionView()
 
-@property (weak, nonatomic) IBOutlet UIView *cardView;
-@property (weak, nonatomic) IBOutlet UIView *optionView;
+@property (weak, nonatomic) IBOutlet UIView         *cardView;
+@property (weak, nonatomic) IBOutlet UIView         *optionView;
 
-@property (strong, nonatomic) UILabel *cardText;
-@property (strong, nonatomic) CPStopWatchView *stopWatchView;
-@property (strong, nonatomic) UILabel *questionText;
-@property (strong, nonatomic) UIControl *optionA;
-@property (strong, nonatomic) UIControl *optionB;
-@property (strong, nonatomic) UIControl *optionC;
-@property (strong, nonatomic) CPRippleView *rippleView;
-
-@property (nonatomic) CPGameMode gameMode;
-@property (strong, nonatomic) CPGameQuestion *question;
-@property (nonatomic, getter=isStartPlay) BOOL startPlay;
+@property (strong, nonatomic) UILabel               *cardText;
+@property (strong, nonatomic) UILabel               *questionText;
+@property (strong, nonatomic) UIControl             *optionA;
+@property (strong, nonatomic) UIControl             *optionB;
+@property (strong, nonatomic) UIControl             *optionC;
+@property (strong, nonatomic) CPRippleView          *rippleView;
+@property (strong, nonatomic) CPStopWatchView       *stopWatchView;
+@property (assign, nonatomic) CPGameMode            gameMode;
+@property (strong, nonatomic) CPGameQuestion        *question;
+@property (assign, nonatomic, getter=isStartPlay) BOOL startPlay;
 
 @end
 
@@ -84,7 +85,6 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         
         [self setting];
         
-        
         [self updateComponentAlpha:0];
         
         /**
@@ -108,7 +108,6 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 - (void)commonInit
 {
     CGRect cardViewFrame = self.cardView.frame;
-    
     CGFloat cardOffsetY = cardViewFrame.size.height / 3;
     
     self.cardText = ({
@@ -234,14 +233,14 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
     });
     [self.optionView addSubview:self.optionC];
     
-    self.rippleView = ({
-    
-        CGFloat width = self.optionA.frame.size.width / 1.2;
-        
-        CPRippleView *view = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
-        
-        view;
-    });
+//    self.rippleView = ({
+//    
+//        CGFloat width = self.optionA.frame.size.width / 1.2;
+//        
+//        CPRippleView *view = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+//        
+//        view;
+//    });
 }
 
 - (void)setting
@@ -256,9 +255,9 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
             [self.cardText setBackgroundColor:gameCard.bgColor.color];
             [self.stopWatchView setBackgroundColor:gameCard.bgColor.color];
             [self.questionText setBackgroundColor:gameCard.bgColor.color];
-            
-            if ([gameCard.bgColor.colorName isEqualToString:@"BLACK"] ||
-                [gameCard.bgColor.colorName isEqualToString:@"YELLOW"])
+            NSLog(@"color %@", gameCard.bgColor.colorName);
+            if ([gameCard.bgColor.colorName isEqualToString:@"Black"] ||
+                [gameCard.bgColor.colorName isEqualToString:@"Yellow"])
             {
                 [self.questionText setTextColor:[UIColor whiteColor]];
                 [self.stopWatchView setTextColor:[UIColor whiteColor]];
@@ -289,7 +288,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
     [options enumerateObjectsUsingBlock:^(CPGameCardColor *option, NSUInteger idx, BOOL *stop) {
         UIView *optionView = [self.optionView viewWithTag:idx+1];
         [optionView setBackgroundColor:option.color];
-        if ([option.colorName isEqual:@"BLACK"])
+        if ([option.colorName isEqual:@"Black"])
         {
             UILabel *label = [optionView subviews][0];
             [label setTextColor:[UIColor whiteColor]];
@@ -308,7 +307,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         {
             [self updateTopToBottomCrossoverFrame];
             
-            [UIView animateWithDuration:1.2f
+            [UIView animateWithDuration:0.6f
                                            delay:0.0f
                                          options:UIViewAnimationOptionCurveEaseOut animations:^{
                 
@@ -320,7 +319,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                 
             }];
             
-            [UIView animateWithDuration:1.0f
+            [UIView animateWithDuration:0.7f
                                   delay:0.0f
                  usingSpringWithDamping:0.4f
                   initialSpringVelocity:20.0f
@@ -332,21 +331,21 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                  
                              }];
             
-            [UIView animateWithDuration:1.3f
+            [UIView animateWithDuration:0.8f
                                   delay:0.0f
                  usingSpringWithDamping:0.4f
                   initialSpringVelocity:18.0f
                                 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                                 
+                                    
                                  self.stopWatchView.transform = CGAffineTransformMakeTranslation(self.cardView.frame.size.width, 0);
                                  
                              } completion:^(BOOL finished) {
-                                 
+
                                  [self startTimer];
                                  
                              }];
             
-            [UIView animateWithDuration:1.1f
+            [UIView animateWithDuration:0.8f
                                   delay:0.0f
                  usingSpringWithDamping:0.4f
                   initialSpringVelocity:16.0f
@@ -366,7 +365,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         {
             [self updateRightToLeftSpringFrame];
             
-            [UIView animateWithDuration:0.4f
+            [UIView animateWithDuration:0.25f
                                   delay:0.0f
                                 options:UIViewAnimationOptionCurveEaseOut animations:^{
                                     
@@ -374,7 +373,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                     
                                 } completion:^(BOOL finished) {
                                     
-                                    [UIView animateWithDuration:0.3f
+                                    [UIView animateWithDuration:0.2f
                                                           delay:0.0f
                                                         options:UIViewAnimationOptionCurveEaseOut animations:^{
                                                             
@@ -382,7 +381,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                                             
                                                         } completion:^(BOOL finished) {
                                                             
-                                                            [UIView animateWithDuration:0.3f
+                                                            [UIView animateWithDuration:0.2f
                                                                                   delay:0.0f
                                                                                 options:UIViewAnimationOptionCurveEaseOut animations:^{
                                                                                     
@@ -395,7 +394,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                                         }];
                                 }];
             
-            [UIView animateWithDuration:1.0f
+            [UIView animateWithDuration:0.6f
                                   delay:0.0f
                  usingSpringWithDamping:0.4f
                   initialSpringVelocity:20.0f
@@ -407,7 +406,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                     
                                 }];
             
-            [UIView animateWithDuration:1.2f
+            [UIView animateWithDuration:0.8f
                                   delay:0.0f
                  usingSpringWithDamping:0.3f
                   initialSpringVelocity:18.0f
@@ -421,7 +420,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                     
                                 }];
             
-            [UIView animateWithDuration:1.1f
+            [UIView animateWithDuration:0.8f
                                   delay:0.0f
                  usingSpringWithDamping:0.3f
                   initialSpringVelocity:16.0f
@@ -440,42 +439,42 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         {
             [self updateCurlDown];
 
-            [UIView transitionWithView:self.cardText duration:1.0f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlUp
+            [UIView transitionWithView:self.cardText duration:0.8f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlUp
                             animations:^{
                                 
                                 self.cardText.alpha = 1;
                                 
                             } completion:nil];
             
-            [UIView transitionWithView:self.stopWatchView duration:1.0f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlDown
+            [UIView transitionWithView:self.stopWatchView duration:0.8f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlDown
                             animations:^{
                                 
                                 self.stopWatchView.alpha = 1;
                                 
                             } completion:nil];
             
-            [UIView transitionWithView:self.questionText duration:1.0f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlUp
+            [UIView transitionWithView:self.questionText duration:0.8f options: UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionTransitionCurlUp
                             animations:^{
                                 
                                 self.questionText.alpha = 1;
                                 
                             } completion:nil];
 
-            [UIView transitionWithView:self.optionA duration:1.0f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
+            [UIView transitionWithView:self.optionA duration:0.8f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
                             animations:^{
                                 
                                 self.optionA.alpha = 1;
                                 
                             } completion:nil];
             
-            [UIView transitionWithView:self.optionB duration:1.0f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
+            [UIView transitionWithView:self.optionB duration:0.8f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
                             animations:^{
                                 
                                 self.optionB.alpha = 1;
                                 
                             } completion:nil];
             
-            [UIView transitionWithView:self.optionC duration:1.1f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
+            [UIView transitionWithView:self.optionC duration:0.9f options: UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseOut
                             animations:^{
                                 
                                 self.optionC.alpha = 1;
@@ -494,7 +493,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
             [self updateScaleFrame];
             
             self.cardText.alpha = 1;
-            [UIView animateWithDuration:0.5 delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:15.0f
+            [UIView animateWithDuration:0.3 delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:15.0f
                                 options:UIViewAnimationOptionCurveEaseInOut
                              animations:^{
                                  
@@ -503,7 +502,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                              } completion:^(BOOL finished) {
                                  
                                  self.stopWatchView.alpha = 1;
-                                 [UIView animateWithDuration:0.5 delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:20.0f
+                                 [UIView animateWithDuration:0.3 delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:20.0f
                                                      options:UIViewAnimationOptionCurveEaseInOut
                                                   animations:^{
                                                       
@@ -512,7 +511,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                                   } completion:^(BOOL finished) {
                                                       
                                                       self.questionText.alpha = 1;
-                                                      [UIView animateWithDuration:0.5f delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:20.0f
+                                                      [UIView animateWithDuration:0.3f delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:20.0f
                                                                           options:UIViewAnimationOptionCurveEaseInOut
                                                                        animations:^{
                                                                            
@@ -528,19 +527,19 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                  
                              }];
             
-            [UIView animateWithDuration:0.5 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [UIView animateWithDuration:0.2 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
                 
                 self.optionA.alpha = 1;
                 
             } completion:^(BOOL finished) {
                 
-                [UIView animateWithDuration:0.5 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+                [UIView animateWithDuration:0.3 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
                     
                     self.optionB.alpha = 1;
                     
                 } completion:^(BOOL finished) {
                     
-                    [UIView animateWithDuration:0.5 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+                    [UIView animateWithDuration:0.3 delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
                         
                         self.optionC.alpha = 1;
                         
@@ -560,7 +559,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
             [self updateDropFrame];
             
             self.cardText.alpha = 1;
-            [UIView animateWithDuration:0.5f delay:0.0f usingSpringWithDamping:0.5f initialSpringVelocity:5.0f
+            [UIView animateWithDuration:0.3f delay:0.0f usingSpringWithDamping:0.5f initialSpringVelocity:5.0f
                                 options:UIViewAnimationOptionCurveLinear
                              animations:^{
                                  
@@ -570,7 +569,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                  
                                  self.optionA.alpha = 1;
                                  self.stopWatchView.alpha = 1;
-                                 [UIView animateWithDuration:0.5f delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:5.0f
+                                 [UIView animateWithDuration:0.3f delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:5.0f
                                                      options:UIViewAnimationOptionCurveEaseOut
                                                   animations:^{
                                                       
@@ -580,7 +579,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
                                                       
                                                       self.optionB.alpha = 1;
                                                       self.questionText.alpha = 1;
-                                                      [UIView animateWithDuration:0.5f delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:10.0f
+                                                      [UIView animateWithDuration:0.3f delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:10.0f
                                                                           options:UIViewAnimationOptionCurveEaseOut
                                                                        animations:^{
                                                                            
@@ -603,32 +602,32 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
         {
             self.cardText.alpha = 1;
             
-            [UIView transitionWithView:self.cardText duration:0.3f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+            [UIView transitionWithView:self.cardText duration:0.2f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
                 
             } completion:^(BOOL finished) {
                 
                 self.stopWatchView.alpha = 1;
-                [UIView transitionWithView:self.stopWatchView duration:0.3f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+                [UIView transitionWithView:self.stopWatchView duration:0.2f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
                     
                 } completion:^(BOOL finished) {
                     
                     self.questionText.alpha = 1;
-                    [UIView transitionWithView:self.questionText duration:0.3f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+                    [UIView transitionWithView:self.questionText duration:0.2f options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
                         
                     } completion:^(BOOL finished) {
                         
                         self.optionA.alpha = 1;
-                        [UIView transitionWithView:self.optionA duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+                        [UIView transitionWithView:self.optionA duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                             
                         } completion:^(BOOL finished) {
                             
                             self.optionB.alpha = 1;
-                            [UIView transitionWithView:self.optionB duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+                            [UIView transitionWithView:self.optionB duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                                 
                             } completion:^(BOOL finished) {
                                 
                                 self.optionC.alpha = 1;
-                                [UIView transitionWithView:self.optionC duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+                                [UIView transitionWithView:self.optionC duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                                     
                                 } completion:^(BOOL finished) {
                                     
@@ -803,28 +802,21 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 
 - (void)showRippleLocation:(CGPoint)location
 {
-    [self addSubview:self.rippleView];
-    self.rippleView.center = location;
-    self.rippleView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-    [UIView animateWithDuration:0.1
-                     animations:^{
-                         
-                         self.rippleView.alpha=1;
-                         
-                     }];
-    
-    [UIView animateWithDuration:0.5
+    CGFloat width = self.optionA.frame.size.width / 1.2;
+    CPRippleView *rippleView = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+    [self addSubview:rippleView];
+    rippleView.center = location;
+    rippleView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          
-                         self.rippleView.transform = CGAffineTransformMakeScale(1,1);
-                         self.rippleView.alpha=0;
+                         rippleView.transform = CGAffineTransformMakeScale(1,1);
+                         rippleView.alpha=0;
                          
                      } completion:^(BOOL finished) {
-                         
-                         [self.rippleView removeFromSuperview];
-                         
+                         [rippleView removeFromSuperview];
                      }];
 
 }
@@ -852,6 +844,11 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 {
     if( self.startPlay )
     {
+        if( [CPSettingData sharedInstance].effectSelected )
+        {
+            [[CPSoundManager sharedInstance] playEffect:kShotEffect vibrate:NO];
+        }
+        
         UIControl *control = (UIControl *)sender;
         
         if( self.delegate && [self.delegate respondsToSelector:@selector(checkAnswerWithClickOption:)] )
@@ -866,8 +863,11 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 - (void)startTimer
 {
     self.startPlay = YES;
+    
+    weakify(self);
     [self.stopWatchView fireStopWatch:0.0f timeOut:^{
 
+        strongify(self);
         self.startPlay = NO;
         if( self.delegate && [self.delegate respondsToSelector:@selector(timeout)] )
         {

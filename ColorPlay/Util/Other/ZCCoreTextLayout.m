@@ -99,7 +99,8 @@
 }
 
 
-- (void) layoutWithAttributedString: (NSAttributedString *) attributedString constainedToSize: (CGSize) size {
+- (void) layoutWithAttributedString: (NSAttributedString *) attributedString constainedToSize: (CGSize) size
+{
     NSString *text = [attributedString string];
     if ([text length] < 1) {
         return;

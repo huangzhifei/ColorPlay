@@ -4,63 +4,123 @@
 <array>
 	<dict>
 		<key>Name</key>
-		<string>ORANGE</string>
+		<string>Orange</string>
 		<key>Color</key>
 		<string>#FF9600</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>PURPLE</string>
+		<string>Purple</string>
 		<key>Color</key>
 		<string>#9B59B6</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>YELLOW</string>
+		<string>Yellow</string>
 		<key>Color</key>
 		<string>#FFEE24</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>GREEN</string>
+		<string>Green</string>
 		<key>Color</key>
 		<string>#44DB5E</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>BLUE</string>
+		<string>Blue</string>
 		<key>Color</key>
 		<string>#54C7FC</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>PINK</string>
+		<string>Pink</string>
 		<key>Color</key>
 		<string>#FF99AC</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>BROWN</string>
+		<string>Brown</string>
 		<key>Color</key>
 		<string>#6A4320</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>RED</string>
+		<string>Red</string>
 		<key>Color</key>
 		<string>#FF220C</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>WHITE</string>
+		<string>White</string>
 		<key>Color</key>
 		<string>#FFFFFF</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>BLACK</string>
+		<string>Black</string>
 		<key>Color</key>
 		<string>#000000</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>DeepPink</string>
+		<key>Color</key>
+		<string>#FF1493</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Gold</string>
+		<key>Color</key>
+		<string>#FFD700</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Chocolate</string>
+		<key>Color</key>
+		<string>#D2691E</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>OrangeRed</string>
+		<key>Color</key>
+		<string>#FF4500</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>DarkRed</string>
+		<key>Color</key>
+		<string>#8B0000</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Silver</string>
+		<key>Color</key>
+		<string>#C0C0C0</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>DarkCyan</string>
+		<key>Color</key>
+		<string>#008B8B</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Olive</string>
+		<key>Color</key>
+		<string>#808000</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>YellowGreen</string>
+		<key>Color</key>
+		<string>#9ACD32</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Tan</string>
+		<key>Color</key>
+		<string>#D2B48C</string>
 	</dict>
 </array>
 </plist>

@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 somewhere. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 static const CGFloat kZCAnimatedLabelStiffnessLight  = 5.f;

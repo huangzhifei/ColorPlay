@@ -10,8 +10,7 @@
 
 @interface CPOutlineLabel : UILabel
 
-@property (nonatomic, strong) UIColor *outlineColor;
-
-@property (nonatomic) CGFloat outlineWith;
+@property (strong, nonatomic) UIColor *outlineColor;
+@property (assign, nonatomic) CGFloat outlineWith;
 
 @end

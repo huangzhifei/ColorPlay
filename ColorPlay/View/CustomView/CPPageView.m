@@ -10,9 +10,9 @@
 
 @interface CPPageView()<UIScrollViewDelegate>
 
-@property (strong, nonatomic) NSArray       *pages;
-@property (strong, nonatomic) UIScrollView  *scrollView;
-@property (strong, nonatomic) UIPageControl *pageControl;
+@property (strong, nonatomic) NSArray           *pages;
+@property (strong, nonatomic) UIScrollView      *scrollView;
+@property (strong, nonatomic) UIPageControl     *pageControl;
 
 @end
 
@@ -57,10 +57,15 @@
     
     _pageControl = ({
         
-        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 40, 320, 40)];
+        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,
+                                                                                     self.frame.size.height - 40,
+                                                                                     self.frame.size.width,
+                                                                                     40)];
         pageControl.backgroundColor = [UIColor clearColor];
         pageControl.currentPage = 0;
         pageControl.numberOfPages = [_pages count];
+        pageControl.pageIndicatorTintColor = [UIColor blackColor];
+        pageControl.currentPageIndicatorTintColor = [UIColor redColor];
         [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
         pageControl;
         

@@ -12,12 +12,12 @@
 
 typedef NS_ENUM(NSInteger,CPStartStatus)
 {
-    CPStartStatusHalf,
+    CPStartStatusZero,
     CPStartStatusOne,
-    CPStartStatusOneHalf,
     CPStartStatusTwo,
-    CPStartStatusTwoHalf,
-    CPStartStatusThree
+    CPStartStatusThree,
+    CPStartStatusFour,
+    CPStartStatusFive
 };
 
 @interface CPGameScoreView()
@@ -26,12 +26,11 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
 @property (weak, nonatomic) IBOutlet UILabel        *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel        *highscoreLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView    *starred_1;
-@property (weak, nonatomic) IBOutlet UIImageView    *starred_2;
-@property (weak, nonatomic) IBOutlet UIImageView    *starred_3;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *starredepts;
 
-@property (assign, nonatomic) CPGameMode mode;
-@property (assign, nonatomic) NSInteger score;
+@property (assign, nonatomic) CPGameMode            mode;
+@property (assign, nonatomic) NSInteger             score;
+@property (strong, nonatomic) CPFireWorkView        *fireWorkView;
 
 @end
 
@@ -47,16 +46,17 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
 - (instancetype)initWithFrame:(CGRect)frame Mode:(CPGameMode)mode score:(NSInteger)score
 {
     self = [CPGameScoreView loadDIYNib];
-    
+
     if( self )
     {
         [self setFrame:frame];
+        [self updateStarsAlpha:NO];
         
         _mode = mode;
         _score = score;
         
         _modeLabel.text = [self stringFromMode:mode];
-        _scoreLabel.text = [NSString stringWithFormat:@"%ld", score];
+        _scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
         
         _highScore = ({
             
@@ -83,7 +83,7 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
             score;
         });
         
-        _highscoreLabel.text = [NSString stringWithFormat:@"%ld", _highScore];
+        _highscoreLabel.text = [NSString stringWithFormat:@"%ld", (long)_highScore];
         
         [self syncHighScore];
 
@@ -94,94 +94,42 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
 
 #pragma mark - private Methods
 
+- (void)updateStarsAlpha:(BOOL)value
+{
+    for( UIImageView *view in self.starredepts )
+    {
+        view.alpha = value;
+    }
+}
+
 - (CPStartStatus)startShow
 {
-    if( self.score <= 0 || (self.score - self.highScore + 5) <= 0 ) return CPStartStatusHalf;
-    
-    else
-    {
-        NSInteger rank = self.score - self.highScore + 5;
-        
-        switch (rank)
-        {
-            case CPStartStatusHalf:
-                return CPStartStatusHalf;
-            
-            case CPStartStatusOne:
-                return CPStartStatusOne;
-                
-            case CPStartStatusOneHalf:
-                return CPStartStatusOneHalf;
-                
-            case CPStartStatusTwo:
-                return CPStartStatusTwo;
-                
-            case CPStartStatusTwoHalf:
-                return CPStartStatusTwoHalf;
-                
-            default:
-                return CPStartStatusThree;
-                
-        }
-        
-        return 0;
-    }
+    if( self.score <= 0 ) return CPStartStatusZero;
+    else if( self.score > 0 && self.score + 5 >= self.highScore && self.score > 30 ) return CPStartStatusFour;
+    else if( self.score > 0 && self.score + 10 >= self.highScore && self.score > 15) return CPStartStatusThree;
+    else if( self.score > 0 && self.score + 15 >= self.highScore && self.score > 10) return CPStartStatusTwo;
+    else if( self.score > 99 ) return CPStartStatusFive;
+    else return CPStartStatusOne;
 }
 
 - (void)syncStarts
 {
-    switch ([self startShow])
+    NSInteger index = 0;
+    
+    for( ; index < [self startShow]; index ++)
     {
-        case CPStartStatusHalf:
-        {
-            self.starred_1.image  = [UIImage imageNamed:@"starredhalf"];
-            self.starred_1.alpha = 1;
-        }
-            break;
-            
-        case CPStartStatusOne:
-        {
-            self.starred_1.alpha = 1;
-        }
-            break;
-            
-        case CPStartStatusOneHalf:
-        {
-            self.starred_1.alpha = 1;
-            self.starred_2.image  = [UIImage imageNamed:@"starredhalf"];
-            self.starred_2.alpha = 1;
-        }
-            break;
-            
-        case CPStartStatusTwo:
-        {
-            self.starred_1.alpha = 1;
-            self.starred_2.alpha = 1;
-        }
-            break;
-            
-        case CPStartStatusTwoHalf:
-        {
-            self.starred_1.alpha = 1;
-            self.starred_2.alpha = 1;
-            self.starred_3.image  = [UIImage imageNamed:@"starredhalf"];
-            self.starred_3.alpha = 1;
-        }
-            break;
-            
-        case CPStartStatusThree:
-        {
-            self.starred_1.alpha = 1;
-            self.starred_2.alpha = 1;
-            self.starred_3.alpha = 1;
-        }
-            break;
-            
-        default:
-            break;
+        UIImageView *imageView = [self.starredepts objectAtIndex:index];
+        imageView.image = [UIImage imageNamed:@"starred"];
+        imageView.alpha = 1;
     }
-
+    
+    for( ; index < self.starredepts.count; ++ index)
+    {
+        UIImageView *imageView = [self.starredepts objectAtIndex:index];
+        imageView.alpha = 1;
+    }
 }
+
 - (void)syncHighScore
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -235,10 +183,6 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
 
 - (void)startAnimation
 {
-    self.starred_1.alpha = 0;
-    self.starred_2.alpha = 0;
-    self.starred_3.alpha = 0;
-    
     [GCDTimer scheduledTimerWithTimeInterval:0.1f repeats:NO block:^{
         
         CGFloat moveDistance = self.frame.size.width;
@@ -246,42 +190,50 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
         frame.origin.x -= moveDistance;
         self.frame = frame;
         
-        [UIView animateWithDuration:1.0f
+        [UIView animateWithDuration:0.8f
                               delay:0.0f
              usingSpringWithDamping:0.5f
               initialSpringVelocity:5.0f
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
-                             
+                             NSLog(@"first start1");
                              CGRect frame = self.frame;
                              frame.origin.x += moveDistance;
                              self.frame = frame;
                              
                          } completion:^(BOOL finished) {
-                             
+                             NSLog(@"first end");
                              CGMutablePathRef path = CGPathCreateMutable();
                              CGPathMoveToPoint(path, NULL, -self.bounds.size.width, 0);
                              CGPathAddCurveToPoint(path, NULL, -self.bounds.size.width/2, 0.0,
                                                    self.bounds.size.width/6, 120,
-                                                   280 , 95);
+                                                   self.bounds.size.width - 40, 95);
                              
-                             CPFireWorkView *fireView = [[CPFireWorkView alloc] initWithFrame:self.bounds movePath:path];
+                             self.fireWorkView = [[CPFireWorkView alloc] initWithFrame:self.bounds movePath:path];
+                             [self addSubview:self.fireWorkView];
                              
-                             [self addSubview:fireView];
-                             [fireView startAnimation:2.0f block:^{
-
+                             weakify(self);
+                             [self.fireWorkView startAnimation:1.0f block:^{
+                                 
+                                 strongify(self)
                                  [UIView animateWithDuration:1.0f
                                                        delay:0.0f
-                                                     options:UIViewAnimationOptionCurveLinear
+                                                     options:UIViewAnimationOptionCurveEaseOut
                                                   animations:^{
-                                                      
+                                                      NSLog(@"start1");
+                                                      /**
+                                                       *  syncStarts 里面没有 UIView 动画的默认元素，是不执行动画的
+                                                       *  直接跳到completion里面，并且finished 的值还是 true
+                                                       *  后续在里面增加了alpha值的变化就可以正常执行动画了。
+                                                       */
                                                       [self syncStarts];
                                                       
                                                   } completion:^(BOOL finished) {
-                                                      
-                                                      [fireView removeFromSuperview];
-                                                      
+                                                      NSLog(@"end2 finished %d", finished);
+                                                      CGPathRelease(path);
+                                                      [self.fireWorkView removeFromSuperview];
                                                   }];
+                                 
                              }];
                              
                          }];

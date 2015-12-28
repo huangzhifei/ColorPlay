@@ -86,8 +86,6 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     {
         [self.starOverlayView restartFireWork];
     }
-    
-    [self refreshSettingData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -122,10 +120,17 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
         [self.soundEffectSlider addSubview:self.effectSlider];
         [self.effectSlider setValue:self.setting.effectVolumn animated:NO];
     }
+    
+    if( !self.setting.bgEffectSelected )
+    {
+        [self.starOverlayView stopFireWork];
+    }
 }
 
 - (void)commonInit
 {
+    _setting = [CPSettingData sharedInstance];
+    
     _viewCornerFlag = false;
 
     _soundEffectCheck.selected = self.setting.effectSelected;
@@ -138,11 +143,6 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     
     _notificationPusCheck.selected = self.setting.notificationSelected;
     _notificationPusCheck.tag = ButtonNotification;
-    
-    _soundManager = [CPSoundManager sharedInstance];
-    _setting = [CPSettingData sharedInstance];
-    
-    [self.soundManager playBackgroundMusic:kMainMusic loops:YES];
 }
 
 #pragma getter
@@ -261,8 +261,7 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
             break;
             
     }
-    
-    
+
 }
 
 - (void)sliderTouchDown:(id)sender
@@ -273,15 +272,15 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     {
         case SoundMusicSlider:
         {
-            self.musicSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
-            self.musicSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
+            self.musicSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+            self.musicSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
         }
             break;
             
         case SoundEffectSlider:
         {
-            self.effectSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
-            self.effectSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.5, 1.5);
+            self.effectSliderLeft.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+            self.effectSliderRight.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
         }
             
         default:
@@ -299,14 +298,14 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     
     [self updateUIState];
     
-    [self refreshSettingData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveClicked:(id)sender {
     
     [self.setting saveSetting];
     
-    [self refreshSettingData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)selectedClicked:(id)sender {
@@ -348,13 +347,6 @@ typedef NS_ENUM(NSInteger, ButtonCheckType)
     
     [self.navigationController popViewControllerAnimated:YES];
     
-}
-
-#pragma mark - private Methods
-
--(void)refreshSettingData
-{
-    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
 }
 
 @end

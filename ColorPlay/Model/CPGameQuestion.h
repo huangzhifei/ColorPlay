@@ -6,9 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-
 @interface CPGameQuestion : NSObject
 
 /**

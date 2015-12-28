@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Colin Eberhardt. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 @interface CPFlipAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (assign, nonatomic) CGFloat duration;

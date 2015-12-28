@@ -23,14 +23,15 @@
 
 @property (weak, nonatomic) IBOutlet CPOutlineLabel *scoreLabel;
 
-@property (nonatomic, strong) CPGameScene           *scene;
-@property (nonatomic, assign) CPGameMode            gameMode;
-@property (nonatomic, strong) CPGameQuestionView    *currentQuestionView;
-@property (nonatomic, strong) CPGameQuestionView    *lastQuestionView;
-@property (nonatomic, strong) NSMutableArray        *cardViewList;
-@property (nonatomic, strong) CPSettingData         *setting;
-@property (nonatomic, strong) CPSoundManager        *soundManager;
-@property (nonatomic, strong) CPStarsOverlayView    *starOverlayView;
+@property (strong, nonatomic) CPGameScene           *scene;
+@property (assign, nonatomic) CPGameMode            gameMode;
+@property (strong, nonatomic) CPGameQuestionView    *currentQuestionView;
+@property (strong, nonatomic) CPGameQuestionView    *lastQuestionView;
+@property (strong, nonatomic) CPSettingData         *setting;
+@property (strong, nonatomic) CPSoundManager        *soundManager;
+@property (strong, nonatomic) CPStarsOverlayView    *starOverlayView;
+
+@property (strong, nonatomic) NSMutableArray        *cardViewList;
 
 @end
 
@@ -40,7 +41,7 @@
 
 - (instancetype)initWithGameMode:(CPGameMode)gameMode
 {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+    self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
     
     if( self )
     {
@@ -58,8 +59,30 @@
     
     self.setting = [CPSettingData sharedInstance];
     self.soundManager = [CPSoundManager sharedInstance];
-    [self.soundManager preloadBackgroundMusic:kMainMusic];
-    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
+    
+    if( self.setting.musicSelected )
+    {
+        [self.soundManager preloadBackgroundMusic:kGameMusic];
+        [self.soundManager playBackgroundMusic:kGameMusic loops:YES];
+        [self refreshSettingMusic];
+    }
+    
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager preloadEffect:kShotEffect];
+        
+        [self refreshSettingMusic];
+    }
+    
+    /**
+     *  自动测试
+     */
+//    [GCDTimer scheduledTimerWithTimeInterval:2.0f repeats:YES block:^{
+//        
+//        NSLog(@"fdfdfdfffff");
+//        
+//    }];
+    
 }
 
 #pragma mark - life cycle
@@ -78,6 +101,15 @@
     {
         self.scene = [[CPGameScene alloc] initWithGameMode:self.gameMode];
     }
+    
+    if( !self.setting.bgEffectSelected )
+    {
+        [self.starOverlayView stopFireWork];
+    }
+    else if( self.setting.bgEffectSelected && !self.starOverlayView.isEffectRunning )
+    {
+        [self.starOverlayView restartFireWork];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -85,17 +117,6 @@
     [super viewWillAppear:animated];
     
     self.navigationController.delegate = self;
-    
-    //[self.soundManager playBackgroundMusic:kMainMusic loops:YES];
-    
-    if( self.setting.musicSelected )
-    {
-        
-    }
-    else
-    {
-        
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -136,7 +157,6 @@
     resultVC.gameMode = self.gameMode;
     resultVC.score = self.scene.score;
     [self.navigationController pushViewController:resultVC animated:YES];
-    
 }
 
 - (void)addQuestionView
@@ -224,6 +244,16 @@
 
 }
 
+- (void)refreshSettingMusic
+{
+    self.soundManager.musicVolume = self.setting.musicVolumn / 100;
+}
+
+- (void)refreshSettingEffect
+{
+    self.soundManager.effectVolume = self.setting.effectVolumn / 100;
+}
+
 #pragma mark - question view delegate
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
@@ -251,36 +281,52 @@
         [self.scene nextQuestion];
         
         self.currentQuestionView.delegate = nil;
-        self.lastQuestionView = self.currentQuestionView;
         
         //先添加，防止出现动画切换时不连贯
         [self addCardViews];
         
         //将新添加的view放到当前view后面
-        if( self.lastQuestionView )
+        if( self.currentQuestionView )
         {
-            [self.view bringSubviewToFront:self.lastQuestionView];
+            [self.view bringSubviewToFront:self.currentQuestionView];
         }
         
         [UIView animateWithDuration:0.3 animations:^{
             
-            self.lastQuestionView.transform = CGAffineTransformMakeTranslation(-self.view.frame.size.width, 0);
+            self.currentQuestionView.transform = CGAffineTransformMakeTranslation(-self.view.frame.size.width, 0);
             
         } completion:^(BOOL finished) {
             
-            [self.lastQuestionView removeFromSuperview];
+            [self.currentQuestionView removeFromSuperview];
             
             [self showCardViewsAnimation];
             
         }];
-        
+        //[self addViewTestLeaks];
     }
     
     else
     {
         self.currentQuestionView.delegate = nil;
+        [self.currentQuestionView removeFromSuperview];
         [self gameOver];
     }
+}
+
+#pragma mark - test
+
+- (void)addViewTestLeaks
+{
+    NSLog(@"subview count %lu", (unsigned long)[self.view.subviews count]);
+    for(int i = 0; i < 20; ++ i)
+    {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 320, 20)];
+        view.backgroundColor = [UIColor redColor];
+        
+        //[self.view addSubview:view];
+        NSLog(@"add %d", i);
+    }
+    
 }
 
 @end

@@ -9,8 +9,6 @@
 //  Copyright (c) 2015 somewhere. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 typedef NS_ENUM(NSInteger, ZCLayoutGroupType)
 {
     ZCLayoutGroupChar,

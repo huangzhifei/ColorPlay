@@ -4,9 +4,6 @@
 //
 //  Copyright (C) 2010-2015 Umeng.com . All rights reserved.
 
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-
 #define UMOnlineConfigDidFinishedNotification @"OnlineConfigDidFinishedNotification"
 #define XcodeAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 

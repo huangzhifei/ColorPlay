@@ -12,15 +12,11 @@ typedef void (^TimeOutBlock)();
 
 @interface CPStopWatchView : UIView
 
-@property (strong, nonatomic) UIColor *textColor;
-
-@property (strong, nonatomic) UIColor *outlineColor;
-
-@property (assign, nonatomic) CGFloat outlineWidth;
-
-@property (strong,nonatomic) UIFont *font;
-
-@property (assign, nonatomic) NSInteger stopWatch;
+@property (strong, nonatomic) UIColor       *textColor;
+@property (strong, nonatomic) UIColor       *outlineColor;
+@property (strong, nonatomic) UIFont        *font;
+@property (assign, nonatomic) CGFloat       outlineWidth;
+@property (assign, nonatomic) NSInteger     stopWatch;
 
 - (instancetype) initWithFrame:(CGRect)frame stopWatch:(NSInteger)stopWatch;
 

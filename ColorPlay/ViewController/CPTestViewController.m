@@ -31,7 +31,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    if( _starOverlayView )
+    if( !_starOverlayView )
     {
         _starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:_starOverlayView];
@@ -41,7 +41,9 @@
 
 + (instancetype)initWithNib
 {
-    return [[CPTestViewController alloc] initWithNibName:NSStringFromClass(self) bundle:nil];
+    //NSString *string = @"CPTestIconController";
+    NSString *string1 = @"CPTestViewController";
+    return [[CPTestViewController alloc] initWithNibName:string1 bundle:nil];
 }
 
 @end

@@ -34,7 +34,7 @@
                 <constraint firstItem="3g7-WU-ops" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="CKm-O2-c32"/>
                 <constraint firstAttribute="trailing" secondItem="3g7-WU-ops" secondAttribute="trailing" constant="8" id="U9h-In-ppP"/>
             </constraints>
-            <point key="canvasLocation" x="-726" y="-68"/>
+            <point key="canvasLocation" x="-798" y="-86"/>
         </view>
     </objects>
 </document>

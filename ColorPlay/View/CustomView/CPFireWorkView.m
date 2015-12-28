@@ -14,9 +14,9 @@
     CAEmitterLayer *emitterLayer;
 }
 
-@property (strong, nonatomic) blockAnimation completionBlock;
-@property (assign, nonatomic) CGFloat duration;
-@property CGPathRef path;
+@property (strong, nonatomic) blockAnimation    completionBlock;
+@property (assign, nonatomic) CGFloat           duration;
+@property (nullable) CGPathRef                  movePath;
 
 @end
 
@@ -26,10 +26,10 @@
 
 - (id)initWithFrame:(CGRect)frame movePath:(CGPathRef)path;
 {
-    self = [super initWithFrame:frame];
+    self = [self initWithFrame:frame];
     if(self)
     {
-        _path = path;
+        _movePath = path;
     }
     return self;
 }
@@ -59,8 +59,8 @@
     self.duration = duration;
     
     [self animationEmitter];
-    [self animationMoveWithPath:self.path];
-
+    [self animationMoveWithPath:self.movePath];
+    
     [GCDTimer scheduledTimerWithTimeInterval:self.duration repeats:NO block:^{
         
         [self stopFireWork];
@@ -69,7 +69,7 @@
         {
             self.completionBlock();
         }
-        
+
     }];
 }
 
@@ -84,10 +84,9 @@
 - (void)restartFireWork
 {
     emitterLayer.lifetime = 1;
-    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starred.birthRate"];
-    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starredhalf.birthRate"];
-    [emitterLayer setValue:[NSNumber numberWithInteger:150] forKeyPath:@"emitterCells.starredept.birthRate"];
-
+    [emitterLayer setValue:[NSNumber numberWithInteger:300] forKeyPath:@"emitterCells.starred.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:300] forKeyPath:@"emitterCells.starredhalf.birthRate"];
+    [emitterLayer setValue:[NSNumber numberWithInteger:300] forKeyPath:@"emitterCells.starredept.birthRate"];
 }
 
 #pragma mark - private Methods
@@ -122,7 +121,7 @@
 - (CAEmitterCell *)productEmitterCellWithContents:(id)contents
 {
     CAEmitterCell *cell = [CAEmitterCell emitterCell];
-    cell.birthRate = 200;
+    cell.birthRate = 400;
     cell.lifetime = 1.0;
     cell.lifetimeRange = 0.3;
     cell.contents = contents;

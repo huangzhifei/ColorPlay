@@ -31,7 +31,7 @@
     self.layer.cornerRadius = MIN(self.frame.size.width/2, self.frame.size.height/2);
     self.layer.masksToBounds = YES;
     self.backgroundColor = [UIColor blackColor];
-    self.alpha=0;
+    //self.alpha=0;
 }
 
 - (void)setBgColor:(UIColor *)bgColor

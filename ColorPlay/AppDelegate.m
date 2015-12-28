@@ -25,7 +25,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //[NSThread sleepForTimeInterval:3.5];//设置启动页面时间
+    //设置启动页面时间
+    [NSThread sleepForTimeInterval:1.0f];
     
     //[self registerUmeng];
     

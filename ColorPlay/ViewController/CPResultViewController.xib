@@ -21,22 +21,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-JN-wDb" userLabel="scoreView">
-                    <rect key="frame" x="0.0" y="108" width="600" height="132"/>
+                    <rect key="frame" x="0.0" y="90" width="600" height="120"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kB9-yZ-Rhw" userLabel="menuView">
-                    <rect key="frame" x="0.0" y="240" width="600" height="300"/>
+                    <rect key="frame" x="0.0" y="226" width="600" height="312"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaU-78-Pa5" userLabel="titleView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="158-e7-DS3" userLabel="bannerLabel">
-                    <rect key="frame" x="300.5" y="583.5" width="0.0" height="0.0"/>
+                    <rect key="frame" x="300.5" y="592" width="0.0" height="0.0"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,22 +48,22 @@
             <constraints>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2T0-lp-Lia"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="top" secondItem="BaU-78-Pa5" secondAttribute="bottom" id="5aP-MV-Vii"/>
-                <constraint firstItem="BaU-78-Pa5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="8nD-tl-4j5"/>
+                <constraint firstItem="BaU-78-Pa5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="8nD-tl-4j5"/>
                 <constraint firstAttribute="trailing" secondItem="kB9-yZ-Rhw" secondAttribute="trailing" id="K6N-cm-3dT"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K84-s7-tlm"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="width" secondItem="BaU-78-Pa5" secondAttribute="width" id="LDM-st-I6C"/>
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="width" secondItem="BaU-78-Pa5" secondAttribute="width" id="Mrm-ax-xpk"/>
-                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="top" secondItem="Tjd-JN-wDb" secondAttribute="bottom" id="QPP-ne-weN"/>
+                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="top" secondItem="Tjd-JN-wDb" secondAttribute="bottom" constant="16" id="QPP-ne-weN"/>
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VTq-rH-u07"/>
-                <constraint firstAttribute="bottom" secondItem="158-e7-DS3" secondAttribute="bottom" constant="16" id="VZl-bA-mH5"/>
+                <constraint firstAttribute="bottom" secondItem="158-e7-DS3" secondAttribute="bottom" constant="8" id="VZl-bA-mH5"/>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="be1-Cs-471"/>
                 <constraint firstAttribute="trailing" secondItem="BaU-78-Pa5" secondAttribute="trailing" id="cKf-6X-RZq"/>
                 <constraint firstAttribute="trailing" secondItem="Tjd-JN-wDb" secondAttribute="trailing" id="kI5-9w-uJA"/>
-                <constraint firstItem="Tjd-JN-wDb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.22" id="nso-Iy-3Lu"/>
-                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="qFZ-Pd-6kg"/>
+                <constraint firstItem="Tjd-JN-wDb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="nso-Iy-3Lu"/>
+                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.52" id="qFZ-Pd-6kg"/>
                 <constraint firstItem="158-e7-DS3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vRQ-wj-18v"/>
             </constraints>
-            <point key="canvasLocation" x="-575" y="-103"/>
+            <point key="canvasLocation" x="-487" y="-176"/>
         </view>
     </objects>
 </document>

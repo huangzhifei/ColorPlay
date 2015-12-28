@@ -21,6 +21,7 @@
 #import "CPStarsOverlayView.h"
 #import "GCDTimer.h"
 #import "CPFlipAnimationController.h"
+#import "CPSharedViewController.h"
 
 @interface CPMenuViewController ()<UINavigationControllerDelegate>
 
@@ -33,7 +34,6 @@
 @property (strong, nonatomic) CPSoundManager            *soundManager;
 @property (strong, nonatomic) CPSettingData             *setting;
 @property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
-
 @property (strong, nonatomic) CPFlipAnimationController *filpAnimation;
 
 @end
@@ -45,13 +45,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:kVersion];
-    [self.versionLabel setText:[NSString stringWithFormat:@"v %@",version]];
-    
+
     self.filpAnimation = [[CPFlipAnimationController alloc] init];
     self.setting = [CPSettingData sharedInstance];
     self.soundManager = [CPSoundManager sharedInstance];
+    if( self.setting.musicSelected )
+    {
+        [self.soundManager preloadBackgroundMusic:kMainMusic];
+    }
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:kVersion];
+    [self.versionLabel setText:[NSString stringWithFormat:@"v %@",version]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,13 +80,25 @@
     [super viewWillAppear:animated];
     
     self.navigationController.delegate = self;
-
+    
     if( self.setting.musicSelected )
     {
-        //[self.soundManager playBackgroundMusic:@"大王叫我来巡山.mp3" loops:YES];
-    
-        //[self refreshSettingData];
+        [self.soundManager playBackgroundMusic:kMainMusic loops:YES];
+        
+        [self refreshSettingMusic];
     }
+    else
+    {
+        [self.soundManager stopBackgroundMusic];
+    }
+    
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager preloadEffect:kSenceEffect];
+        
+        [self refreshSettingEffect];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -91,6 +107,10 @@
     
     self.navigationController.delegate = nil;
     
+    if( self.starOverlayView )
+    {
+        [self.starOverlayView stopFireWork];
+    }
 }
 
 - (void)viewDidLayoutSubviews
@@ -101,6 +121,7 @@
     
     if( !_starOverlayView)
     {
+        NSLog(@"MenuView alloc startOver");
         self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
         [self.view addSubview:self.starOverlayView];
         [self.view sendSubviewToBack:self.starOverlayView];
@@ -112,13 +133,26 @@
         self.effectLabel.center = self.titleView.center;
         [self.effectLabel performEffectAnimation:2 repeats:YES];
     }
-    
     if( !_menu3DView )
     {
         [self.mainView addSubview:self.menu3DView];
         [self.menu3DView startAnimation];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    if( !self.setting.bgEffectSelected && self.starOverlayView.isEffectRunning )
+    {
+        [self.starOverlayView stopFireWork];
+    }
+    else if( self.setting.bgEffectSelected && !self.starOverlayView.isEffectRunning )
+    {
+        [self.starOverlayView restartFireWork];
+    }
 }
 
 #pragma mark - getter
@@ -128,15 +162,12 @@
     if( !_effectLabel )
     {
         _effectLabel = ({
+            
             CPEffectLabelView *label = [[CPEffectLabelView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
             label.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:40];
             label.text = @"ColorPlay";
             label.textAlignment = NSTextAlignmentCenter;
             label.textColor = [UIColor whiteColor];
-//            label.effectColor = @[(id)[UIColor blackColor].CGColor,
-//                                        (id)[UIColor yellowColor].CGColor,
-//                                        (id)[UIColor greenColor].CGColor,
-//                                        (id)[UIColor blueColor].CGColor];
             
             label;
         });
@@ -150,51 +181,108 @@
 {
     if( !_menu3DView )
     {
-        CPAnimation3DItem *easy = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [easy setTitle:@"Classic" forState:UIControlStateNormal];
-        [easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]]  forState:UIControlStateNormal];
-        [easy setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateHighlighted];
-        //[easy setTintColor:[UIColor whiteColor]];
-        [easy.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
-        [easy addTarget:self action:@selector(easyMode:) forControlEvents:UIControlEventTouchUpInside];
+        CPAnimation3DItem *easy = ({
+            
+            CPAnimation3DItem *item = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
+            
+            [item setTitle:@"Classic" forState:UIControlStateNormal];
+            [item setTintColor:[UIColor whiteColor]];
+            [item.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
+            
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FF1493"]]
+                            forState:UIControlStateNormal];
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FF1493"]]
+                            forState:UIControlStateHighlighted];
+            
+            [item addTarget:self action:@selector(easyMode:) forControlEvents:UIControlEventTouchUpInside];
+            
+            item;
+        });
         
-        CPAnimation3DItem *hard = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [hard setTitle:@"Fantasy" forState:UIControlStateNormal];
-        [hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]]  forState:UIControlStateNormal];
-        [hard setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor]] forState:UIControlStateHighlighted];
-        //[hard setTintColor:[UIColor whiteColor]];
-        [hard.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
-        [hard addTarget:self action:@selector(hardMode:) forControlEvents:UIControlEventTouchUpInside];
         
-        CPAnimation3DItem *setting = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [setting setTitle:@"Setting" forState:UIControlStateNormal];
-        [setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]]  forState:UIControlStateNormal];
-        [setting setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor]] forState:UIControlStateHighlighted];
-        //[setting setTintColor:[UIColor whiteColor]];
-        [setting.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
-        [setting addTarget:self action:@selector(settingMode:) forControlEvents:UIControlEventTouchUpInside];
+        CPAnimation3DItem *hard = ({
+            
+            CPAnimation3DItem *item = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
+            
+            [item setTitle:@"Fantasy" forState:UIControlStateNormal];
+            [item setTintColor:[UIColor whiteColor]];
+            [item.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
+            
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#9932CC"]]
+                            forState:UIControlStateNormal];
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#9932CC"]]
+                            forState:UIControlStateHighlighted];
+            
+            [item addTarget:self action:@selector(hardMode:) forControlEvents:UIControlEventTouchUpInside];
+            
+            item;
+        });
         
-        CPAnimation3DItem *about = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [about setTitle:@"About" forState:UIControlStateNormal];
-        [about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]]  forState:UIControlStateNormal];
-        [about setBackgroundImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateHighlighted];
-        //[about setTintColor:[UIColor whiteColor]];
-        [about.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
-        [about addTarget:self action:@selector(aboutMode:) forControlEvents:UIControlEventTouchUpInside];
         
-        CPAnimation3DItem *guide = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
-        [guide setTitle:@"Tutorial" forState:UIControlStateNormal];
-        [guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]]  forState:UIControlStateNormal];
-        [guide setBackgroundImage:[UIImage imageWithColor:[UIColor purpleColor]] forState:UIControlStateHighlighted];
-        //[guide setTintColor:[UIColor whiteColor]];
-        [guide.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
-        [guide addTarget:self action:@selector(guideMode:) forControlEvents:UIControlEventTouchUpInside];
+        CPAnimation3DItem *setting = ({
+            
+            CPAnimation3DItem *item = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
+            
+            [item setTitle:@"Setting" forState:UIControlStateNormal];
+            [item setTintColor:[UIColor whiteColor]];
+            [item.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
+            
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#4169E1"]]
+                            forState:UIControlStateNormal];
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#4169E1"]]
+                            forState:UIControlStateHighlighted];
+            
+            [item addTarget:self action:@selector(settingMode:) forControlEvents:UIControlEventTouchUpInside];
+            
+            item;
+        });
+        
+        
+        CPAnimation3DItem *about = ({
+            
+            CPAnimation3DItem *item = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
+            
+            [item setTitle:@"About" forState:UIControlStateNormal];
+            [item setTintColor:[UIColor whiteColor]];
+            [item.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
+
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#00FF00"]]
+                            forState:UIControlStateNormal];
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#00FF00"]]
+                            forState:UIControlStateHighlighted];
+            
+            [item addTarget:self action:@selector(aboutMode:) forControlEvents:UIControlEventTouchUpInside];
+
+            item;
+        });
+        
+        CPAnimation3DItem *guide = ({
+            
+            CPAnimation3DItem *item = [CPAnimation3DItem buttonWithType:UIButtonTypeSystem];
+            
+            [item setTitle:@"Tutorial" forState:UIControlStateNormal];
+            [item setTintColor:[UIColor whiteColor]];
+            [item.titleLabel setFont:[UIFont fontWithName:@"ChalkboardSE-Bold" size:15]];
+            
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FFD700"]]
+                            forState:UIControlStateNormal];
+            [item setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FFD700"]]
+                            forState:UIControlStateHighlighted];
+            
+            [item addTarget:self action:@selector(guideMode:) forControlEvents:UIControlEventTouchUpInside];
+            
+            item;
+        });
         
         NSArray *items = @[easy, hard, setting, about, guide];
         
+        CGFloat radius = 90;
+        if( kScreen.size.height > 568 ) radius = 100;
+        else if( kScreen.size.height < 568 ) radius = 80;
+        NSLog(@"radius %f", radius);
         _menu3DView = [[CPAnimation3DMenuView alloc] initWithFrame:self.mainView.bounds
                                                         itemsArray:items
-                                                            radius:90
+                                                            radius:radius
                                                           duration:0.5];
 
     }
@@ -207,7 +295,12 @@
 - (void)easyMode:(id)sender
 {
     CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
-
+    
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager playEffect:kSenceEffect vibrate:NO];
+    }
+    
     [item touchUpInsideAnimation:^{
         
         self.filpAnimation.presenting = YES;
@@ -222,6 +315,11 @@
 {
     CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
 
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager playEffect:kSenceEffect vibrate:NO];
+    }
+    
     [item touchUpInsideAnimation:^{
         
         self.filpAnimation.presenting = YES;
@@ -235,6 +333,11 @@
 {
     CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
 
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager playEffect:kSenceEffect vibrate:NO];
+    }
+    
     [item touchUpInsideAnimation:^{
         
         self.filpAnimation.presenting = YES;
@@ -248,6 +351,11 @@
 {
     CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
 
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager playEffect:kSenceEffect vibrate:NO];
+    }
+    
     [item touchUpInsideAnimation:^{
         
         self.filpAnimation.presenting = YES;
@@ -261,6 +369,11 @@
 {
     CPAnimation3DItem *item = (CPAnimation3DItem *)sender;
 
+    if( self.setting.effectSelected )
+    {
+        [self.soundManager playEffect:kSenceEffect vibrate:NO];
+    }
+    
     [item touchUpInsideAnimation:^{
         
         self.filpAnimation.presenting = YES;
@@ -272,9 +385,14 @@
 
 #pragma mark - private Methods
 
-- (void)refreshSettingData
+- (void)refreshSettingMusic
 {
     self.soundManager.musicVolume = self.setting.musicVolumn / 100;
+}
+
+- (void)refreshSettingEffect
+{
+    self.soundManager.effectVolume = self.setting.effectVolumn / 100;
 }
 
 #pragma mark - delegate

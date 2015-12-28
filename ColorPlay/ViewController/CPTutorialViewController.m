@@ -10,6 +10,7 @@
 #import "CPStarsOverlayView.h"
 #import "CPPageData.h"
 #import "CPPageView.h"
+#import "CPSettingData.h"
 
 @interface CPTutorialViewController ()
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
 @property (strong, nonatomic) CPPageView                *pageView;
 @property (strong, nonatomic) CPPageData                *page;
+@property (strong, nonatomic) CPSettingData             *setting;
 
 @end
 
@@ -47,21 +49,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    if( self.starOverlayView )
-    {
-        [self.starOverlayView restartFireWork];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    if( self.starOverlayView )
-    {
-        [self.starOverlayView stopFireWork];
-    }
 }
 
 - (void)viewDidLayoutSubviews
@@ -70,19 +62,13 @@
     
     [self.view layoutIfNeeded];
     
-    if( _starOverlayView )
-    {
-        self.starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.frame];
-        [self.view addSubview:self.starOverlayView];
-        [self.view sendSubviewToBack:self.starOverlayView];
-    }
-    
     if( !_pageView )
     {
         _pageView = [[CPPageView alloc] initWithFrame:self.view.frame page:self.page.photos];
         [self.view addSubview:_pageView];
         [self.view sendSubviewToBack:_pageView];
     }
+
 }
 
 #pragma mark - IB

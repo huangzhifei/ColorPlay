@@ -24,9 +24,6 @@
  
  */
 
-
-#import <Foundation/Foundation.h>
-
 @interface GCDTimer : NSObject
 
 /**

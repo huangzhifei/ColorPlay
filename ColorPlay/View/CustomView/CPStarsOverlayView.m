@@ -8,7 +8,7 @@
 
 #import "CPStarsOverlayView.h"
 #import "GCDTimer.h"
-#define LIFTTIME 30
+#define LIFTTIME 15
 
 @interface CPStarsOverlayView()
 
@@ -43,6 +43,7 @@
     if( self )
     {
         _emitterImage = [UIImage imageNamed:@"spark"];
+        _effectRunning = YES;
         [self commonInit];
     }
     
@@ -64,14 +65,14 @@
     _emitter.emitterSize = self.bounds.size;
     _emitter.emitterMode = kCAEmitterLayerOutline;
     _emitter.emitterShape = kCAEmitterLayerCircle;
-    _emitter.renderMode = kCAEmitterLayerOldestFirst;
+    //_emitter.renderMode = kCAEmitterLayerOldestFirst;
     _emitter.preservesDepth = true;
     
     CAEmitterCell *particle = [CAEmitterCell emitterCell];
     particle.name = @"spark";
     
     particle.contents = (id)[_emitterImage CGImage];
-    particle.birthRate = 10;
+    particle.birthRate = 8;
     
     particle.lifetime = LIFTTIME;
     particle.lifetimeRange = 1;
@@ -79,7 +80,7 @@
     particle.velocity = 20;
     particle.velocityRange = 10;
     
-    particle.scale = 0.03;
+    particle.scale = 0.05;
     particle.scaleRange = 0.05;
     particle.scaleSpeed = 0.02;
     
@@ -155,6 +156,7 @@
 
 - (void)stopFireWork
 {
+    _effectRunning = NO;
     self.emitter.lifetime = 0;
     [self.emitter setValue:[NSNumber numberWithInteger:0] forKeyPath:@"emitterCells.spark.birthRate"];
     [self.emitter removeFromSuperlayer];
@@ -163,8 +165,9 @@
 
 - (void)restartFireWork
 {
+    _effectRunning = YES;
     self.emitter.lifetime = LIFTTIME;
-    [self.emitter setValue:[NSNumber numberWithInteger:10] forKeyPath:@"emitterCells.spark.birthRate"];
+    [self.emitter setValue:[NSNumber numberWithInteger:8] forKeyPath:@"emitterCells.spark.birthRate"];
     [self setup];
 }
 

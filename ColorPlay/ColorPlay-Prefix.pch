@@ -1,0 +1,40 @@
+//
+//  ColorPlay-Prefix.pch
+//  ColorPlay
+//
+//  Created by huangzhifei on 15/12/24.
+//  Copyright © 2015年 huangzhifei. All rights reserved.
+//
+
+#ifndef ColorPlay_Prefix_pch
+#define ColorPlay_Prefix_pch
+
+#import <Availability.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+
+#define weakify(var) __weak typeof(var) HZFWeak_##var = var;
+#define strongify(var) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+__strong typeof(var) var = HZFWeak_##var; \
+_Pragma("clang diagnostic pop")
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else //发布
+#define NSLog(...)
+#define debugMethod()
+#endif
+
+#endif
+
+#endif /* ColorPlay_Prefix_pch */

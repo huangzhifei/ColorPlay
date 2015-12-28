@@ -6,8 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface CPPageData : NSObject
 
 @property (strong, nonatomic, readonly) NSArray *photos;

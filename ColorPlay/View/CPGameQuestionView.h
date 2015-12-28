@@ -6,7 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CPGameQuestion.h"
 #import "CPMacro.h"
 
@@ -22,7 +21,7 @@
 
 @interface CPGameQuestionView : UIView
 
-@property (weak, nonatomic)id<CPGameQuestionViewDelegate> delegate;
+@property (weak, nonatomic) id<CPGameQuestionViewDelegate> delegate;
 
 -(instancetype)initWithFrame:(CGRect)frame question:(CPGameQuestion *)question gameMode:(CPGameMode)mode;
 

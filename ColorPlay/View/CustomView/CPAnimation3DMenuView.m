@@ -12,9 +12,9 @@
 
 @interface CPAnimation3DItem()
 
-@property (nonatomic) CGFloat currentAngle;
-@property (nonatomic) NSInteger currentIndex;
-@property (nonatomic) CGFloat radius;
+@property (assign, nonatomic) CGFloat       currentAngle;
+@property (assign, nonatomic) NSInteger     currentIndex;
+@property (assign, nonatomic) CGFloat       radius;
 
 @end
 
@@ -38,8 +38,8 @@
 
 - (void)commonInit
 {
-    self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = [[UIColor yellowColor] CGColor];
+    //self.layer.borderWidth = 1.0f;
+    self.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.layer.cornerRadius = self.radius;
     [self setClipsToBounds:YES];
 }
@@ -57,16 +57,15 @@
 
 - (void)touchUpInsideAnimation:(touchAnimation)block
 {
-    CPRippleView *rippleView = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.height, self.bounds.size.height)];
-    
+    CPRippleView *rippleView = [[CPRippleView alloc] initWithFrame:CGRectMake(0, 0,
+                                                                              self.bounds.size.height,
+                                                                              self.bounds.size.height)];
     rippleView.bgColor = [[UIColor alloc] initWithCGColor:self.layer.borderColor];
-    
     [self addSubview:rippleView];
     rippleView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
     rippleView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    rippleView.alpha=1;
     
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:0.2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -84,15 +83,12 @@
                                           } completion:^(BOOL finished) {
                                               
                                               [rippleView removeFromSuperview];
-                                              
                                               if( block )
                                               {
                                                   block();
                                               }
                                               
-                                              
                                           }];
-                         
                          
                      }];
 
@@ -123,15 +119,15 @@ typedef NS_ENUM(NSInteger, Raisedirection) {
 
 @interface CPAnimation3DMenuView()
 
-@property (strong, nonatomic) NSArray *scaleArray;
-@property (strong, nonatomic) NSArray *itemsArray;
-@property (strong, nonatomic) NSArray *itemsCenterArray;
+@property (strong, nonatomic) NSArray   *scaleArray;
+@property (strong, nonatomic) NSArray   *itemsArray;
+@property (strong, nonatomic) NSArray   *itemsCenterArray;
 
-@property (nonatomic) CGFloat radius;
-@property (nonatomic) CGFloat duration;
-@property (nonatomic) CGPoint circleCenter;
-@property (nonatomic) NSInteger currentIndex;
-@property (nonatomic) BOOL animationFinished;
+@property (assign, nonatomic) CGFloat   radius;
+@property (assign, nonatomic) CGFloat   duration;
+@property (assign, nonatomic) CGPoint   circleCenter;
+@property (assign, nonatomic) NSInteger currentIndex;
+@property (assign, nonatomic) BOOL      animationFinished;
 
 @end
 
@@ -322,7 +318,7 @@ const NSInteger itemTag = 1000;
         return;
     }
     
-    [UIView animateWithDuration:0.15f
+    [UIView animateWithDuration:0.2f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -430,12 +426,13 @@ const NSInteger itemTag = 1000;
         animationGroup.animations = @[positionAnimation];
         animationGroup.fillMode = kCAFillModeForwards;
         animationGroup.removedOnCompletion = NO;
-        animationGroup.duration = 0.25;
+        animationGroup.duration = 0.2f;
         animationGroup.autoreverses = NO;
         [item.layer addAnimation:animationGroup forKey:@"animationGroup"];
         
         item.currentAngle = endAngle;
         
+        CGPathRelease(arcPath);
     }
     
     self.currentIndex++;
@@ -448,7 +445,7 @@ const NSInteger itemTag = 1000;
         return;
     }
     
-    [GCDTimer scheduledTimerWithTimeInterval:0.25 repeats:NO block:^{
+    [GCDTimer scheduledTimerWithTimeInterval:0.2f repeats:NO block:^{
         
         [self startRotateAnimation];
         
@@ -582,6 +579,8 @@ const NSInteger itemTag = 1000;
         
         item.currentIndex = nextIndex;
         item.currentAngle = endAngle;
+        
+        CGPathRelease(arcPath);
     }
     
     [self updateItemUserInteractionEnabled];

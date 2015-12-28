@@ -10,6 +10,7 @@
 #import "GCDTimer.h"
 #import "ZCFallLabel.h"
 #import "CPStarsOverlayView.h"
+#import "CPSettingData.h"
 
 @interface CPAboutViewController ()
 
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) NSString                  *showData;
 @property (assign, nonatomic) CGFloat                   scrollOrignalHeight;
 @property (strong, nonatomic) CPStarsOverlayView        *starOverlayView;
+@property (strong, nonatomic) CPSettingData             *setting;
 
 - (IBAction)backClick:(id)sender;
 
@@ -61,6 +63,7 @@
         data;
     });
     
+    self.setting = [CPSettingData sharedInstance];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,6 +119,11 @@
                                                                      }];
             
         }];
+    }
+    
+    if( !self.setting.bgEffectSelected )
+    {
+        [self.starOverlayView stopFireWork];
     }
 }
 

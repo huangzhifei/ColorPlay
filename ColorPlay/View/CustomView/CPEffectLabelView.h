@@ -19,20 +19,16 @@ typedef NS_ENUM(NSUInteger, EffectLabelDirection)
 
 @interface CPEffectLabelView : UIView
 
-@property (nonatomic, strong) UIFont *font;
-
-@property (nonatomic, strong) NSString *text;
-
-@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIFont    *font;
+@property (nonatomic, strong) NSString  *text;
+@property (nonatomic, strong) UIColor   *textColor;
 
 /**
  *  CGColor数组
  */
-@property (nonatomic, strong) NSArray *effectColor;
-
-@property (nonatomic, assign) EffectLabelDirection effectDirection;
-
-@property (nonatomic, assign) NSTextAlignment textAlignment;
+@property (strong, nonatomic) NSArray               *effectColor;
+@property (assign, nonatomic) EffectLabelDirection  effectDirection;
+@property (assign, nonatomic) NSTextAlignment       textAlignment;
 
 - (void)performEffectAnimation:(CFTimeInterval)seconds repeats:(BOOL)repeats;
 

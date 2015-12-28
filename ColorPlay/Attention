@@ -1,0 +1,47 @@
+
+利用Product-->Analyze静态分析，一般会分析出哪里出现memory leaks，主要的 leaks 点在桥接 (__bridge) :C 和 OC
+之间传递数据的时候需要使用桥接! why?
+
+1、内存管理：
+在 OC 中，如果是在 ARC 环境下开发，编译器在编译的时候会根据代码结构，自动为 OC 代码添加 retain/release/autorelease等。
+                                                                    -----自动内存管理(ARC)的原理!
+
+但是, ARC只负责 OC 部分的内存管理！不会负责 C 语言部分代码的内存管理！也就是说即使是在 ARC 的开发环境中如果使用 C 语言代码
+出现了 retain/copy/new/create 等字样呢!我们都需要手动为其添加 release 操作！否则会出现内存泄露！
+
+在混合开发时(C 和 OC 代码混合)，C 和 OC 之间传递数据需要使用 __bridge 桥接，目的就是为了告诉编译器如何管理内存，在 MRC 中
+不需要使用桥接! 因为都需要手动进行内存管理！
+
+2、数据类型转换：
+
+    Foundation 和 Core Foundation框架的数据类型可以互相转换的
+    Foundation :  OC
+    Core Foundation : C 语言
+
+    NSString *str = @"123"; // Foundation
+    CFStringRef str2 = (__bridge CFStringRef)str; // Core Foundation
+
+    NSString *str3 = (__bridge NSString *)str2;
+    CFArrayRef ---- NSArray
+    CFDictionaryRef ---- NSDictionary
+    CFNumberRef ---- NSNumber
+
+    Core Foundation 中手动创建的数据类型，都需要手动释放
+
+    CGPathRef path = CGPathCreateMutable();
+    CGPathRetain(path);
+
+    CGPathRelease(path);
+    CGPathRelease(path);
+
+3、桥接的添加:
+    利用 Xcode 提示自动添加！ -- 简单/方便/快速
+    /**
+        凡是函数名中带有create\copy\new\retain等字眼, 都应该在不需要使用这个数据的时候进行release
+        GCD的数据类型在ARC环境下不需要再做release
+        CF(Core Foundation)的数据类型在ARC\MRC环境下都需要再做release
+    */
+
+
+文章连接：http://www.jianshu.com/p/4336d4c8ee1e
+

@@ -11,8 +11,6 @@
 
 @interface CPSoundManager()<AVAudioPlayerDelegate>
 {
-    // need Framework:AudioToolbox.framework
-    //SystemSoundID _soundEffect;
     NSString *_lastMusic;
     NSString *_lastEffect;
 }
@@ -43,7 +41,7 @@
 - (void)commonInit
 {
     _effectVolume = 0.5f;
-    _musicVolume = 0.5;
+    _musicVolume = 0.5f;
 }
 
 - (void)preloadBackgroundMusic:(NSString*)fileName
@@ -55,18 +53,19 @@
     NSURL *filePath = ({
         
         NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *strPath = [path stringByAppendingPathComponent:fileName];
+        NSString *strPath = [path stringByAppendingPathComponent:_lastMusic];
         NSURL *url = [NSURL fileURLWithPath:strPath];
         url;
         
     });
     
     [self.soundMusic stop];
-    self.soundMusic = nil;
     
     NSError *error = nil;
     
     self.soundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:&error];
+    
+    NSLog(@"sound %@", self.soundMusic);
     
     if(error)
     {
@@ -88,15 +87,17 @@
         self.soundMusic.numberOfLoops = -1;
     }
          
-    if(self.soundMusic.isPlaying)
-    {
-        self.soundMusic.currentTime = 0.0f;
-    }
-    else
+    if( !self.soundMusic.isPlaying )
     {
         self.soundMusic.volume = self.musicVolume;
         [self.soundMusic play];
+        //self.soundMusic.currentTime = 0.0f;
     }
+//    else
+//    {
+//        self.soundMusic.volume = self.musicVolume;
+//        [self.soundMusic play];
+//    }
 }
 
 - (void)resumeBackgroundMusic
@@ -118,9 +119,6 @@
 
 - (void)preloadEffect:(NSString*)fileName
 {
-    //NSString *path = [[NSBundlemainBundle] pathForResource:@"win" ofType:@"wav"];
-    //AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileName, &_soundEffect);
-    
     if( [_lastEffect isEqualToString:fileName] ) return;
     
     _lastEffect = fileName;
@@ -128,7 +126,7 @@
     NSURL *filePath = ({
         
         NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *strPath = [path stringByAppendingPathComponent:fileName];
+        NSString *strPath = [path stringByAppendingPathComponent:_lastEffect];
         NSURL *url = [NSURL fileURLWithPath:strPath];
         url;
         
@@ -153,21 +151,13 @@
 
 - (void)playEffect:(NSString *)fileName vibrate:(BOOL)vibrate
 {
-    //仅播放音频
-    //AudioServicesPlaySystemSound(_soundEffect);
-    
     [self preloadEffect:fileName];
     
-    if(self.soundEffect.isPlaying)
-    {
-        self.soundEffect.currentTime = 0.0f;
-    }
-    else
+    if(!self.soundEffect.isPlaying)
     {
         self.soundEffect.volume = self.effectVolume;
         [self.soundEffect play];
     }
-    
     if( vibrate )
     {
         [self vibrate];

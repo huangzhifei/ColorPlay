@@ -6,9 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 #define kMusicSelected          @"musicSelected"
 #define kEffectSelected         @"effectSelected"
 #define kBgEffectSeleted        @"bgEffectSelected"
@@ -18,12 +15,12 @@
 
 @interface CPSettingData : NSObject
 
-@property (nonatomic) BOOL musicSelected;
-@property (nonatomic) BOOL effectSelected;
-@property (nonatomic) CGFloat musicVolumn;
-@property (nonatomic) CGFloat effectVolumn;
-@property (nonatomic) BOOL bgEffectSelected;
-@property (nonatomic) BOOL notificationSelected;
+@property (assign, nonatomic) BOOL musicSelected;
+@property (assign, nonatomic) BOOL effectSelected;
+@property (assign, nonatomic) CGFloat musicVolumn;
+@property (assign, nonatomic) CGFloat effectVolumn;
+@property (assign, nonatomic) BOOL bgEffectSelected;
+@property (assign, nonatomic) BOOL notificationSelected;
 
 + (instancetype)sharedInstance;
 

@@ -12,9 +12,8 @@
 
 @interface CPStopWatchView()
 
-@property (strong, nonatomic) CPOutlineLabel *outlineLabel;
-
-@property (strong) TimeOutBlock timeOut;
+@property (strong, nonatomic) CPOutlineLabel    *outlineLabel;
+@property (strong, nonatomic) TimeOutBlock      timeOut;
 
 @end
 
@@ -145,7 +144,7 @@
 - (void)fireStopWatch:(NSTimeInterval)delay timeOut:(TimeOutBlock)timeOut
 {
     self.timeOut = timeOut;
-    
+
     [GCDTimer scheduledTimerWithTimeInterval:delay repeats:NO block:^{
         
         [self fire];

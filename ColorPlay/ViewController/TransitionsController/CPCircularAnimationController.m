@@ -75,8 +75,8 @@
 
         CABasicAnimation* pathAnim = [CABasicAnimation animationWithKeyPath: @"path"];
         pathAnim.delegate = self;
-        pathAnim.fromValue = (id)self.maskPath.CGPath;
-        pathAnim.toValue = (id)finalPath.CGPath;
+        pathAnim.fromValue = (__bridge id)self.maskPath.CGPath;
+        pathAnim.toValue = (__bridge id)finalPath.CGPath;
         pathAnim.duration = [self transitionDuration:transitionContext];
         maskLayer.path = finalPath.CGPath;
         [maskLayer addAnimation:pathAnim forKey:@"path"];
@@ -101,8 +101,8 @@
         
         CABasicAnimation* pathAnim = [CABasicAnimation animationWithKeyPath: @"path"];
         pathAnim.delegate = self;
-        pathAnim.fromValue = (id)self.maskPath.CGPath;
-        pathAnim.toValue = (id)finalPath.CGPath;
+        pathAnim.fromValue = (__bridge id)self.maskPath.CGPath;
+        pathAnim.toValue = (__bridge id)finalPath.CGPath;
         pathAnim.duration = [self transitionDuration:transitionContext];
         maskLayer.path = finalPath.CGPath;
         [maskLayer addAnimation:pathAnim forKey:@"path"];

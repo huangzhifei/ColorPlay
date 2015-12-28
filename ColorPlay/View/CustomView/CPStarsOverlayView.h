@@ -10,6 +10,8 @@
 
 @interface CPStarsOverlayView : UIView
 
+@property (assign, nonatomic, getter=isEffectRunning, readonly) BOOL effectRunning;
+
 - (void)stopFireWork;
 
 - (void)restartFireWork;

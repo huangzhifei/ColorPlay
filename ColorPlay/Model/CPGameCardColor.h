@@ -6,9 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 @interface CPGameCardColor : NSObject
 
 @property (strong, nonatomic, readonly) UIColor *color;

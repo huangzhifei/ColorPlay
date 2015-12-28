@@ -6,7 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CPMacro.h"
 #import "CPQuestionFactory.h"
 

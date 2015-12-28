@@ -6,7 +6,6 @@
 //  Copyright © 2015年 huangzhifei. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CPMacro.h"
 
 @interface CPGameScoreView : UIView
