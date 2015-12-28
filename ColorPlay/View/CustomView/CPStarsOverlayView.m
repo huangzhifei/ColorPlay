@@ -80,7 +80,7 @@
     particle.velocity = 20;
     particle.velocityRange = 10;
     
-    particle.scale = 0.05;
+    particle.scale = 0.03;
     particle.scaleRange = 0.05;
     particle.scaleSpeed = 0.02;
     

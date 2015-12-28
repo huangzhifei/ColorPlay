@@ -31,7 +31,6 @@
 		2824213C1BF21B7D008DAE61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213B1BF21B7D008DAE61 /* QuartzCore.framework */; };
 		2824213E1BF21B86008DAE61 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213D1BF21B86008DAE61 /* CoreGraphics.framework */; };
 		2883CADB1C2DC217006AD8DC /* mainMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2883CADA1C2DC217006AD8DC /* mainMusic.wav */; };
-		2883CADF1C2DC2F3006AD8DC /* gameMusic1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2883CADE1C2DC2F3006AD8DC /* gameMusic1.wav */; };
 		2883CAE31C2E4E46006AD8DC /* gameMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2883CAE21C2E4E46006AD8DC /* gameMusic.wav */; };
 		2892CA401C1888AE0031E75A /* Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2892CA3F1C1888AE0031E75A /* Tutorial.plist */; };
 		2892CA431C188DDA0031E75A /* CPPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2892CA421C188DDA0031E75A /* CPPageView.m */; };
@@ -144,7 +143,6 @@
 		2824213B1BF21B7D008DAE61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2824213D1BF21B86008DAE61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2883CADA1C2DC217006AD8DC /* mainMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mainMusic.wav; sourceTree = "<group>"; };
-		2883CADE1C2DC2F3006AD8DC /* gameMusic1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameMusic1.wav; sourceTree = "<group>"; };
 		2883CAE21C2E4E46006AD8DC /* gameMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameMusic.wav; sourceTree = "<group>"; };
 		2892CA3F1C1888AE0031E75A /* Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorial.plist; sourceTree = "<group>"; };
 		2892CA411C188DDA0031E75A /* CPPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPageView.h; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				2883CAE21C2E4E46006AD8DC /* gameMusic.wav */,
-				2883CADE1C2DC2F3006AD8DC /* gameMusic1.wav */,
 				2883CADA1C2DC217006AD8DC /* mainMusic.wav */,
 				28F6934C1C2D4D32006D6AF0 /* shooter-action.wav */,
 				28F693431C2D3E15006D6AF0 /* catch.wav */,
@@ -648,7 +645,6 @@
 				2883CAE31C2E4E46006AD8DC /* gameMusic.wav in Resources */,
 				28B2FD601BF221B10065F762 /* CPGameViewController.xib in Resources */,
 				28C4EBCD1C2C48F000735B68 /* CPTestIconController.xib in Resources */,
-				2883CADF1C2DC2F3006AD8DC /* gameMusic1.wav in Resources */,
 				28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */,
 				28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */,
 				2892CA481C1896180031E75A /* CPTutorialViewController.xib in Resources */,

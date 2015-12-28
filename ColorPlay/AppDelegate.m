@@ -26,7 +26,7 @@
     // Override point for customization after application launch.
     
     //设置启动页面时间
-    [NSThread sleepForTimeInterval:1.0f];
+    [NSThread sleepForTimeInterval:0.5f];
     
     //[self registerUmeng];
     
