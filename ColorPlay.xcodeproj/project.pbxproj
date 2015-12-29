@@ -30,6 +30,17 @@
 		282421271BF21A4C008DAE61 /* ColorPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 282421261BF21A4C008DAE61 /* ColorPlayUITests.m */; };
 		2824213C1BF21B7D008DAE61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213B1BF21B7D008DAE61 /* QuartzCore.framework */; };
 		2824213E1BF21B86008DAE61 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2824213D1BF21B86008DAE61 /* CoreGraphics.framework */; };
+		282808331C32955000C62EC7 /* classic.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808321C32955000C62EC7 /* classic.png */; };
+		282808351C32956A00C62EC7 /* f-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808341C32956A00C62EC7 /* f-background.png */; };
+		282808371C3295A200C62EC7 /* f-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808361C3295A200C62EC7 /* f-card.png */; };
+		282808391C3295CF00C62EC7 /* f-card2.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808381C3295CF00C62EC7 /* f-card2.png */; };
+		2828083B1C3295DA00C62EC7 /* f-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 2828083A1C3295DA00C62EC7 /* f-color.png */; };
+		2828083D1C3295E200C62EC7 /* f-meaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 2828083C1C3295E200C62EC7 /* f-meaning.png */; };
+		282808411C32960E00C62EC7 /* c-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808401C32960E00C62EC7 /* c-background.png */; };
+		282808431C32961600C62EC7 /* c-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808421C32961600C62EC7 /* c-color.png */; };
+		282808451C32961F00C62EC7 /* c-meaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808441C32961F00C62EC7 /* c-meaning.png */; };
+		282808471C329ACC00C62EC7 /* fantasy.png in Resources */ = {isa = PBXBuildFile; fileRef = 282808461C329ACC00C62EC7 /* fantasy.png */; };
+		2828084B1C32AC8100C62EC7 /* Attention.md in Sources */ = {isa = PBXBuildFile; fileRef = 2828084A1C32AC8100C62EC7 /* Attention.md */; };
 		2883CADB1C2DC217006AD8DC /* mainMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2883CADA1C2DC217006AD8DC /* mainMusic.wav */; };
 		2883CAE31C2E4E46006AD8DC /* gameMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2883CAE21C2E4E46006AD8DC /* gameMusic.wav */; };
 		2892CA401C1888AE0031E75A /* Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2892CA3F1C1888AE0031E75A /* Tutorial.plist */; };
@@ -142,6 +153,17 @@
 		282421281BF21A4C008DAE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2824213B1BF21B7D008DAE61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2824213D1BF21B86008DAE61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		282808321C32955000C62EC7 /* classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classic.png; sourceTree = "<group>"; };
+		282808341C32956A00C62EC7 /* f-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-background.png"; sourceTree = "<group>"; };
+		282808361C3295A200C62EC7 /* f-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-card.png"; sourceTree = "<group>"; };
+		282808381C3295CF00C62EC7 /* f-card2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-card2.png"; sourceTree = "<group>"; };
+		2828083A1C3295DA00C62EC7 /* f-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-color.png"; sourceTree = "<group>"; };
+		2828083C1C3295E200C62EC7 /* f-meaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-meaning.png"; sourceTree = "<group>"; };
+		282808401C32960E00C62EC7 /* c-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-background.png"; sourceTree = "<group>"; };
+		282808421C32961600C62EC7 /* c-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-color.png"; sourceTree = "<group>"; };
+		282808441C32961F00C62EC7 /* c-meaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-meaning.png"; sourceTree = "<group>"; };
+		282808461C329ACC00C62EC7 /* fantasy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fantasy.png; sourceTree = "<group>"; };
+		2828084A1C32AC8100C62EC7 /* Attention.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Attention.md; sourceTree = "<group>"; };
 		2883CADA1C2DC217006AD8DC /* mainMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mainMusic.wav; sourceTree = "<group>"; };
 		2883CAE21C2E4E46006AD8DC /* gameMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameMusic.wav; sourceTree = "<group>"; };
 		2892CA3F1C1888AE0031E75A /* Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorial.plist; sourceTree = "<group>"; };
@@ -338,6 +360,7 @@
 		282421011BF21A4C008DAE61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				282808311C32950A00C62EC7 /* image */,
 				280A141D1C0DE764000F2E1B /* music */,
 				28BAFAF41C08117D002E44E6 /* Assets.xcassets */,
 				28B2FD7D1BF23B0F0065F762 /* ColorList.plist */,
@@ -348,6 +371,7 @@
 				282421051BF21A4C008DAE61 /* AppDelegate.m */,
 				282421021BF21A4C008DAE61 /* main.m */,
 				2824210F1BF21A4C008DAE61 /* LaunchScreen.storyboard */,
+				2828084A1C32AC8100C62EC7 /* Attention.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -379,6 +403,23 @@
 				2824213B1BF21B7D008DAE61 /* QuartzCore.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		282808311C32950A00C62EC7 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				282808321C32955000C62EC7 /* classic.png */,
+				282808341C32956A00C62EC7 /* f-background.png */,
+				282808361C3295A200C62EC7 /* f-card.png */,
+				282808381C3295CF00C62EC7 /* f-card2.png */,
+				2828083A1C3295DA00C62EC7 /* f-color.png */,
+				2828083C1C3295E200C62EC7 /* f-meaning.png */,
+				282808461C329ACC00C62EC7 /* fantasy.png */,
+				282808401C32960E00C62EC7 /* c-background.png */,
+				282808421C32961600C62EC7 /* c-color.png */,
+				282808441C32961F00C62EC7 /* c-meaning.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		28B2FD3A1BF21DF40065F762 /* View */ = {
@@ -640,12 +681,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B2FD7E1BF23B0F0065F762 /* ColorList.plist in Resources */,
+				282808391C3295CF00C62EC7 /* f-card2.png in Resources */,
+				282808411C32960E00C62EC7 /* c-background.png in Resources */,
 				28F6934B1C2D4908006D6AF0 /* CPSharedViewController.xib in Resources */,
+				282808431C32961600C62EC7 /* c-color.png in Resources */,
+				282808371C3295A200C62EC7 /* f-card.png in Resources */,
+				282808471C329ACC00C62EC7 /* fantasy.png in Resources */,
 				282421111BF21A4C008DAE61 /* LaunchScreen.storyboard in Resources */,
 				2883CAE31C2E4E46006AD8DC /* gameMusic.wav in Resources */,
 				28B2FD601BF221B10065F762 /* CPGameViewController.xib in Resources */,
+				282808331C32955000C62EC7 /* classic.png in Resources */,
 				28C4EBCD1C2C48F000735B68 /* CPTestIconController.xib in Resources */,
 				28B90CB61BF4646400035651 /* CPGameQuestionView.xib in Resources */,
+				282808351C32956A00C62EC7 /* f-background.png in Resources */,
 				28B2FD5B1BF21EC10065F762 /* CPMenuViewController.xib in Resources */,
 				2892CA481C1896180031E75A /* CPTutorialViewController.xib in Resources */,
 				28F693441C2D3E15006D6AF0 /* catch.wav in Resources */,
@@ -653,8 +701,11 @@
 				28BAFA941C02430D002E44E6 /* CPGameScoreView.xib in Resources */,
 				2892CA401C1888AE0031E75A /* Tutorial.plist in Resources */,
 				28B2FD6F1BF2222A0065F762 /* CPSettingViewController.xib in Resources */,
+				282808451C32961F00C62EC7 /* c-meaning.png in Resources */,
+				2828083D1C3295E200C62EC7 /* f-meaning.png in Resources */,
 				280A14091C0B04CD000F2E1B /* AboutContent.plist in Resources */,
 				280A145F1C14A423000F2E1B /* CPTestViewController.xib in Resources */,
+				2828083B1C3295DA00C62EC7 /* f-color.png in Resources */,
 				2883CADB1C2DC217006AD8DC /* mainMusic.wav in Resources */,
 				28B2FD651BF221FE0065F762 /* CPResultViewController.xib in Resources */,
 				28BAFAF51C08117D002E44E6 /* Assets.xcassets in Resources */,
@@ -710,6 +761,7 @@
 				28B2FD641BF221FE0065F762 /* CPResultViewController.m in Sources */,
 				280A13FF1C0AFDD8000F2E1B /* ZCAnimatedLabel.m in Sources */,
 				28B90CA81BF462F200035651 /* CPGameCardColor.m in Sources */,
+				2828084B1C32AC8100C62EC7 /* Attention.md in Sources */,
 				280A14651C15C395000F2E1B /* CPFlipAnimationController.m in Sources */,
 				28B2FD691BF222170065F762 /* CPAboutViewController.m in Sources */,
 				28B2FD5A1BF21EC10065F762 /* CPMenuViewController.m in Sources */,

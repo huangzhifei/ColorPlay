@@ -12,7 +12,7 @@
 #import "CPPageView.h"
 #import "CPSettingData.h"
 
-@interface CPTutorialViewController ()
+@interface CPTutorialViewController ()<CPPageViewScrollDelegate>
 
 - (IBAction)back:(id)sender;
 
@@ -65,6 +65,7 @@
     if( !_pageView )
     {
         _pageView = [[CPPageView alloc] initWithFrame:self.view.frame page:self.page.photos];
+        _pageView.delegate = self;
         [self.view addSubview:_pageView];
         [self.view sendSubviewToBack:_pageView];
     }
@@ -74,7 +75,6 @@
 #pragma mark - IB
 
 - (IBAction)back:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

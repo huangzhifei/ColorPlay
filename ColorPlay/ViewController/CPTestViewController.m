@@ -31,7 +31,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    if( !_starOverlayView )
+    if( _starOverlayView )
     {
         _starOverlayView = [[CPStarsOverlayView alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:_starOverlayView];

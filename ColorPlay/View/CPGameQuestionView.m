@@ -56,6 +56,7 @@ typedef NS_ENUM(NSInteger, CPGameQuestionAnimations)
 
 + (instancetype)loadDIYNib
 {
+    //ps: loadNibNamed 即时加载 与之对应的是 initWithNibName 懒加载
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];
 }
 

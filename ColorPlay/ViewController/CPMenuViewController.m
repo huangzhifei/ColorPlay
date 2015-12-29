@@ -65,6 +65,7 @@
 
 + (instancetype)initWithNib
 {
+    // ps: initWithNibName 懒加载，此时View上的控件是nil，只有到需要显示时，才会不是nil
     CPMenuViewController *vc = [[CPMenuViewController alloc] initWithNibName:NSStringFromClass([self class]) bundle:nil];
     
     return vc;
