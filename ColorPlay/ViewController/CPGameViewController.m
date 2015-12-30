@@ -71,7 +71,7 @@
     {
         [self.soundManager preloadEffect:kShotEffect];
         
-        [self refreshSettingMusic];
+        [self refreshSettingEffect];
     }
     
     /**
@@ -105,10 +105,6 @@
     if( !self.setting.bgEffectSelected )
     {
         [self.starOverlayView stopFireWork];
-    }
-    else if( self.setting.bgEffectSelected && !self.starOverlayView.isEffectRunning )
-    {
-        [self.starOverlayView restartFireWork];
     }
 }
 

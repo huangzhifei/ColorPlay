@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-JN-wDb" userLabel="scoreView">
-                    <rect key="frame" x="0.0" y="90" width="600" height="120"/>
+                    <rect key="frame" x="0.0" y="106" width="600" height="120"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -47,13 +47,13 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2T0-lp-Lia"/>
-                <constraint firstItem="Tjd-JN-wDb" firstAttribute="top" secondItem="BaU-78-Pa5" secondAttribute="bottom" id="5aP-MV-Vii"/>
+                <constraint firstItem="Tjd-JN-wDb" firstAttribute="top" secondItem="BaU-78-Pa5" secondAttribute="bottom" constant="16" id="5aP-MV-Vii"/>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="8nD-tl-4j5"/>
                 <constraint firstAttribute="trailing" secondItem="kB9-yZ-Rhw" secondAttribute="trailing" id="K6N-cm-3dT"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K84-s7-tlm"/>
                 <constraint firstItem="Tjd-JN-wDb" firstAttribute="width" secondItem="BaU-78-Pa5" secondAttribute="width" id="LDM-st-I6C"/>
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="width" secondItem="BaU-78-Pa5" secondAttribute="width" id="Mrm-ax-xpk"/>
-                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="top" secondItem="Tjd-JN-wDb" secondAttribute="bottom" constant="16" id="QPP-ne-weN"/>
+                <constraint firstItem="kB9-yZ-Rhw" firstAttribute="top" secondItem="Tjd-JN-wDb" secondAttribute="bottom" id="QPP-ne-weN"/>
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VTq-rH-u07"/>
                 <constraint firstAttribute="bottom" secondItem="158-e7-DS3" secondAttribute="bottom" constant="8" id="VZl-bA-mH5"/>
                 <constraint firstItem="BaU-78-Pa5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="be1-Cs-471"/>
@@ -63,7 +63,7 @@
                 <constraint firstItem="kB9-yZ-Rhw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.52" id="qFZ-Pd-6kg"/>
                 <constraint firstItem="158-e7-DS3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vRQ-wj-18v"/>
             </constraints>
-            <point key="canvasLocation" x="-487" y="-176"/>
+            <point key="canvasLocation" x="-489" y="-371"/>
         </view>
     </objects>
 </document>

@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
         _score = score;
         
         _modeLabel.text = [self stringFromMode:mode];
-        _scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+        _scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)_score];
         
         _highScore = ({
             
@@ -206,8 +206,8 @@ typedef NS_ENUM(NSInteger,CPStartStatus)
                              CGMutablePathRef path = CGPathCreateMutable();
                              CGPathMoveToPoint(path, NULL, -self.bounds.size.width, 0);
                              CGPathAddCurveToPoint(path, NULL, -self.bounds.size.width/2, 0.0,
-                                                   self.bounds.size.width/6, 120,
-                                                   self.bounds.size.width - 40, 95);
+                                                   self.bounds.size.width/6, self.bounds.size.height+8,
+                                                   self.bounds.size.width - 40, self.bounds.size.height - 32);
                              
                              self.fireWorkView = [[CPFireWorkView alloc] initWithFrame:self.bounds movePath:path];
                              [self addSubview:self.fireWorkView];

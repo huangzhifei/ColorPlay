@@ -97,3 +97,8 @@
     initWithNibName：是延迟加载，这个View上的控件是 nil 的，只有到 需要显示时，才会不是 nil。UIView 没有此接口
     loadNibNamed： 即时加载，用该方法加载的xib对象中的各个元素都已经存在
 
+9、View Debugging in Xcode6
+	
+	在Xcode6，苹果终于加入了视图调试功能，下面文章中讲解了其功能上各个按钮的作用及一些简单操作
+	http://www.cnblogs.com/daiweilai/p/4421340.html
+
